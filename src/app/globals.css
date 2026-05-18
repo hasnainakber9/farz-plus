@@ -85,6 +85,21 @@ a {
   animation: pulse-care 2.4s ease-in-out infinite;
 }
 
+.float-3d {
+  transform-style: preserve-3d;
+  animation: float-3d 8s ease-in-out infinite;
+}
+
+.scan-line {
+  background: linear-gradient(90deg, transparent, rgba(160, 231, 180, 0.9), transparent);
+  animation: scan-line 3.6s ease-in-out infinite;
+}
+
+.emergency-sweep {
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 90, 0.38), transparent);
+  animation: scan-line 2.7s ease-in-out infinite;
+}
+
 @keyframes heartbeat-flow {
   to {
     stroke-dashoffset: -240;
@@ -98,5 +113,30 @@ a {
   }
   50% {
     box-shadow: 0 0 0 14px rgba(76, 211, 100, 0);
+  }
+}
+
+@keyframes float-3d {
+  0%,
+  100% {
+    transform: perspective(1200px) rotateX(2deg) rotateY(-4deg) translateY(0);
+  }
+  50% {
+    transform: perspective(1200px) rotateX(-1deg) rotateY(4deg) translateY(-12px);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateX(-115%);
+    opacity: 0;
+  }
+  20%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(115%);
+    opacity: 0;
   }
 }

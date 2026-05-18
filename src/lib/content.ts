@@ -183,7 +183,7 @@ export const plans = [
     tier: "basic",
     name: "Farz Basic",
     audience: "For families who need visibility and light support.",
-    price: "Validated after pilot",
+    price: "Rs 5,000 /mo pilot",
     cta: "Start Basic",
     features: [
       "Elder profile",
@@ -199,7 +199,7 @@ export const plans = [
     tier: "plus",
     name: "Farz Plus",
     audience: "For families who need active care coordination.",
-    price: "Most popular",
+    price: "Rs 15,000 /mo pilot",
     cta: "Choose Plus",
     badge: "Most Popular",
     features: [
@@ -218,7 +218,7 @@ export const plans = [
     tier: "premium",
     name: "Farz Premium",
     audience: "For families who need full support.",
-    price: "Advisor priced",
+    price: "Rs 35,000 /mo pilot",
     cta: "Talk to Care Advisor",
     features: [
       "Everything in Plus",
@@ -236,7 +236,7 @@ export const plans = [
     tier: "corporate",
     name: "Farz Corporate",
     audience: "For employers supporting parent-care needs.",
-    price: "Custom employer plan",
+    price: "Custom pricing",
     cta: "Contact Sales",
     features: [
       "Employee parent-care benefit",

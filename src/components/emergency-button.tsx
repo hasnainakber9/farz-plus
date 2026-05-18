@@ -2,8 +2,9 @@
 
 import { AlertTriangle, PhoneCall, X } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
-export function EmergencyButton() {
+export function EmergencyButton({ className }: { className?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -11,7 +12,10 @@ export function EmergencyButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#FF4D5A] px-6 py-3 text-sm font-bold text-white shadow-[0_0_28px_rgba(255,77,90,0.35)] transition hover:-translate-y-0.5"
+        className={cn(
+          "inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#FF4D5A] px-6 py-3 text-sm font-bold text-white shadow-[0_0_28px_rgba(255,77,90,0.35)] transition hover:-translate-y-0.5",
+          className,
+        )}
       >
         <AlertTriangle className="h-4 w-4" aria-hidden="true" />
         Emergency SOS

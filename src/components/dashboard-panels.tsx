@@ -11,29 +11,71 @@ import {
   ShieldCheck,
   UsersRound,
 } from "lucide-react";
+import Image from "next/image";
 import { CareScoreRing } from "@/components/care-score-ring";
+import { CountingBar } from "@/components/stitch-motion";
 import { GlassCard, MetricCard, StatusPill } from "@/components/ui";
+import { realImages } from "@/lib/assets";
 import { corporateAccounts, demoElder, demoPartners, monthlyReport } from "@/lib/content";
 
 export function FamilyDashboardPreview() {
   return (
-    <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-      <GlassCard className="p-5">
-        <div className="flex items-start justify-between gap-4">
-          <div>
+    <div className="grid gap-5 lg:grid-cols-12">
+      <GlassCard className="overflow-hidden p-0 lg:col-span-4">
+        <div className="relative h-72">
+          <Image
+            alt={realImages.elderKarachi.alt}
+            src={realImages.elderKarachi.src}
+            fill
+            sizes="(min-width: 1024px) 380px, 100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#061422] via-[#061422]/45 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-5">
             <StatusPill>Parent status: Stable</StatusPill>
             <h3 className="mt-4 text-2xl font-semibold text-white">Ammi - Lahore</h3>
-            <p className="mt-2 text-sm leading-6 text-[#B8C0C8]">Care manager Ayesha. Emergency plan active.</p>
+            <p className="mt-2 text-sm leading-6 text-[#D6E4F7]">Care manager Ayesha. Emergency plan active.</p>
           </div>
-          <CareScoreRing score={88} size="sm" />
         </div>
-        <div className="mt-5 grid gap-3">
+        <div className="grid gap-3 p-5">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#A0E7B4]">Overall care score</p>
+              <p className="mt-2 text-sm text-[#B8C0C8]">Updated after today&apos;s check-in.</p>
+            </div>
+            <CareScoreRing score={88} size="sm" />
+          </div>
           <InfoLine icon={Pill} label="Medicine" value="Morning dose completed" />
           <InfoLine icon={CalendarCheck} label="Appointment" value="Cardiology follow-up on Thursday" />
           <InfoLine icon={ShieldCheck} label="Emergency readiness" value="Contacts and hospital preferences verified" />
         </div>
       </GlassCard>
-      <GlassCard className="p-5">
+      <GlassCard className="p-5 lg:col-span-4">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
+          <h3 className="text-xl font-semibold text-white">Medicine Adherence</h3>
+          <StatusPill>Completed</StatusPill>
+        </div>
+        <div className="mt-5 grid gap-3">
+          <MedicineRow name="Lisinopril (Blood Pressure)" dose="10mg - Morning" />
+          <MedicineRow name="Vitamin D3" dose="5000 IU - After Breakfast" />
+        </div>
+        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <h4 className="text-lg font-semibold text-white">Last Check-in</h4>
+              <p className="mt-1 font-mono text-xs text-[#A0E7B4]">Today, 9:30 AM</p>
+            </div>
+            <MessageSquareText className="h-5 w-5 text-[#80C3DC]" />
+          </div>
+          <p className="mt-4 text-sm leading-7 text-[#D6E4F7]">
+            &quot;Ammi reported feeling well after breakfast. Blood pressure is normal. She plans to take a short walk in the garden later.&quot;
+          </p>
+          <button className="mt-4 flex min-h-12 w-full items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-sm font-semibold text-[#A2C9FF]">
+            Play Audio Recording
+          </button>
+        </div>
+      </GlassCard>
+      <GlassCard className="p-5 lg:col-span-4">
         <div className="flex items-center justify-between gap-4">
           <h3 className="text-xl font-semibold text-white">Family Care Timeline</h3>
           <StatusPill tone="info">Proof-based</StatusPill>
@@ -50,7 +92,30 @@ export function FamilyDashboardPreview() {
             </div>
           ))}
         </div>
+        <div className="mt-5 rounded-2xl border border-[#80C3DC]/20 bg-[#80C3DC]/10 p-4">
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#9CDFF9]">Partner SLA</span>
+            <span className="font-mono text-sm text-white">91%</span>
+          </div>
+          <div className="mt-3">
+            <CountingBar width="91%" />
+          </div>
+        </div>
       </GlassCard>
+    </div>
+  );
+}
+
+function MedicineRow({ name, dose }: { name: string; dose: string }) {
+  return (
+    <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.055] p-4">
+      <div>
+        <p className="font-semibold text-white">{name}</p>
+        <p className="mt-1 font-mono text-xs text-[#B8C0C8]">{dose}</p>
+      </div>
+      <span className="grid h-8 w-8 place-items-center rounded-full border border-[#4CD364]/35 bg-[#4CD364]/10 text-[#4CD364]">
+        <Pill className="h-4 w-4" />
+      </span>
     </div>
   );
 }

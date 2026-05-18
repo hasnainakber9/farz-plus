@@ -58,30 +58,32 @@ export default function Home() {
       <section className="relative overflow-hidden pb-16 pt-16 sm:pb-24 sm:pt-24">
         <div className="absolute inset-0 grid-texture opacity-60" />
         <div className="absolute left-1/2 top-0 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[#0E4B82]/20 blur-3xl" />
-        <Shell className="relative grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-          <div className="min-w-0">
+        <Shell className="relative">
+          <div className="mx-auto max-w-4xl min-w-0 text-center">
             <StatusPill tone="info">Pakistan-first parent care OS</StatusPill>
-            <h1 className="mt-6 max-w-[22rem] text-balance text-3xl font-semibold leading-tight tracking-tight text-white sm:max-w-2xl sm:text-6xl lg:text-7xl">
+            <h1 className="mx-auto mt-6 max-w-[22rem] text-balance text-4xl font-semibold leading-tight tracking-tight text-white sm:max-w-4xl sm:text-6xl lg:text-7xl">
               Care for your parents, even when you&apos;re away.
             </h1>
-            <p className="mt-6 max-w-[22rem] text-lg leading-8 text-[#D7DEE6] sm:max-w-2xl">
+            <p className="mx-auto mt-6 max-w-[22rem] text-base leading-8 text-[#D7DEE6] sm:max-w-2xl sm:text-lg">
               Farz+ helps Pakistani families support aging parents with check-ins, health coordination,
               emergency response, companionship, and transparent family updates, all managed through a trusted care platform.
             </p>
-            <p className="mt-5 max-w-[22rem] text-sm font-medium text-[#A0E7B4] sm:max-w-2xl">
+            <p className="mx-auto mt-5 max-w-[22rem] text-sm font-medium text-[#A0E7B4] sm:max-w-2xl">
               Built for overseas Pakistanis, busy families, and elders who deserve dignity at home.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <PrimaryButton href="/contact" className="w-full max-w-[22rem] sm:w-auto">Book a Free Care Call</PrimaryButton>
               <SecondaryButton href="/care-plans" className="w-full max-w-[22rem] sm:w-auto">View Care Plans</SecondaryButton>
             </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               <MiniTrust label="Managed care" value="Not a marketplace" />
               <MiniTrust label="Launch city" value="Islamabad first" />
               <MiniTrust label="Parent app" value="Optional" />
             </div>
           </div>
-          <HeroDashboard />
+          <div className="mt-14">
+            <HeroDashboard />
+          </div>
         </Shell>
       </section>
 
