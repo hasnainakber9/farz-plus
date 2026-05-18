@@ -38,9 +38,7 @@ import {
   emergencyTimeline,
   faqs,
   howItWorks,
-  launchPlan,
   localization,
-  metrics,
   pillars,
   plans,
   problemCards,
@@ -68,7 +66,7 @@ export default function Home() {
               Farz+ helps Pakistani families support aging parents with check-ins, health coordination,
               emergency response, companionship, and transparent family updates, all managed through a trusted care platform.
             </p>
-            <p className="mx-auto mt-5 max-w-[22rem] text-sm font-medium text-[#A0E7B4] sm:max-w-2xl">
+            <p className="mx-auto mt-5 max-w-[22rem] text-sm font-medium text-[#E6FAF3] sm:max-w-2xl">
               Built for overseas Pakistanis, busy families, and elders who deserve dignity at home.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -77,7 +75,7 @@ export default function Home() {
             </div>
             <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               <MiniTrust label="Managed care" value="Not a marketplace" />
-              <MiniTrust label="Launch city" value="Islamabad first" />
+              <MiniTrust label="Coverage" value="Pakistan" />
               <MiniTrust label="Parent app" value="Optional" />
             </div>
           </div>
@@ -120,7 +118,7 @@ export default function Home() {
                 const Icon = solutionIcons[index];
                 return (
                   <GlassCard key={pillar} className="p-5">
-                    <Icon className="h-6 w-6 text-[#4CD364]" aria-hidden="true" />
+                    <Icon className="h-6 w-6 text-[#38D6B0]" aria-hidden="true" />
                     <p className="mt-4 text-lg font-semibold text-white">{pillar}</p>
                   </GlassCard>
                 );
@@ -139,7 +137,7 @@ export default function Home() {
           <div className="mt-10 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.045]">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[760px] text-left text-sm">
-                <thead className="bg-white/[0.06] text-xs uppercase tracking-[0.18em] text-[#A0E7B4]">
+                <thead className="bg-white/[0.06] text-xs uppercase tracking-[0.18em] text-[#E6FAF3]">
                   <tr>
                     {["Feature", "Nursing agency", "Doctor app", "Marketplace", "Farz+"].map((heading) => (
                       <th key={heading} className="px-5 py-4 font-semibold">{heading}</th>
@@ -150,7 +148,7 @@ export default function Home() {
                   {comparisonRows.map((row) => (
                     <tr key={row[0]} className="transition hover:bg-white/[0.035]">
                       {row.map((cell, index) => (
-                        <td key={`${row[0]}-${index}`} className={index === 4 ? "px-5 py-4 font-semibold text-[#A0E7B4]" : "px-5 py-4"}>
+                        <td key={`${row[0]}-${index}`} className={index === 4 ? "px-5 py-4 font-semibold text-[#E6FAF3]" : "px-5 py-4"}>
                           {cell}
                         </td>
                       ))}
@@ -169,7 +167,7 @@ export default function Home() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <GlassCard key={service} className="p-5">
-                <CheckCircle2 className="h-5 w-5 text-[#4CD364]" aria-hidden="true" />
+                <CheckCircle2 className="h-5 w-5 text-[#38D6B0]" aria-hidden="true" />
                 <p className="mt-4 text-sm font-semibold leading-6 text-white">{service}</p>
               </GlassCard>
             ))}
@@ -183,7 +181,7 @@ export default function Home() {
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {howItWorks.map((step, index) => (
               <GlassCard key={step.title} className="p-6">
-                <span className="font-mono text-sm text-[#A0E7B4]">0{index + 1}</span>
+                <span className="font-mono text-sm text-[#E6FAF3]">0{index + 1}</span>
                 <h3 className="mt-4 text-xl font-semibold text-white">{step.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#B8C0C8]">{step.detail}</p>
               </GlassCard>
@@ -243,7 +241,7 @@ export default function Home() {
               <div className="grid gap-4">
                 {emergencyTimeline.map((item, index) => (
                   <div key={item} className="flex items-center gap-4">
-                    <span className="grid h-10 w-10 flex-none place-items-center rounded-full border border-[#4CD364]/30 bg-[#4CD364]/10 font-mono text-sm text-[#A0E7B4]">
+                    <span className="grid h-10 w-10 flex-none place-items-center rounded-full border border-[#38D6B0]/30 bg-[#38D6B0]/10 font-mono text-sm text-[#E6FAF3]">
                       {index + 1}
                     </span>
                     <p className="text-base font-semibold text-white">{item}</p>
@@ -298,9 +296,7 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <SectionHeading eyebrow="Pakistan localization" title="Built for Pakistani families, not imported care models.">
-                <p>
-                  Islamabad launches first, with Rawalpindi treated as operational adjacency. The roadmap then expands city by city after partner quality is proven.
-                </p>
+                <p>Care coordination is shaped for Pakistani families, elders, hospitals, pharmacies, labs, and WhatsApp-first communication.</p>
               </SectionHeading>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {localization.map((item) => (
@@ -314,7 +310,7 @@ export default function Home() {
               <PakistanSignalMap />
               {cityPhases.map((phase) => (
                 <GlassCard key={phase.phase} className="p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#A0E7B4]">{phase.phase}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E6FAF3]">{phase.phase}</p>
                   <p className="mt-3 text-lg font-semibold text-white">{phase.cities.join(", ")}</p>
                   <p className="mt-2 text-sm leading-6 text-[#B8C0C8]">{phase.note}</p>
                 </GlassCard>
@@ -326,20 +322,18 @@ export default function Home() {
 
       <AnimatedSection className="py-14 sm:py-20">
         <Shell>
-          <SectionHeading eyebrow="Plans and pricing" title="Start with the right level of support.">
-            <p>Pricing remains placeholder until Islamabad partner rates, operations cost, and care-manager capacity are validated.</p>
-          </SectionHeading>
+          <SectionHeading eyebrow="Plans and pricing" title="Choose the right level of support." />
           <div className="mt-10 grid gap-5 lg:grid-cols-4">
             {plans.map((plan) => (
-              <GlassCard key={plan.name} className={plan.badge ? "relative p-5 ring-1 ring-[#4CD364]/50" : "p-5"}>
+              <GlassCard key={plan.name} className={plan.badge ? "relative p-5 ring-1 ring-[#38D6B0]/50" : "p-5"}>
                 {plan.badge ? (
-                  <span className="absolute right-5 top-5 rounded-full bg-[#4CD364] px-3 py-1 text-xs font-bold text-[#050410]">
+                  <span className="absolute right-5 top-5 rounded-full bg-[#38D6B0] px-3 py-1 text-xs font-bold text-[#07111F]">
                     {plan.badge}
                   </span>
                 ) : null}
                 <h3 className="pr-24 text-xl font-semibold text-white">{plan.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#B8C0C8]">{plan.audience}</p>
-                <p className="mt-5 font-mono text-sm font-semibold uppercase tracking-[0.14em] text-[#A0E7B4]">{plan.price}</p>
+                <p className="mt-5 font-mono text-sm font-semibold uppercase tracking-[0.14em] text-[#E6FAF3]">{plan.price}</p>
                 <ul className="mt-5 space-y-3">
                   {plan.features.map((feature) => (
                     <CheckRow key={feature}>{feature}</CheckRow>
@@ -379,40 +373,13 @@ export default function Home() {
 
       <AnimatedSection className="py-14 sm:py-20">
         <Shell>
-          <SectionHeading eyebrow="Launch plan" title="Prove trust manually, then automate.">
-            <p>
-              The MVP starts with a concierge Islamabad pilot: landing page, WhatsApp lead capture, care consultations,
-              parent profile forms, manual dashboard operations, and monthly family reports.
-            </p>
-          </SectionHeading>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {launchPlan.map((phase) => (
-              <GlassCard key={phase.phase} className="p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#A0E7B4]">{phase.phase}</p>
-                <h3 className="mt-4 text-xl font-semibold text-white">{phase.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#B8C0C8]">{phase.detail}</p>
-              </GlassCard>
-            ))}
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {metrics.slice(0, 8).map((metric) => (
-              <div key={metric} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-[#D7DEE6]">
-                {metric}
-              </div>
-            ))}
-          </div>
-        </Shell>
-      </AnimatedSection>
-
-      <AnimatedSection className="py-14 sm:py-20">
-        <Shell>
-          <SectionHeading eyebrow="Testimonials" title="Realistic pilot feedback placeholders." />
+          <SectionHeading eyebrow="Testimonials" title="Families feel the difference." />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {testimonials.map((item) => (
               <GlassCard key={item.person} className="p-6">
-                <Sparkles className="h-5 w-5 text-[#A0E7B4]" aria-hidden="true" />
+                <Sparkles className="h-5 w-5 text-[#E6FAF3]" aria-hidden="true" />
                 <p className="mt-5 text-base leading-8 text-white">&quot;{item.quote}&quot;</p>
-                <p className="mt-5 text-sm font-semibold text-[#A0E7B4]">{item.person}</p>
+                <p className="mt-5 text-sm font-semibold text-[#E6FAF3]">{item.person}</p>
               </GlassCard>
             ))}
           </div>
@@ -437,7 +404,7 @@ export default function Home() {
                 Your parents cared for you. Now let Farz+ help you care for them.
               </h2>
               <p className="mt-5 text-base leading-8 text-[#B8C0C8]">
-                Start with one parent profile, one care manager, and one simple care plan.
+                Start with one parent profile, one care manager, and one connected care plan.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton href="/contact">Book a Free Care Call</PrimaryButton>

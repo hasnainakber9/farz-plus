@@ -18,13 +18,13 @@ export function CareScoreRing({
     <div
       className={cn("relative grid place-items-center rounded-full signal-glow", sizeClass)}
       style={{
-        background: `radial-gradient(circle at center, #070817 58%, transparent 59%), conic-gradient(from -90deg, #4CD364 0deg, #43B0C1 ${angle}deg, rgba(255,255,255,0.08) ${angle}deg)`,
+        background: `radial-gradient(circle at center, #070817 58%, transparent 59%), conic-gradient(from -90deg, #38D6B0 0deg, #43B0C1 ${angle}deg, rgba(255,255,255,0.08) ${angle}deg)`,
       }}
       aria-label={`Care Score ${score}, ${status}`}
     >
       <div className="text-center">
         <div className={cn("font-mono font-semibold text-white", textClass)}>{score}</div>
-        <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#A0E7B4]">{status}</div>
+        <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#E6FAF3]">{status}</div>
       </div>
     </div>
   );

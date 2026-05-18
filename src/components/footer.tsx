@@ -36,7 +36,7 @@ const footerGroups = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050410]">
+    <footer className="border-t border-white/10 bg-[#07111F]">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.2fr_2fr] lg:px-8">
         <div>
           <BrandMark />
@@ -45,7 +45,7 @@ export function Footer() {
           </p>
           <Link
             href={whatsappLink("I want to learn more about Farz+ care plans.")}
-            className="mt-6 inline-flex rounded-full border border-[#A0E7B4]/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#4CD364]/10"
+            className="mt-6 inline-flex rounded-full border border-[#E6FAF3]/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#38D6B0]/10"
           >
             Talk on WhatsApp
           </Link>
@@ -57,7 +57,7 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {group.links.map(([label, href]) => (
                   <li key={href}>
-                    <Link href={href} className="text-sm text-[#B8C0C8] transition hover:text-[#A0E7B4]">
+                    <Link href={href} className="text-sm text-[#B8C0C8] transition hover:text-[#E6FAF3]">
                       {label}
                     </Link>
                   </li>

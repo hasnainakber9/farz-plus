@@ -130,7 +130,7 @@ export default function EmergencySupportPage() {
                   <StatusPill tone="info">Family call tree</StatusPill>
                   <h2 className="mt-4 text-2xl font-semibold text-white">Approved contacts and access details</h2>
                 </div>
-                <ShieldCheck className="h-7 w-7 text-[#4CD364]" aria-hidden="true" />
+                <ShieldCheck className="h-7 w-7 text-[#38D6B0]" aria-hidden="true" />
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {accessItems.map(([label, value]) => (

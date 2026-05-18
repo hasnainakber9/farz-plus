@@ -40,7 +40,7 @@ export function FamilyDashboardPreview() {
         <div className="grid gap-3 p-5">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#A0E7B4]">Overall care score</p>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#E6FAF3]">Overall care score</p>
               <p className="mt-2 text-sm text-[#B8C0C8]">Updated after today&apos;s check-in.</p>
             </div>
             <CareScoreRing score={88} size="sm" />
@@ -63,7 +63,7 @@ export function FamilyDashboardPreview() {
           <div className="flex items-center justify-between gap-3">
             <div>
               <h4 className="text-lg font-semibold text-white">Last Check-in</h4>
-              <p className="mt-1 font-mono text-xs text-[#A0E7B4]">Today, 9:30 AM</p>
+              <p className="mt-1 font-mono text-xs text-[#E6FAF3]">Today, 9:30 AM</p>
             </div>
             <MessageSquareText className="h-5 w-5 text-[#80C3DC]" />
           </div>
@@ -85,7 +85,7 @@ export function FamilyDashboardPreview() {
             <div key={event.id} className="grid gap-1 rounded-3xl border border-white/10 bg-white/[0.05] p-4">
               <div className="flex items-center justify-between gap-3">
                 <p className="font-semibold text-white">{event.title}</p>
-                <span className="font-mono text-xs text-[#A0E7B4]">{event.time}</span>
+                <span className="font-mono text-xs text-[#E6FAF3]">{event.time}</span>
               </div>
               <p className="text-sm leading-6 text-[#B8C0C8]">{event.detail}</p>
               <p className="text-xs uppercase tracking-[0.16em] text-[#7F8A96]">Proof: {event.proof}</p>
@@ -113,7 +113,7 @@ function MedicineRow({ name, dose }: { name: string; dose: string }) {
         <p className="font-semibold text-white">{name}</p>
         <p className="mt-1 font-mono text-xs text-[#B8C0C8]">{dose}</p>
       </div>
-      <span className="grid h-8 w-8 place-items-center rounded-full border border-[#4CD364]/35 bg-[#4CD364]/10 text-[#4CD364]">
+      <span className="grid h-8 w-8 place-items-center rounded-full border border-[#38D6B0]/35 bg-[#38D6B0]/10 text-[#38D6B0]">
         <Pill className="h-4 w-4" />
       </span>
     </div>
@@ -123,7 +123,7 @@ function MedicineRow({ name, dose }: { name: string; dose: string }) {
 export function CareManagerDashboardPreview() {
   return (
     <div className="grid gap-5 lg:grid-cols-3">
-      <MetricCard label="Assigned elders" value="18" detail="Ayesha's Islamabad pilot caseload." />
+      <MetricCard label="Assigned elders" value="18" detail="Ayesha's active care-manager panel." />
       <MetricCard label="SLA tasks" value="7" detail="Open check-ins, partner bookings, and updates." />
       <MetricCard label="Risk flags" value="2" detail="Missed medicine and mood-watch follow-ups." />
       <GlassCard className="lg:col-span-2">
@@ -149,7 +149,7 @@ export function AdminDashboardPreview() {
   return (
     <div className="grid gap-5">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard label="Active elders" value="42" detail="Islamabad pilot accounts." />
+        <MetricCard label="Active elders" value="42" detail="Families under managed care." />
         <MetricCard label="Emergency cases" value="3" detail="Two closed, one under follow-up." />
         <MetricCard label="Partner SLA" value="91%" detail="On-time completion this week." />
         <MetricCard label="Care Score avg" value="82" detail="Stable, with hydration watch flags." />
@@ -203,7 +203,7 @@ export function ElderMobilePreview() {
   ] as const;
 
   return (
-    <div className="mx-auto max-w-sm rounded-[36px] border border-white/10 bg-[#050410] p-4 shadow-[0_30px_120px_rgba(14,75,130,0.35)]">
+    <div className="mx-auto max-w-sm rounded-[36px] border border-white/10 bg-[#07111F] p-4 shadow-[0_30px_120px_rgba(14,75,130,0.35)]">
       <div className="rounded-[28px] border border-white/10 bg-white/[0.06] p-5">
         <div className="flex items-center justify-between">
           <p className="font-semibold text-white">Ammi</p>
@@ -221,7 +221,7 @@ export function ElderMobilePreview() {
                   : "border-white/10 bg-white/[0.06] text-white"
               }`}
             >
-              <Icon className={label === "Emergency SOS" ? "h-5 w-5 text-[#FF9BA3]" : "h-5 w-5 text-[#A0E7B4]"} />
+              <Icon className={label === "Emergency SOS" ? "h-5 w-5 text-[#FF9BA3]" : "h-5 w-5 text-[#E6FAF3]"} />
               {label}
             </button>
           ))}
@@ -235,7 +235,7 @@ export function MonthlyReportCard() {
   return (
     <GlassCard>
       <div className="flex items-center gap-3">
-        <ClipboardCheck className="h-6 w-6 text-[#4CD364]" aria-hidden="true" />
+        <ClipboardCheck className="h-6 w-6 text-[#38D6B0]" aria-hidden="true" />
         <div>
           <h3 className="text-xl font-semibold text-white">Monthly care report</h3>
           <p className="text-sm text-[#B8C0C8]">{monthlyReport.month}</p>
@@ -245,10 +245,10 @@ export function MonthlyReportCard() {
         {monthlyReport.careScoreTrend.map((score, index) => (
           <div key={`${score}-${index}`} className="flex flex-1 flex-col items-center gap-2">
             <div
-              className="w-full rounded-t-2xl bg-gradient-to-t from-[#126379] to-[#4CD364]"
+              className="w-full rounded-t-2xl bg-gradient-to-t from-[#126379] to-[#38D6B0]"
               style={{ height: `${score}px` }}
             />
-            <span className="font-mono text-xs text-[#A0E7B4]">{score}</span>
+            <span className="font-mono text-xs text-[#E6FAF3]">{score}</span>
           </div>
         ))}
       </div>
@@ -272,7 +272,7 @@ function InfoLine({
 }) {
   return (
     <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.05] p-4">
-      <Icon className="h-5 w-5 flex-none text-[#4CD364]" aria-hidden="true" />
+      <Icon className="h-5 w-5 flex-none text-[#38D6B0]" aria-hidden="true" />
       <div>
         <p className="text-xs uppercase tracking-[0.15em] text-[#7F8A96]">{label}</p>
         <p className="mt-1 text-sm font-semibold text-white">{value}</p>
@@ -295,11 +295,11 @@ function TaskLine({
   return (
     <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4">
       <div className="flex items-start gap-3">
-        <Icon className="mt-0.5 h-5 w-5 flex-none text-[#4CD364]" aria-hidden="true" />
+        <Icon className="mt-0.5 h-5 w-5 flex-none text-[#38D6B0]" aria-hidden="true" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="font-semibold text-white">{title}</p>
-            <span className="rounded-full border border-white/10 px-2 py-1 font-mono text-xs text-[#A0E7B4]">{status}</span>
+            <span className="rounded-full border border-white/10 px-2 py-1 font-mono text-xs text-[#E6FAF3]">{status}</span>
           </div>
           <p className="mt-2 text-sm leading-6 text-[#B8C0C8]">{detail}</p>
         </div>
@@ -310,7 +310,7 @@ function TaskLine({
 
 function MiniScore({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#050410]/60 p-3">
+    <div className="rounded-2xl border border-white/10 bg-[#07111F]/60 p-3">
       <p className="font-mono text-xl font-semibold text-white">{value}</p>
       <p className="text-[10px] uppercase tracking-[0.14em] text-[#7F8A96]">{label}</p>
     </div>

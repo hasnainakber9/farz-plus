@@ -21,7 +21,7 @@ export function StoryPage({
         <div className="absolute inset-0 grid-texture opacity-40" />
         <Shell className="relative">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#A0E7B4]">{eyebrow}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#E6FAF3]">{eyebrow}</p>
             <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl">
               {title}
             </h1>
@@ -59,10 +59,10 @@ export function StoryPage({
           <Shell>
             <div className="grid gap-8 rounded-[32px] border border-white/10 bg-white/[0.055] p-5 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#A0E7B4]">Start safely</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#E6FAF3]">Start safely</p>
                 <h2 className="mt-4 text-3xl font-semibold text-white">Begin with one parent profile and one care call.</h2>
                 <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
-                  The pilot flow captures the core family context, parent city, urgency, and consent before any care plan is proposed.
+                  Farz+ captures family context, parent city, urgency, and consent before any care plan is proposed.
                 </p>
               </div>
               <LeadForm compact />

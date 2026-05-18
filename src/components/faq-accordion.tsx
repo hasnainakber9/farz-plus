@@ -18,7 +18,7 @@ export function FaqAccordion({ items }: { items: string[][] }) {
             aria-expanded={open === index}
           >
             {question}
-            <ChevronDown className={cn("h-5 w-5 flex-none text-[#A0E7B4] transition", open === index && "rotate-180")} />
+            <ChevronDown className={cn("h-5 w-5 flex-none text-[#E6FAF3] transition", open === index && "rotate-180")} />
           </button>
           {open === index ? <p className="px-5 pb-5 text-sm leading-7 text-[#B8C0C8]">{answer}</p> : null}
         </div>

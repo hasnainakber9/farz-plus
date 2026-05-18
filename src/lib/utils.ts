@@ -18,13 +18,13 @@ export function whatsappLink(message: string) {
 }
 
 export const brand = {
-  black: "#050410",
-  navy: "#0B1B6A",
+  black: "#07111F",
+  navy: "#07111F",
   signalBlue: "#0E4B82",
   careTeal: "#126379",
-  green: "#4CD364",
+  green: "#38D6B0",
   trustGreen: "#269F66",
-  mint: "#A0E7B4",
+  mint: "#E6FAF3",
   emergency: "#FF4D5A",
   warning: "#FFC857",
   info: "#43B0C1",

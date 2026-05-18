@@ -12,7 +12,7 @@ export function Navbar() {
   const leadMessage = "Assalam o alaikum Farz+, I want to book a free care call for my parent.";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050410]/80 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111F]/80 backdrop-blur-2xl">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <BrandMark />
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
@@ -29,14 +29,14 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href={whatsappLink(leadMessage)}
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-[#A0E7B4]/35 px-4 text-sm font-semibold text-white transition hover:bg-[#4CD364]/10"
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-[#E6FAF3]/35 px-4 text-sm font-semibold text-white transition hover:bg-[#38D6B0]/10"
           >
-            <MessageCircle className="h-4 w-4 text-[#4CD364]" aria-hidden="true" />
+            <MessageCircle className="h-4 w-4 text-[#38D6B0]" aria-hidden="true" />
             WhatsApp
           </Link>
           <Link
             href="/contact"
-            className="inline-flex h-11 items-center rounded-full bg-[#4CD364] px-5 text-sm font-bold text-[#050410] shadow-[0_0_26px_rgba(76,211,100,0.35)] transition hover:bg-[#A0E7B4]"
+            className="inline-flex h-11 items-center rounded-full bg-[#38D6B0] px-5 text-sm font-bold text-[#07111F] shadow-[0_0_26px_rgba(56,214,176,0.35)] transition hover:bg-[#E6FAF3]"
           >
             Book a Free Care Call
           </Link>
@@ -52,7 +52,7 @@ export function Navbar() {
         </button>
       </div>
       {open ? (
-        <div className="border-t border-white/10 bg-[#050410]/95 px-5 py-5 lg:hidden">
+        <div className="border-t border-white/10 bg-[#07111F]/95 px-5 py-5 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-2" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link
@@ -67,7 +67,7 @@ export function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-2xl bg-[#4CD364] px-4 py-3 text-center text-sm font-bold text-[#050410]"
+              className="mt-2 rounded-2xl bg-[#38D6B0] px-4 py-3 text-center text-sm font-bold text-[#07111F]"
             >
               Book a Free Care Call
             </Link>

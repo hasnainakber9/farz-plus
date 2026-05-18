@@ -23,7 +23,7 @@ const leadSchema = z.object({
 type LeadFormValues = z.infer<typeof leadSchema>;
 
 const fieldClass =
-  "min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none transition placeholder:text-[#7F8A96] focus:border-[#4CD364] focus:ring-2 focus:ring-[#4CD364]/20";
+  "min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none transition placeholder:text-[#7F8A96] focus:border-[#38D6B0] focus:ring-2 focus:ring-[#38D6B0]/20";
 
 export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -77,9 +77,9 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         </FieldError>
         <FieldError error={errors.urgency?.message}>
           <select className={fieldClass} {...register("urgency")}>
-            <option className="bg-[#050410]" value="planning">Planning ahead</option>
-            <option className="bg-[#050410]" value="this_week">Need help this week</option>
-            <option className="bg-[#050410]" value="urgent">Urgent family concern</option>
+            <option className="bg-[#07111F]" value="planning">Planning ahead</option>
+            <option className="bg-[#07111F]" value="this_week">Need help this week</option>
+            <option className="bg-[#07111F]" value="urgent">Urgent family concern</option>
           </select>
         </FieldError>
       </div>
@@ -93,7 +93,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       <label className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-[#B8C0C8]">
         <input
           type="checkbox"
-          className="mt-1 h-4 w-4 rounded border-white/20 bg-[#050410] accent-[#4CD364]"
+          className="mt-1 h-4 w-4 rounded border-white/20 bg-[#07111F] accent-[#38D6B0]"
           {...register("consent")}
         />
         <span>I agree that Farz+ may contact me about a care consultation. Medical emergencies should still go to local emergency services.</span>
@@ -103,27 +103,27 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-[#4CD364] px-6 py-3 text-sm font-bold text-[#050410] transition hover:bg-[#A0E7B4] disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-[#38D6B0] px-6 py-3 text-sm font-bold text-[#07111F] transition hover:bg-[#E6FAF3] disabled:cursor-not-allowed disabled:opacity-60"
         >
           <Send className="h-4 w-4" aria-hidden="true" />
           {isSubmitting ? "Sending..." : "Book a Free Care Call"}
         </button>
         <a
           href={whatsappLink("I want to book a free Farz+ care call.")}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#A0E7B4]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4CD364]/10"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#E6FAF3]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38D6B0]/10"
         >
-          <MessageCircle className="h-4 w-4 text-[#4CD364]" aria-hidden="true" />
+          <MessageCircle className="h-4 w-4 text-[#38D6B0]" aria-hidden="true" />
           WhatsApp
         </a>
       </div>
       {status === "success" ? (
-        <div className="rounded-2xl border border-[#4CD364]/30 bg-[#4CD364]/10 p-4 text-sm text-[#A0E7B4]">
-          Care-call request captured. The API is Supabase-ready and currently returns a safe MVP acknowledgement.
+        <div className="rounded-2xl border border-[#38D6B0]/30 bg-[#38D6B0]/10 p-4 text-sm text-[#E6FAF3]">
+          Care-call request received. A Farz+ advisor will follow up shortly.
         </div>
       ) : null}
       {status === "error" ? (
         <div className="rounded-2xl border border-[#FF4D5A]/30 bg-[#FF4D5A]/10 p-4 text-sm text-[#FFB6BC]">
-          Something went wrong. Please try WhatsApp while the pilot stack is being connected.
+          Something went wrong. Please try WhatsApp or submit again.
         </div>
       ) : null}
     </form>

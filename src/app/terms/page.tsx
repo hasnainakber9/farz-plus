@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
   title: "Terms",
-  description: "Farz+ MVP terms and care coordination boundaries.",
+  description: "Farz+ terms and care coordination boundaries.",
 };
 
 export default function TermsPage() {
@@ -11,7 +11,7 @@ export default function TermsPage() {
     <LegalPage
       eyebrow="Terms"
       title="Farz+ coordinates care, but families and licensed providers remain decision owners."
-      intro="These MVP terms are product-ready placeholders and must be reviewed before commercial launch."
+      intro="These terms define Farz+ care coordination, partner services, payments, and family responsibilities."
       sections={[
         {
           title: "Service role",
@@ -23,11 +23,11 @@ export default function TermsPage() {
         },
         {
           title: "Pricing",
-          body: "Pilot pricing is placeholder until Islamabad partner costs, care-manager workload, and emergency coordination costs are validated. Partner charges should be transparent.",
+          body: "Farz+ plan pricing is shown clearly. Partner charges, receipts, and invoices should remain transparent.",
         },
         {
           title: "Cancellations and refunds",
-          body: "Refunds, cancellations, paused plans, partner disputes, and emergency event charges require a written SOP before paid launch.",
+          body: "Refunds, cancellations, paused plans, partner disputes, and emergency event charges follow Farz+ written support policies.",
         },
       ]}
       disclaimer

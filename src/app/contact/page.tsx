@@ -15,14 +15,14 @@ export default function ContactPage() {
         <div>
           <SectionHeading eyebrow="Contact" title="Book a Free Care Call.">
             <p>
-              Share your parent&apos;s city, care context, and urgency. Farz+ will respond through the pilot lead flow and WhatsApp-ready contact path.
+              Share your parent&apos;s city, care context, and urgency. Farz+ will respond through your preferred contact channel.
             </p>
           </SectionHeading>
           <div className="mt-8 grid gap-4">
             <GlassCard className="p-5">
-              <StatusPill>Islamabad pilot</StatusPill>
+              <StatusPill>Pakistan coverage</StatusPill>
               <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
-                Rawalpindi is treated as operational adjacency for family needs, hospitals, and partner coordination.
+                Care managers coordinate family updates, partner bookings, reports, and emergency readiness across major cities.
               </p>
             </GlassCard>
             <GlassCard className="p-5">

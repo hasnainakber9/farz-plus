@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { CheckRow, GlassCard, SectionHeading, Shell, StatusPill } from "@/components/ui";
-import { launchPlan, metrics, sops } from "@/lib/content";
+import { metrics, operationsCards, sops } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations System",
-  description: "Farz+ SOPs, launch plan, and operating metrics.",
+  description: "Farz+ SOPs and operating metrics.",
 };
 
 export default function OperationsPage() {
@@ -23,7 +23,7 @@ export default function OperationsPage() {
       <section className="pb-20">
         <Shell className="grid gap-10">
           <div className="grid gap-5 lg:grid-cols-3">
-            {launchPlan.map((phase) => (
+            {operationsCards.map((phase) => (
               <GlassCard key={phase.phase} className="p-6">
                 <StatusPill>{phase.phase}</StatusPill>
                 <h2 className="mt-4 text-xl font-semibold text-white">{phase.title}</h2>

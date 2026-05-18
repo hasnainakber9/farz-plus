@@ -38,7 +38,7 @@ export function CountingBar({ width = "72%", delay = 0 }: { width?: string; dela
   return (
     <div className="h-2 overflow-hidden rounded-full bg-white/[0.06]">
       <motion.div
-        className="h-full rounded-full bg-gradient-to-r from-[#80C3DC] to-[#4CD364] shadow-[0_0_18px_rgba(76,211,100,0.45)]"
+        className="h-full rounded-full bg-gradient-to-r from-[#80C3DC] to-[#38D6B0] shadow-[0_0_18px_rgba(56,214,176,0.45)]"
         initial={{ width: "0%" }}
         whileInView={{ width }}
         viewport={{ once: true }}

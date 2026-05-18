@@ -151,7 +151,7 @@ export interface CorporateAccount {
   company: string;
   employeesCovered: number;
   activeParents: number;
-  plan: "pilot" | "standard" | "enterprise";
+  plan: "standard" | "enterprise";
 }
 
 export interface MonthlyReport {

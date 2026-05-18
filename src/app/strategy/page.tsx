@@ -63,7 +63,7 @@ export default function StrategyPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {advantages.map((advantage, index) => (
               <GlassCard key={advantage} className="p-5">
-                <p className="font-mono text-sm text-[#A0E7B4]">{String(index + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-sm text-[#E6FAF3]">{String(index + 1).padStart(2, "0")}</p>
                 <h2 className="mt-3 text-lg font-semibold text-white">{advantage}</h2>
               </GlassCard>
             ))}

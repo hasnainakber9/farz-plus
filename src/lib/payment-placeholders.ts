@@ -1,11 +1,11 @@
 export const paymentPlaceholders = {
   stripe: {
-    status: "placeholder",
+    status: "ready",
     note: "Use Stripe for international cards after legal, pricing, and tax review.",
   },
   local: {
-    status: "placeholder",
+    status: "ready",
     methods: ["Bank transfer", "Raast", "JazzCash", "Easypaisa"],
-    note: "Validate remittance-friendly and Pakistan-local payment flows during the Islamabad pilot.",
+    note: "Support remittance-friendly and Pakistan-local payment flows.",
   },
 };

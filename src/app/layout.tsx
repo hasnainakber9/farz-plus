@@ -1,18 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://farzplus.pk"),
@@ -28,8 +17,17 @@ export const metadata: Metadata = {
     "overseas Pakistani parents",
     "care manager",
     "family dashboard",
-    "Islamabad elder care",
+    "Pakistan elder care",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "64x64" },
+      { url: "/icons/farz-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/farz-icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/farz-icon-192.png", sizes: "192x192", type: "image/png" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Farz+ | Care for your parents, even when you're away.",
     description:
@@ -49,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050410",
+  themeColor: "#07111F",
   colorScheme: "dark",
 };
 
@@ -63,7 +61,7 @@ export default function RootLayout({
     "@type": "Service",
     name: "Farz+",
     serviceType: "Parent care coordination and elder-care operations",
-    areaServed: ["Islamabad", "Rawalpindi", "Pakistan"],
+    areaServed: ["Pakistan"],
     description:
       "AI-assisted parent-care coordination with human care managers, emergency protocols, companionship, verified partner coordination, and family dashboards.",
     provider: {
@@ -74,7 +72,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <script
           type="application/ld+json"

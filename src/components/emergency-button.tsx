@@ -21,7 +21,7 @@ export function EmergencyButton({ className }: { className?: string }) {
         Emergency SOS
       </button>
       {open ? (
-        <div className="fixed inset-0 z-[80] grid place-items-center bg-[#050410]/80 px-5 backdrop-blur-xl" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-[80] grid place-items-center bg-[#07111F]/80 px-5 backdrop-blur-xl" role="dialog" aria-modal="true">
           <div className="w-full max-w-lg rounded-[28px] border border-[#FF4D5A]/30 bg-[#12070B] p-6 shadow-[0_40px_140px_rgba(255,77,90,0.25)]">
             <div className="flex items-start justify-between gap-4">
               <div>

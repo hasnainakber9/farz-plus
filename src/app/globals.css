@@ -1,16 +1,32 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Light.otf") format("opentype");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-ExtraBold.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #050410;
+  --background: #07111f;
   --foreground: #ffffff;
-  --farz-black: #050410;
-  --deep-navy: #0b1b6a;
+  --farz-black: #07111f;
+  --deep-navy: #07111f;
   --signal-blue: #0e4b82;
   --care-teal: #126379;
-  --farz-green: #4cd364;
-  --trust-green: #269f66;
-  --soft-mint: #a0e7b4;
-  --soft-text: #b8c0c8;
+  --farz-green: #38d6b0;
+  --trust-green: #38d6b0;
+  --soft-mint: #e6faf3;
+  --soft-text: #d9e3e8;
   --card-border: rgba(255, 255, 255, 0.1);
   --glass-card: rgba(255, 255, 255, 0.06);
 }
@@ -18,8 +34,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-sans: "Gilroy", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Gilroy", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -35,15 +51,15 @@ html {
 body {
   min-height: 100%;
   background:
-    radial-gradient(circle at 15% 12%, rgba(76, 211, 100, 0.16), transparent 28rem),
-    radial-gradient(circle at 82% 5%, rgba(67, 176, 193, 0.18), transparent 30rem),
-    linear-gradient(145deg, #050410 0%, #07112e 42%, #050410 100%);
+    radial-gradient(circle at 15% 12%, rgba(56, 214, 176, 0.13), transparent 28rem),
+    radial-gradient(circle at 82% 5%, rgba(230, 250, 243, 0.08), transparent 30rem),
+    linear-gradient(145deg, #07111f 0%, #07111f 46%, #020811 100%);
   color: var(--foreground);
-  font-family: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Gilroy", ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
-  background: rgba(76, 211, 100, 0.35);
+  background: rgba(56, 214, 176, 0.35);
   color: #ffffff;
 }
 
@@ -67,13 +83,13 @@ a {
 }
 
 .signal-glow {
-  box-shadow: 0 0 28px rgba(76, 211, 100, 0.42), 0 0 88px rgba(67, 176, 193, 0.18);
+  box-shadow: 0 0 28px rgba(56, 214, 176, 0.42), 0 0 88px rgba(230, 250, 243, 0.12);
 }
 
 .soft-ring {
   background:
     radial-gradient(circle at center, rgba(5, 4, 16, 1) 58%, transparent 59%),
-    conic-gradient(from -90deg, #4cd364 0deg, #43b0c1 260deg, rgba(255, 255, 255, 0.08) 260deg);
+    conic-gradient(from -90deg, #38d6b0 0deg, #e6faf3 260deg, rgba(255, 255, 255, 0.08) 260deg);
 }
 
 .heartbeat {
@@ -109,10 +125,10 @@ a {
 @keyframes pulse-care {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(76, 211, 100, 0.4);
+    box-shadow: 0 0 0 0 rgba(56, 214, 176, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 14px rgba(76, 211, 100, 0);
+    box-shadow: 0 0 0 14px rgba(56, 214, 176, 0);
   }
 }
 

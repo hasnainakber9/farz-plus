@@ -16,14 +16,14 @@ export const navItems = [
 
 export const cityPhases = [
   {
-    phase: "Phase 1",
-    cities: ["Islamabad", "Rawalpindi"],
-    note: "Controlled premium pilot with partner density and fast supervision loops.",
+    phase: "Core coverage",
+    cities: ["Karachi", "Lahore", "Islamabad", "Rawalpindi"],
+    note: "Dedicated care managers, emergency profiles, and verified partner coordination.",
   },
   {
-    phase: "Phase 2",
+    phase: "Extended coverage",
     cities: ["Karachi", "Lahore", "Faisalabad", "Multan", "Hyderabad", "Peshawar", "Quetta", "Sialkot", "Gujranwala"],
-    note: "Expand after care-manager playbooks, partner scoring, and unit economics are proven.",
+    note: "City-by-city partner depth for families across Pakistan.",
   },
 ];
 
@@ -166,7 +166,7 @@ export const dashboardWidgets = [
 export const localization = [
   "Urdu + English-ready content",
   "WhatsApp-first support",
-  "Regional language roadmap",
+  "Regional language support",
   "Female care-manager option",
   "City-specific partner network",
   "Overseas payment support",
@@ -183,7 +183,7 @@ export const plans = [
     tier: "basic",
     name: "Farz Basic",
     audience: "For families who need visibility and light support.",
-    price: "Rs 5,000 /mo pilot",
+    price: "Rs 5,000 /mo",
     cta: "Start Basic",
     features: [
       "Elder profile",
@@ -199,7 +199,7 @@ export const plans = [
     tier: "plus",
     name: "Farz Plus",
     audience: "For families who need active care coordination.",
-    price: "Rs 15,000 /mo pilot",
+    price: "Rs 15,000 /mo",
     cta: "Choose Plus",
     badge: "Most Popular",
     features: [
@@ -218,7 +218,7 @@ export const plans = [
     tier: "premium",
     name: "Farz Premium",
     audience: "For families who need full support.",
-    price: "Rs 35,000 /mo pilot",
+    price: "Rs 35,000 /mo",
     cta: "Talk to Care Advisor",
     features: [
       "Everything in Plus",
@@ -288,7 +288,7 @@ export const faqs = [
   ["What happens during an emergency?", "Farz+ verifies urgency, starts the family call tree, coordinates ambulance or hospital routing where available, and maintains a live timeline until closure."],
   ["Do you provide doctors directly?", "Farz+ coordinates with verified doctors and partners. It does not replace licensed medical providers."],
   ["Are caregivers verified?", "Partner verification, background checks, documentation, scoring, and complaint escalation are core operating requirements."],
-  ["Which cities do you support?", "The MVP starts with Islamabad and Rawalpindi adjacency, then expands to major Pakistani cities after operations are validated."],
+  ["Which cities do you support?", "Farz+ supports major Pakistani cities through care managers, verified partners, phone support, and WhatsApp-first coordination."],
   ["Can I choose a female care manager?", "Yes. Female care-manager preference is part of the Pakistan-first localization model."],
   ["Is my parent's data private?", "Records are consent-based with family roles, limited staff access, and privacy-first defaults."],
   ["Can I customize a plan?", "Yes. Premium and employer plans can be configured around family needs, city support, and partner availability."],
@@ -299,24 +299,24 @@ export const faqs = [
   ["What if my parent refuses app usage?", "The elder app is optional. Farz+ can operate through calls, WhatsApp, and care-manager workflows."],
 ];
 
-export const launchPlan = [
+export const operationsCards = [
   {
-    phase: "Days 1-30",
-    title: "Concierge proof",
+    phase: "Care operations",
+    title: "Managed support",
     detail:
-      "Recruit Islamabad and Rawalpindi partners, onboard early families, run manual care-manager workflows, and validate emergency profiles.",
+      "Care managers coordinate check-ins, medicines, appointments, family updates, and emergency profiles.",
   },
   {
-    phase: "Days 31-60",
-    title: "Paid trust loop",
+    phase: "Partner network",
+    title: "Verified services",
     detail:
-      "Convert pilot families, standardize SOPs, ship family dashboard access, partner scoring, and monthly reports.",
+      "Doctors, labs, pharmacies, nurses, companions, and ambulance desks are verified, scored, and monitored.",
   },
   {
-    phase: "Days 61-90",
-    title: "Employer and referral wedge",
+    phase: "Family visibility",
+    title: "Transparent care",
     detail:
-      "Launch HR pilots, family referral offers, overseas community outreach, and care-manager workload analytics.",
+      "Families see care scores, updates, bills, requests, reports, and proof of completed actions.",
   },
 ];
 
@@ -387,7 +387,7 @@ export const demoElder: ElderProfile = {
   careManager: {
     id: "cm_ayesha",
     name: "Ayesha",
-    city: "Islamabad",
+    city: "Lahore",
     languages: ["English", "Urdu", "Punjabi"],
     caseload: 18,
     supervisor: "Nadia",
@@ -469,9 +469,9 @@ export const demoElder: ElderProfile = {
 export const demoPartners: Partner[] = [
   {
     id: "partner_lab",
-    name: "Islamabad Home Lab Partner",
+    name: "Home Lab Partner Network",
     category: "Labs",
-    city: "Islamabad",
+    city: "Pakistan",
     status: "verified",
     score: {
       responseTime: 92,
@@ -487,9 +487,9 @@ export const demoPartners: Partner[] = [
   },
   {
     id: "partner_physio",
-    name: "Rawalpindi Physio Network",
+    name: "Physio Partner Network",
     category: "Physiotherapy",
-    city: "Rawalpindi",
+    city: "Pakistan",
     status: "verified",
     score: {
       responseTime: 86,
@@ -506,14 +506,14 @@ export const demoPartners: Partner[] = [
 ];
 
 export const corporateAccounts: CorporateAccount[] = [
-  { id: "corp_1", company: "Islamabad SaaS Co.", employeesCovered: 120, activeParents: 18, plan: "pilot" },
+  { id: "corp_1", company: "Pakistan SaaS Co.", employeesCovered: 120, activeParents: 18, plan: "standard" },
   { id: "corp_2", company: "Gulf Remote Team", employeesCovered: 80, activeParents: 11, plan: "standard" },
 ];
 
 export const monthlyReport: MonthlyReport = {
   id: "report_1",
   elderId: demoElder.id,
-  month: "Pilot Month 1",
+  month: "May 2026",
   careScoreTrend: [81, 84, 86, 88],
   notes: [
     "Medicine adherence improved after WhatsApp reminders.",
@@ -534,7 +534,7 @@ export const secondaryPages = {
     eyebrow: "How It Works",
     title: "Simple for families. Respectful for parents.",
     intro:
-      "Start with one parent profile, one care manager, and one clear care plan. The system grows only as the family needs more support.",
+      "Create a parent profile, assign a care manager, and keep the family connected from day one.",
     bullets: howItWorks.map((step) => `${step.title}: ${step.detail}`),
   },
   overseas: {
@@ -548,7 +548,7 @@ export const secondaryPages = {
       "Emergency call tree for decision-makers",
       "Partner coordination without random searching",
       "Monthly reports for peace of mind",
-      "Payment placeholders for remittance-friendly flows",
+      "Remittance-friendly payment support",
     ],
   },
   localFamilies: {
@@ -557,7 +557,7 @@ export const secondaryPages = {
     intro:
       "For professionals, siblings, and out-of-city families who need a reliable backup layer around parents at home.",
     bullets: [
-      "Islamabad-first care-manager operations",
+      "Care-manager operations across major cities",
       "Doctor, lab, pharmacy, and hospital appointment coordination",
       "Check-ins that respect elders and family hierarchy",
       "Emergency profile readiness",

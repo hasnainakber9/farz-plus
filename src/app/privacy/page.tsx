@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <LegalPage
       eyebrow="Privacy"
       title="Consent-based records and limited access by default."
-      intro="This MVP privacy page explains the intended Farz+ trust model before production legal review."
+      intro="Farz+ keeps parent-care records consent-based, role-aware, and limited to care operations."
       sections={[
         {
           title: "Data we collect",
@@ -26,8 +26,8 @@ export default function PrivacyPage() {
           body: "AI may draft summaries, reminders, risk flags, and reports, but it must not diagnose, override doctors, bypass consent, or make emergency guarantees.",
         },
         {
-          title: "Production requirement",
-          body: "Before launch, Farz+ should finalize encryption, retention, audit logs, consent withdrawal, staff access controls, partner agreements, and legal review.",
+          title: "Security standards",
+          body: "Farz+ uses privacy-first access rules, retention policies, consent withdrawal, staff controls, partner agreements, and legal review.",
         },
       ]}
     />

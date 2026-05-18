@@ -26,12 +26,12 @@ export default function CarePlansPage() {
     <>
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 grid-texture opacity-40" />
-        <div className="absolute left-1/2 top-10 h-96 w-96 -translate-x-1/2 rounded-full bg-[#4CD364]/10 blur-3xl" />
+        <div className="absolute left-1/2 top-10 h-96 w-96 -translate-x-1/2 rounded-full bg-[#38D6B0]/10 blur-3xl" />
         <Shell className="relative">
           <SectionHeading eyebrow="Care Plans" title="Trusted care plans for every family journey." align="center">
             <p>
-              Intelligent monitoring combined with compassionate human support. Pilot pricing is indicative and will be
-              validated against city partner rates, care-manager workload, and emergency coordination costs.
+              Intelligent monitoring, compassionate human support, and clear care coordination for families across
+              Pakistan.
             </p>
           </SectionHeading>
         </Shell>
@@ -48,18 +48,18 @@ export default function CarePlansPage() {
                   key={plan.name}
                   className={
                     active
-                      ? "relative p-6 shadow-[0_0_42px_rgba(76,211,100,0.16)] ring-1 ring-[#4CD364]/55 lg:-translate-y-4"
+                      ? "relative p-6 shadow-[0_0_42px_rgba(56,214,176,0.16)] ring-1 ring-[#38D6B0]/55 lg:-translate-y-4"
                       : "relative p-6"
                   }
                 >
-                  <div className={active ? "absolute inset-x-0 top-0 h-1 rounded-t-[24px] bg-gradient-to-r from-[#4CD364] to-[#80C3DC]" : "absolute inset-x-0 top-0 h-1 rounded-t-[24px] bg-white/10"} />
+                  <div className={active ? "absolute inset-x-0 top-0 h-1 rounded-t-[24px] bg-gradient-to-r from-[#38D6B0] to-[#80C3DC]" : "absolute inset-x-0 top-0 h-1 rounded-t-[24px] bg-white/10"} />
                   {plan.badge ? (
-                    <span className="absolute right-4 top-4 rounded-full bg-[#4CD364] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#050410]">
+                    <span className="absolute right-4 top-4 rounded-full bg-[#38D6B0] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#07111F]">
                       {plan.badge}
                     </span>
                   ) : null}
-                  <Icon className={active ? "h-6 w-6 text-[#4CD364]" : "h-6 w-6 text-[#80C3DC]"} />
-                  <h2 className={active ? "mt-5 pr-24 text-2xl font-semibold text-[#4CD364]" : "mt-5 pr-20 text-2xl font-semibold text-white"}>
+                  <Icon className={active ? "h-6 w-6 text-[#38D6B0]" : "h-6 w-6 text-[#80C3DC]"} />
+                  <h2 className={active ? "mt-5 pr-24 text-2xl font-semibold text-[#38D6B0]" : "mt-5 pr-20 text-2xl font-semibold text-white"}>
                     {plan.name}
                   </h2>
                   <p className="mt-3 min-h-14 text-sm leading-6 text-[#B8C0C8]">{plan.audience}</p>
@@ -80,10 +80,10 @@ export default function CarePlansPage() {
             <div className="mt-8 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045]">
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[760px] text-left text-sm">
-                  <thead className="bg-white/[0.06] font-mono text-xs uppercase tracking-[0.18em] text-[#A0E7B4]">
+                  <thead className="bg-white/[0.06] font-mono text-xs uppercase tracking-[0.18em] text-[#E6FAF3]">
                     <tr>
                       {["Feature", "Basic", "Plus", "Premium"].map((heading) => (
-                        <th key={heading} className={heading === "Plus" ? "bg-[#4CD364]/10 px-5 py-4" : "px-5 py-4"}>
+                        <th key={heading} className={heading === "Plus" ? "bg-[#38D6B0]/10 px-5 py-4" : "px-5 py-4"}>
                           {heading}
                         </th>
                       ))}
@@ -93,8 +93,8 @@ export default function CarePlansPage() {
                     {comparison.map((row) => (
                       <tr key={row[0]}>
                         {row.map((cell, index) => (
-                          <td key={`${row[0]}-${index}`} className={index === 2 ? "bg-[#4CD364]/[0.08] px-5 py-4 text-[#A0E7B4]" : "px-5 py-4"}>
-                            {cell === "Yes" ? <Check className="h-5 w-5 text-[#4CD364]" /> : cell}
+                          <td key={`${row[0]}-${index}`} className={index === 2 ? "bg-[#38D6B0]/[0.08] px-5 py-4 text-[#E6FAF3]" : "px-5 py-4"}>
+                            {cell === "Yes" ? <Check className="h-5 w-5 text-[#38D6B0]" /> : cell}
                           </td>
                         ))}
                       </tr>
@@ -108,8 +108,8 @@ export default function CarePlansPage() {
           <div className="mt-14 grid gap-8 lg:grid-cols-[0.74fr_1.26fr]">
             <GlassCard className="grid min-h-80 place-items-center p-8 text-center">
               <div>
-                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-[#4CD364]/25 bg-[#4CD364]/10 shadow-[0_0_42px_rgba(76,211,100,0.18)]">
-                  <Globe2 className="h-9 w-9 text-[#4CD364]" />
+                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-[#38D6B0]/25 bg-[#38D6B0]/10 shadow-[0_0_42px_rgba(56,214,176,0.18)]">
+                  <Globe2 className="h-9 w-9 text-[#38D6B0]" />
                 </div>
                 <h2 className="mt-6 text-2xl font-semibold text-white">Built for Pakistani families</h2>
                 <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
@@ -125,7 +125,7 @@ export default function CarePlansPage() {
 
           <div className="mt-12 grid gap-8 rounded-[28px] border border-white/10 bg-white/[0.055] p-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <StatusPill>Pilot care call</StatusPill>
+              <StatusPill>Care advisor call</StatusPill>
               <h2 className="mt-5 text-3xl font-semibold text-white">Need help choosing?</h2>
               <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
                 A care advisor can map the parent profile, emergency readiness, family decision-makers, and first month support needs before recommending a plan.
