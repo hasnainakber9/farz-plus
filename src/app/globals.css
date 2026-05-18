@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050410;
+  --foreground: #ffffff;
+  --farz-black: #050410;
+  --deep-navy: #0b1b6a;
+  --signal-blue: #0e4b82;
+  --care-teal: #126379;
+  --farz-green: #4cd364;
+  --trust-green: #269f66;
+  --soft-mint: #a0e7b4;
+  --soft-text: #b8c0c8;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --glass-card: rgba(255, 255, 255, 0.06);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--farz-black);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(76, 211, 100, 0.16), transparent 28rem),
+    radial-gradient(circle at 82% 5%, rgba(67, 176, 193, 0.18), transparent 30rem),
+    linear-gradient(145deg, #050410 0%, #07112e 42%, #050410 100%);
+  color: var(--foreground);
+  font-family: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(76, 211, 100, 0.35);
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 88%);
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+  border: 1px solid var(--card-border);
+  box-shadow: 0 24px 90px rgba(14, 75, 130, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+}
+
+.signal-glow {
+  box-shadow: 0 0 28px rgba(76, 211, 100, 0.42), 0 0 88px rgba(67, 176, 193, 0.18);
+}
+
+.soft-ring {
+  background:
+    radial-gradient(circle at center, rgba(5, 4, 16, 1) 58%, transparent 59%),
+    conic-gradient(from -90deg, #4cd364 0deg, #43b0c1 260deg, rgba(255, 255, 255, 0.08) 260deg);
+}
+
+.heartbeat {
+  stroke-dasharray: 7 12;
+  animation: heartbeat-flow 9s linear infinite;
+}
+
+.pulse-care {
+  animation: pulse-care 2.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat-flow {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+
+@keyframes pulse-care {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 211, 100, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(76, 211, 100, 0);
+  }
+}
