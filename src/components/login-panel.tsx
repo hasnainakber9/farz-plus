@@ -12,7 +12,7 @@ export function LoginPanel() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(searchParams.get("error") ? "That authentication link is no longer valid." : "");
-  const [notice, setNotice] = useState(searchParams.get("confirmed") === "check-email" ? "Check your email to confirm your account before signing in." : "");
+  const notice = searchParams.get("confirmed") === "check-email" ? "Check your email to confirm your account before signing in." : "";
   const [submitting, setSubmitting] = useState(false);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
