@@ -59,7 +59,7 @@ const previewData = {
     label: "Clinical escalation inbox",
     status: "1 priority review",
     items: [
-      ["09:28", "Saeeda Khan · 81", "Elevated BP trend and breathlessness."],
+      ["09:28", "Saeeda Khan Â· 81", "Elevated BP trend and breathlessness."],
       ["09:29", "Clinical summary assembled", "Vitals, allergies, and care log attached."],
       ["09:31", "Care manager standing by", "Family communication remains with Ayesha."],
     ],
@@ -239,7 +239,7 @@ export const familyPersona: PersonaConfig = {
   },
   dashboardHref: "/login?role=family",
   dashboardLabel: "Open family dashboard",
-  outcomes: ["WhatsApp-first updates", "Multi-sibling synchronization", "Medication visibility", "Transparent care record"],
+  outcomes: ["In-app family updates", "Multi-sibling synchronization", "Medication visibility", "Transparent care record"],
   features: [
     { title: "WhatsApp care feed", detail: "Care-manager updates, photo check-ins, vitals, and handoffs in one chronological view.", icon: MessageCircle },
     { title: "Sibling sync", detail: "Decision-makers and viewers see the same approved facts without repeating calls across time zones.", icon: Users },
