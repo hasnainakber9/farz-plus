@@ -31,10 +31,10 @@ const segments = [
 export default function StrategyPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 grid-texture opacity-40" />
+      <section className="relative overflow-hidden border-b border-[#DCE9E5] bg-white py-20 sm:py-28">
+        <div className="absolute inset-0 grid-texture opacity-30" />
         <Shell className="relative">
-          <SectionHeading eyebrow="Pitch Strategy" title="Pakistan's AI-assisted parent-care operating system.">
+          <SectionHeading eyebrow="Product Strategy" title="Pakistan's human-led parent-care coordination layer.">
             <p>
               Pakistan has doctors, labs, nurses, pharmacies, and hospitals, but families still struggle to coordinate care for aging parents.
               Farz+ connects fragmented services into one managed care layer.
@@ -42,12 +42,12 @@ export default function StrategyPage() {
           </SectionHeading>
         </Shell>
       </section>
-      <section className="pb-20">
+      <section className="bg-[#F8FBF9] pb-20 pt-14">
         <Shell className="grid gap-10">
           <GlassCard className="p-6">
             <StatusPill>Positioning</StatusPill>
-            <h2 className="mt-4 text-3xl font-semibold text-white">A managed care layer for Pakistani parents aging at home.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
+            <h2 className="mt-4 text-3xl font-semibold text-[#143A35]">A managed care layer for Pakistani parents aging at home.</h2>
+            <p className="mt-4 text-sm leading-7 text-[#60756F]">
               Farz+ is not a nursing agency, doctor-booking app, caregiver marketplace, old-age home, telemedicine app, hospital, or charity.
               It is the coordination layer families need when trust, visibility, and accountability matter.
             </p>
@@ -55,16 +55,16 @@ export default function StrategyPage() {
           <div className="grid gap-5 lg:grid-cols-4">
             {segments.map(([segment, message]) => (
               <GlassCard key={segment} className="p-5">
-                <h2 className="text-lg font-semibold text-white">{segment}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#B8C0C8]">{message}</p>
+                <h2 className="text-lg font-semibold text-[#143A35]">{segment}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#60756F]">{message}</p>
               </GlassCard>
             ))}
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {advantages.map((advantage, index) => (
               <GlassCard key={advantage} className="p-5">
-                <p className="font-mono text-sm text-[#E6FAF3]">{String(index + 1).padStart(2, "0")}</p>
-                <h2 className="mt-3 text-lg font-semibold text-white">{advantage}</h2>
+                <p className="text-sm font-bold text-[#087B69]">{String(index + 1).padStart(2, "0")}</p>
+                <h2 className="mt-3 text-lg font-semibold text-[#143A35]">{advantage}</h2>
               </GlassCard>
             ))}
           </div>

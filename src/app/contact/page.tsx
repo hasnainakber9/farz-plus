@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
-      <div className="absolute inset-0 grid-texture opacity-40" />
+    <section className="relative min-h-[calc(100vh-64px)] overflow-hidden border-b border-[#DCE9E5] bg-[#F8FBF9] py-20 sm:py-28">
+      <div className="absolute inset-0 grid-texture opacity-25" />
       <Shell className="relative grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <SectionHeading eyebrow="Contact" title="Book a Free Care Call.">
@@ -21,13 +21,13 @@ export default function ContactPage() {
           <div className="mt-8 grid gap-4">
             <GlassCard className="p-5">
               <StatusPill>Pakistan coverage</StatusPill>
-              <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
-                Care managers coordinate family updates, partner bookings, reports, and emergency readiness across major cities.
+              <p className="mt-4 text-sm leading-7 text-[#60756F]">
+                Digital access is available nationwide. Physical coordination, provider bookings, reports, and urgent support are confirmed case by case.
               </p>
             </GlassCard>
             <GlassCard className="p-5">
               <StatusPill tone="info">Trust rule</StatusPill>
-              <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">
+              <p className="mt-4 text-sm leading-7 text-[#60756F]">
                 Farz+ coordinates care. It does not replace doctors, hospitals, emergency services, ambulances, or family consent.
               </p>
             </GlassCard>

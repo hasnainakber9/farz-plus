@@ -1,25 +1,23 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
+import { routeForRole } from "@/lib/auth";
+import { createClient } from "@/lib/supabase/server";
+import type { AppRole, ProfileRecord } from "@/lib/supabase/types";
+
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1),
+});
 
 export async function POST(request: Request) {
-  const payload = await request.json().catch(() => null);
+  const parsed = loginSchema.safeParse(await request.json().catch(() => null));
+  if (!parsed.success) return NextResponse.json({ error: "Enter a valid email and password." }, { status: 400 });
 
-  if (!payload || typeof payload.email !== "string" || typeof payload.password !== "string") {
-    return NextResponse.json({ ok: false, error: "Missing credentials" }, { status: 400 });
-  }
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithPassword(parsed.data);
+  if (error || !data.user) return NextResponse.json({ error: "Those credentials do not match a Farz+ account." }, { status: 401 });
 
-  const email = payload.email.toLowerCase();
-  const password = payload.password;
-
-  const demoCredentials = new Map([
-    ["family@farzplus.pk", "FarzFamily123"],
-    ["hamza@farzplus.pk", "FarzSaathi123"],
-    ["dr.farooq@farzplus.pk", "FarzClinical123"],
-    ["admin@farzplus.pk", "FarzAdmin123"],
-  ]);
-
-  if (demoCredentials.get(email) !== password) {
-    return NextResponse.json({ ok: false, error: "Invalid credentials" }, { status: 401 });
-  }
-
-  return NextResponse.json({ ok: true, user: { email, role: email.includes("hamza") ? "CARE_MANAGER" : email.includes("farooq") ? "CLINICIAN" : email.includes("admin") ? "ADMIN" : "FAMILY" } });
+  const { data: profile } = await supabase.from("profiles").select("*").eq("auth_user_id", data.user.id).maybeSingle();
+  const role = ((profile as ProfileRecord | null)?.role ?? "FAMILY") as AppRole;
+  return NextResponse.json({ role, name: (profile as ProfileRecord | null)?.display_name ?? data.user.email, route: routeForRole(role) });
 }

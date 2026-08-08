@@ -23,7 +23,7 @@ const leadSchema = z.object({
 type LeadFormValues = z.infer<typeof leadSchema>;
 
 const fieldClass =
-  "min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none transition placeholder:text-[#7F8A96] focus:border-[#38D6B0] focus:ring-2 focus:ring-[#38D6B0]/20";
+  "min-h-12 w-full rounded-md border border-[#CBDDD8] bg-white px-4 text-sm text-[#143A35] outline-none transition placeholder:text-[#899A96] focus:border-[#08A98A] focus:ring-2 focus:ring-[#08A98A]/15";
 
 export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -77,9 +77,9 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         </FieldError>
         <FieldError error={errors.urgency?.message}>
           <select className={fieldClass} {...register("urgency")}>
-            <option className="bg-[#07111F]" value="planning">Planning ahead</option>
-            <option className="bg-[#07111F]" value="this_week">Need help this week</option>
-            <option className="bg-[#07111F]" value="urgent">Urgent family concern</option>
+            <option value="planning">Planning ahead</option>
+            <option value="this_week">Need help this week</option>
+            <option value="urgent">Urgent family concern</option>
           </select>
         </FieldError>
       </div>
@@ -90,39 +90,39 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
           {...register("needs")}
         />
       </FieldError>
-      <label className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-[#B8C0C8]">
+      <label className="flex gap-3 border-y border-[#D9E5E1] py-4 text-sm leading-6 text-[#617570]">
         <input
           type="checkbox"
-          className="mt-1 h-4 w-4 rounded border-white/20 bg-[#07111F] accent-[#38D6B0]"
+          className="mt-1 h-4 w-4 rounded border-[#AFC9C3] bg-white accent-[#08A98A]"
           {...register("consent")}
         />
         <span>I agree that Farz+ may contact me about a care consultation. Medical emergencies should still go to local emergency services.</span>
       </label>
-      {errors.consent ? <p className="text-sm text-[#FF9BA3]">{errors.consent.message}</p> : null}
+      {errors.consent ? <p className="text-sm text-[#B84637]">{errors.consent.message}</p> : null}
       <div className="flex flex-col gap-3 sm:flex-row">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-[#38D6B0] px-6 py-3 text-sm font-bold text-[#07111F] transition hover:bg-[#E6FAF3] disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-md bg-[#006E5B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#005B4C] disabled:cursor-not-allowed disabled:opacity-60"
         >
           <Send className="h-4 w-4" aria-hidden="true" />
           {isSubmitting ? "Sending..." : "Book a Free Care Call"}
         </button>
         <a
           href={whatsappLink("I want to book a free Farz+ care call.")}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#E6FAF3]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38D6B0]/10"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#8DB7AF] bg-white px-6 py-3 text-sm font-semibold text-[#0D5E51] transition hover:border-[#006E5B] hover:bg-[#F0F8F5]"
         >
-          <MessageCircle className="h-4 w-4 text-[#38D6B0]" aria-hidden="true" />
+          <MessageCircle className="h-4 w-4 text-[#08A98A]" aria-hidden="true" />
           WhatsApp
         </a>
       </div>
       {status === "success" ? (
-        <div className="rounded-2xl border border-[#38D6B0]/30 bg-[#38D6B0]/10 p-4 text-sm text-[#E6FAF3]">
+        <div className="rounded-md border border-[#9FD8CC] bg-[#E6F7F2] p-4 text-sm text-[#08715F]">
           Care-call request received. A Farz+ advisor will follow up shortly.
         </div>
       ) : null}
       {status === "error" ? (
-        <div className="rounded-2xl border border-[#FF4D5A]/30 bg-[#FF4D5A]/10 p-4 text-sm text-[#FFB6BC]">
+        <div className="rounded-md border border-[#F1B9B1] bg-[#FFF3F1] p-4 text-sm text-[#A83B2D]">
           Something went wrong. Please try WhatsApp or submit again.
         </div>
       ) : null}
@@ -134,7 +134,7 @@ function FieldError({ children, error }: { children: React.ReactNode; error?: st
   return (
     <label className="grid gap-2">
       {children}
-      {error ? <span className="text-xs text-[#FF9BA3]">{error}</span> : null}
+      {error ? <span className="text-xs text-[#B84637]">{error}</span> : null}
     </label>
   );
 }

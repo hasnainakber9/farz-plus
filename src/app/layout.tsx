@@ -1,16 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { AppChrome } from "@/components/app-chrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://farzplus.pk"),
+  metadataBase: new URL("https://farz-plus.vercel.app"),
   title: {
-    default: "Farz+ | Pakistan's AI-assisted parent-care operating system",
+    default: "Farz+ | Human-led parent-care coordination",
     template: "%s | Farz+",
   },
   description:
-    "Farz+ helps Pakistani families support aging parents with care managers, emergency plans, companionship, verified partners, and transparent family dashboards.",
+    "Farz+ helps Pakistani families coordinate parent care with human care managers, consent-aware records, in-app messaging, and clear handoffs.",
   keywords: [
     "elder care Pakistan",
     "parent care Pakistan",
@@ -31,8 +30,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Farz+ | Care for your parents, even when you're away.",
     description:
-      "Pakistan-first parent-care coordination for overseas families, busy professionals, and elders aging at home.",
-    url: "https://farzplus.pk",
+      "Pakistan-first parent-care coordination with nationwide digital access and case-by-case physical coordination.",
+    url: "https://farz-plus.vercel.app",
     siteName: "Farz+",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Farz+ care dashboard" }],
     locale: "en_PK",
@@ -47,8 +46,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07111F",
-  colorScheme: "dark",
+  themeColor: "#F8FBF9",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -63,11 +62,11 @@ export default function RootLayout({
     serviceType: "Parent care coordination and elder-care operations",
     areaServed: ["Pakistan"],
     description:
-      "AI-assisted parent-care coordination with human care managers, emergency protocols, companionship, verified partner coordination, and family dashboards.",
+      "Human-led parent-care coordination with consent-aware records, in-app messaging, safety handoffs, and case-by-case external service coordination.",
     provider: {
       "@type": "Organization",
       name: "Farz+",
-      url: "https://farzplus.pk",
+      url: "https://farz-plus.vercel.app",
     },
   };
 
@@ -78,9 +77,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );

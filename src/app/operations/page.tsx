@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function OperationsPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 grid-texture opacity-40" />
+      <section className="relative overflow-hidden border-b border-[#DCE9E5] bg-white py-20 sm:py-28">
+        <div className="absolute inset-0 grid-texture opacity-30" />
         <Shell className="relative">
           <SectionHeading eyebrow="Operations System" title="The operating discipline behind the Farz+ trust promise.">
             <p>
@@ -20,20 +20,20 @@ export default function OperationsPage() {
           </SectionHeading>
         </Shell>
       </section>
-      <section className="pb-20">
+      <section className="bg-[#F8FBF9] pb-20 pt-14">
         <Shell className="grid gap-10">
           <div className="grid gap-5 lg:grid-cols-3">
             {operationsCards.map((phase) => (
               <GlassCard key={phase.phase} className="p-6">
                 <StatusPill>{phase.phase}</StatusPill>
-                <h2 className="mt-4 text-xl font-semibold text-white">{phase.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#B8C0C8]">{phase.detail}</p>
+                <h2 className="mt-4 text-xl font-semibold text-[#143A35]">{phase.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#60756F]">{phase.detail}</p>
               </GlassCard>
             ))}
           </div>
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <GlassCard className="p-6">
-              <h2 className="text-2xl font-semibold text-white">Required SOPs</h2>
+              <h2 className="text-2xl font-semibold text-[#143A35]">Required SOPs</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {sops.map((sop) => (
                   <CheckRow key={sop}>{sop}</CheckRow>
@@ -41,10 +41,10 @@ export default function OperationsPage() {
               </ul>
             </GlassCard>
             <GlassCard className="p-6">
-              <h2 className="text-2xl font-semibold text-white">Metrics to track</h2>
+              <h2 className="text-2xl font-semibold text-[#143A35]">Metrics to track</h2>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {metrics.map((metric) => (
-                  <div key={metric} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-[#D7DEE6]">
+                  <div key={metric} className="rounded-md border border-[#D5E4E0] bg-[#F8FBF9] px-4 py-3 text-sm font-semibold text-[#536B66]">
                     {metric}
                   </div>
                 ))}

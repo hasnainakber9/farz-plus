@@ -7,6 +7,13 @@ export const size = {
 
 export const contentType = "image/png";
 
+const stages = [
+  ["09:18", "Family message", "Received"],
+  ["09:19", "Risk detected", "High risk"],
+  ["09:21", "Corti context", "Grounded"],
+  ["09:22", "Human review", "In progress"],
+];
+
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
@@ -15,75 +22,99 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          background:
-            "radial-gradient(circle at 18% 14%, rgba(56,214,176,0.25), transparent 30%), radial-gradient(circle at 86% 20%, rgba(230,250,243,0.12), transparent 24%), linear-gradient(135deg, #07111F 0%, #07111F 62%, #0A1C2E 100%)",
-          color: "white",
-          fontFamily: "Gilroy",
-          padding: 64,
+          flexDirection: "column",
+          justifyContent: "space-between",
+          background: "#F8FBF9",
+          color: "#143A35",
+          fontFamily: "Arial, sans-serif",
+          padding: 54,
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <div
-              style={{
-                width: 84,
-                height: 84,
-                borderRadius: 28,
-                border: "1px solid rgba(230,250,243,0.18)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "linear-gradient(145deg, rgba(56,214,176,0.22), rgba(255,255,255,0.04))",
-                boxShadow: "0 24px 80px rgba(56,214,176,0.28)",
-                color: "#38D6B0",
-                fontSize: 56,
-                fontWeight: 800,
-              }}
-            >
-              G
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            borderBottom: "1px solid #DCE9E5",
+            paddingBottom: 28,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "baseline", fontSize: 46, fontWeight: 800 }}>
+            <span>Farz</span>
+            <span style={{ color: "#08A98A" }}>+</span>
+          </div>
+          <div style={{ display: "flex", color: "#087B69", fontSize: 18, fontWeight: 700 }}>
+            Human-led care operations
+          </div>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48 }}>
+          <div style={{ display: "flex", flexDirection: "column", width: 560 }}>
+            <div style={{ color: "#087B69", fontSize: 18, fontWeight: 800, marginBottom: 18 }}>
+              LAHORE TO DUBAI
             </div>
-            <div style={{ display: "flex", alignItems: "baseline", fontSize: 58, fontWeight: 800 }}>
-              <span>Farz</span>
-              <span style={{ color: "#38D6B0" }}>+</span>
+            <div style={{ fontSize: 64, lineHeight: 1.02, fontWeight: 700 }}>
+              Care that stays present, even when you can&apos;t.
+            </div>
+            <div style={{ marginTop: 22, color: "#536B66", fontSize: 23, lineHeight: 1.4 }}>
+              Families, care managers, and source-grounded Corti context in one accountable handoff.
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", flex: "1.05 1 0" }}>
-              <div style={{ color: "#E6FAF3", fontSize: 26, fontWeight: 800, marginBottom: 22 }}>
-                Pakistan&apos;s parent-care operating system
-              </div>
-              <div style={{ fontSize: 70, lineHeight: 0.98, fontWeight: 800 }}>
-                Care for your parents, even when you&apos;re away.
-              </div>
-              <div style={{ marginTop: 28, color: "#D7DEE6", fontSize: 27, lineHeight: 1.35, maxWidth: 690 }}>
-                Care managers, emergency plans, companionship, verified partners, and family dashboards.
-              </div>
-            </div>
-
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: 465,
+              border: "1px solid #CFE0DB",
+              background: "#FFFFFF",
+              borderRadius: 8,
+              boxShadow: "0 18px 46px rgba(20,58,53,0.1)",
+            }}
+          >
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                flex: "0.95 1 0",
-                border: "1px solid rgba(230,250,243,0.16)",
-                background: "rgba(255,255,255,0.07)",
-                borderRadius: 34,
-                padding: 30,
-                boxShadow: "0 30px 100px rgba(56,214,176,0.2)",
+                alignItems: "center",
+                justifyContent: "space-between",
+                borderBottom: "1px solid #DCE9E5",
+                padding: "18px 20px",
               }}
             >
-              <div style={{ color: "#E6FAF3", fontSize: 24, fontWeight: 800 }}>Ammi - Lahore</div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 28 }}>
-                <div style={{ display: "flex", fontSize: 86, fontWeight: 800 }}>88</div>
-                <div style={{ color: "#38D6B0", fontSize: 28, fontWeight: 800 }}>Stable</div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span style={{ fontSize: 14, color: "#70847E", fontWeight: 700 }}>MEDICATION SAFETY</span>
+                <span style={{ marginTop: 5, fontSize: 20, fontWeight: 800 }}>Live handoff</span>
               </div>
-              <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 14, color: "#E6FAF3", fontSize: 23 }}>
-                <div style={{ display: "flex" }}>Medicine completed</div>
-                <div style={{ display: "flex" }}>Emergency plan active</div>
-                <div style={{ display: "flex" }}>Care manager: Ayesha</div>
-                <div style={{ display: "flex" }}>Update sent to Dubai + Karachi</div>
-              </div>
+              <span style={{ color: "#8B6718", background: "#FFF8E7", padding: "7px 10px", fontSize: 13 }}>
+                Human review
+              </span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {stages.map(([time, label, status], index) => (
+                <div
+                  key={label}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    borderBottom: index === stages.length - 1 ? "none" : "1px solid #E0ECE8",
+                    padding: "14px 20px",
+                  }}
+                >
+                  <span style={{ width: 58, color: "#70847E", fontSize: 14 }}>{time}</span>
+                  <span
+                    style={{
+                      width: 25,
+                      height: 25,
+                      borderRadius: 99,
+                      background: index === stages.length - 1 ? "#FFF4D7" : "#E8F6F2",
+                      border: index === stages.length - 1 ? "1px solid #E2C675" : "1px solid #9FD8CC",
+                      marginRight: 13,
+                    }}
+                  />
+                  <span style={{ display: "flex", flex: 1, fontSize: 16, fontWeight: 700 }}>{label}</span>
+                  <span style={{ color: "#60756F", fontSize: 13 }}>{status}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

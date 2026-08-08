@@ -36,16 +36,16 @@ const footerGroups = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#07111F]">
+    <footer className="site-footer site-border border-t">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.2fr_2fr] lg:px-8">
         <div>
           <BrandMark />
-          <p className="mt-5 max-w-md text-sm leading-7 text-[#B8C0C8]">
-            Pakistan&apos;s AI-assisted parent-care operating system for families who live away from their elders.
+          <p className="site-muted mt-5 max-w-md text-sm leading-7">
+            A human-led parent-care operating layer for Pakistani families, wherever they live.
           </p>
           <Link
             href={whatsappLink("I want to learn more about Farz+ care plans.")}
-            className="mt-6 inline-flex rounded-full border border-[#E6FAF3]/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#38D6B0]/10"
+            className="mt-6 inline-flex rounded-md border border-[#9BBDB6] px-5 py-3 text-sm font-semibold text-[#0D5E51] transition hover:border-[#006E5B] hover:bg-[#F0F8F5]"
           >
             Talk on WhatsApp
           </Link>
@@ -53,11 +53,11 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.title}>
-              <h3 className="text-sm font-semibold text-white">{group.title}</h3>
+              <h3 className="site-text text-sm font-semibold">{group.title}</h3>
               <ul className="mt-4 space-y-3">
                 {group.links.map(([label, href]) => (
                   <li key={href}>
-                    <Link href={href} className="text-sm text-[#B8C0C8] transition hover:text-[#E6FAF3]">
+                    <Link href={href} className="site-muted text-sm transition hover:text-[#08A98A]">
                       {label}
                     </Link>
                   </li>
@@ -67,7 +67,7 @@ export function Footer() {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-[#7F8A96]">
+      <div className="site-border site-muted border-t px-5 py-5 text-center text-xs">
         (c) 2026 Farz+. Care coordination, not medical diagnosis or emergency-service replacement.
       </div>
     </footer>

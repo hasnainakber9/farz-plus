@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
-import { DashboardAccess } from "@/components/dashboard-access";
+import { redirect } from "next/navigation";
+import { requireUser, routeForRole } from "@/lib/auth";
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Farz+ family and admin care operations dashboard.",
-};
-
-export default function DashboardPage() {
-  return <DashboardAccess />;
+export default async function DashboardPage() {
+  const { profile } = await requireUser();
+  redirect(routeForRole(profile.role));
 }

@@ -148,22 +148,26 @@ export function CareManagerDashboardPreview() {
 export function AdminDashboardPreview() {
   return (
     <div className="grid gap-5">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-y border-[#D5E4E0] bg-[#F8FBF9] px-4 py-3">
+        <p className="text-sm font-bold text-[#143A35]">Illustrative operations workspace</p>
+        <StatusPill tone="neutral">Sample data</StatusPill>
+      </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard label="Active elders" value="42" detail="Families under managed care." />
-        <MetricCard label="Emergency cases" value="3" detail="Two closed, one under follow-up." />
-        <MetricCard label="Partner SLA" value="91%" detail="On-time completion this week." />
-        <MetricCard label="Care Score avg" value="82" detail="Stable, with hydration watch flags." />
+        <MetricCard label="Partner workflow" value="4" detail="Verification, booking, proof, and review." />
+        <MetricCard label="Documentation" value="Required" detail="Every completed service needs a proof record." />
+        <MetricCard label="SLA tracking" value="Enabled" detail="Response and completion windows are recorded." />
+        <MetricCard label="Review model" value="Human" detail="Care managers own partner decisions." />
       </div>
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
         <GlassCard>
-          <h3 className="text-xl font-semibold text-white">Partner Network OS</h3>
+          <h3 className="text-xl font-semibold text-[#143A35]">Partner Network OS</h3>
           <div className="mt-5 grid gap-3">
             {demoPartners.map((partner) => (
-              <div key={partner.id} className="rounded-3xl border border-white/10 bg-white/[0.05] p-4">
+              <div key={partner.id} className="rounded-md border border-[#D5E4E0] bg-[#F8FBF9] p-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="font-semibold text-white">{partner.name}</p>
-                    <p className="mt-1 text-sm text-[#B8C0C8]">{partner.category} - {partner.city}</p>
+                    <p className="font-semibold text-[#143A35]">{partner.name}</p>
+                    <p className="mt-1 text-sm text-[#60756F]">{partner.category} - {partner.city}</p>
                   </div>
                   <StatusPill>{partner.status}</StatusPill>
                 </div>
@@ -177,13 +181,13 @@ export function AdminDashboardPreview() {
           </div>
         </GlassCard>
         <GlassCard>
-          <h3 className="text-xl font-semibold text-white">Corporate accounts</h3>
+          <h3 className="text-xl font-semibold text-[#143A35]">Employer programme scenarios</h3>
           <div className="mt-5 space-y-4">
             {corporateAccounts.map((account) => (
-              <div key={account.id} className="rounded-3xl border border-white/10 bg-white/[0.05] p-4">
-                <p className="font-semibold text-white">{account.company}</p>
-                <p className="mt-2 text-sm text-[#B8C0C8]">
-                  {account.employeesCovered} employees covered. {account.activeParents} active parents.
+              <div key={account.id} className="rounded-md border border-[#D5E4E0] bg-[#F8FBF9] p-4">
+                <p className="font-semibold text-[#143A35]">{account.company}</p>
+                <p className="mt-2 text-sm text-[#60756F]">
+                  Sample configuration: {account.employeesCovered} eligible employees and {account.activeParents} parent profiles.
                 </p>
               </div>
             ))}
@@ -310,9 +314,9 @@ function TaskLine({
 
 function MiniScore({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#07111F]/60 p-3">
-      <p className="font-mono text-xl font-semibold text-white">{value}</p>
-      <p className="text-[10px] uppercase tracking-[0.14em] text-[#7F8A96]">{label}</p>
+    <div className="rounded-md border border-[#D5E4E0] bg-white p-3">
+      <p className="text-xl font-semibold text-[#143A35]">{value}</p>
+      <p className="text-[10px] font-bold uppercase text-[#70847E]">{label}</p>
     </div>
   );
 }

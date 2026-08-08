@@ -8,19 +8,19 @@ export function FaqAccordion({ items }: { items: string[][] }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <div className="grid gap-3">
+    <div className="border-y border-[#D9E5E1]">
       {items.map(([question, answer], index) => (
-        <div key={question} className="rounded-[22px] border border-white/10 bg-white/[0.055]">
+        <div key={question} className="border-b border-[#D9E5E1] last:border-b-0">
           <button
             type="button"
-            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-white"
+            className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-semibold text-[#143A35]"
             onClick={() => setOpen(open === index ? -1 : index)}
             aria-expanded={open === index}
           >
             {question}
-            <ChevronDown className={cn("h-5 w-5 flex-none text-[#E6FAF3] transition", open === index && "rotate-180")} />
+            <ChevronDown className={cn("h-5 w-5 flex-none text-[#087B69] transition", open === index && "rotate-180")} />
           </button>
-          {open === index ? <p className="px-5 pb-5 text-sm leading-7 text-[#B8C0C8]">{answer}</p> : null}
+          {open === index ? <p className="max-w-3xl pb-5 text-sm leading-7 text-[#617570]">{answer}</p> : null}
         </div>
       ))}
     </div>

@@ -17,25 +17,44 @@
 }
 
 :root {
-  --background: #07111f;
-  --foreground: #ffffff;
-  --farz-black: #07111f;
-  --deep-navy: #07111f;
-  --signal-blue: #0e4b82;
-  --care-teal: #126379;
-  --farz-green: #38d6b0;
-  --trust-green: #38d6b0;
-  --soft-mint: #e6faf3;
-  --soft-text: #d9e3e8;
-  --card-border: rgba(255, 255, 255, 0.1);
-  --glass-card: rgba(255, 255, 255, 0.06);
+  --background: #f8fbf9;
+  --foreground: #143a35;
+  --farz-ink: #143a35;
+  --farz-deep: #063f36;
+  --farz-green: #08a98a;
+  --farz-green-dark: #006e5b;
+  --farz-mint: #e6f7f2;
+  --farz-line: #d9e5e1;
+  --farz-muted: #617570;
+  --risk: #d65748;
+  --warning: #b78323;
+  --site-bg: #f8fbf9;
+  --site-surface: #ffffff;
+  --site-surface-soft: #f0f7f4;
+  --site-text: #143a35;
+  --site-muted: #617570;
+  --site-line: #d9e5e1;
+  --site-hero: #073d35;
+  --site-hero-text: #f5fffc;
+}
+
+html.dark {
+  --site-bg: #071a18;
+  --site-surface: #0d2824;
+  --site-surface-soft: #12312c;
+  --site-text: #eaf8f4;
+  --site-muted: #aac3bc;
+  --site-line: #284a43;
+  --site-hero: #051c19;
+  --site-hero-text: #f5fffc;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Gilroy", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Gilroy", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -44,23 +63,57 @@
 
 html {
   min-height: 100%;
-  background: var(--farz-black);
+  background: var(--background);
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100%;
-  background:
-    radial-gradient(circle at 15% 12%, rgba(56, 214, 176, 0.13), transparent 28rem),
-    radial-gradient(circle at 82% 5%, rgba(230, 250, 243, 0.08), transparent 30rem),
-    linear-gradient(145deg, #07111f 0%, #07111f 46%, #020811 100%);
+  background: var(--background);
   color: var(--foreground);
-  font-family: "Gilroy", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+}
+
+.site-shell {
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+.site-surface {
+  background: var(--site-surface);
+  color: var(--site-text);
+}
+
+.site-soft {
+  background: var(--site-surface-soft);
+}
+
+.site-border {
+  border-color: var(--site-line);
+}
+
+.site-text {
+  color: var(--site-text);
+}
+
+.site-muted {
+  color: var(--site-muted);
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--site-surface) 94%, transparent);
+  color: var(--site-text);
+}
+
+.site-footer {
+  background: var(--site-surface);
+  color: var(--site-text);
 }
 
 ::selection {
-  background: rgba(56, 214, 176, 0.35);
-  color: #ffffff;
+  background: rgba(8, 169, 138, 0.22);
+  color: #063f36;
 }
 
 a {
@@ -69,27 +122,26 @@ a {
 
 .grid-texture {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(20, 58, 53, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 58, 53, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 88%);
 }
 
 .glass {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
-  border: 1px solid var(--card-border);
-  box-shadow: 0 24px 90px rgba(14, 75, 130, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(24px);
+  background: #ffffff;
+  border: 1px solid var(--farz-line);
+  box-shadow: 0 14px 44px rgba(20, 58, 53, 0.07);
 }
 
 .signal-glow {
-  box-shadow: 0 0 28px rgba(56, 214, 176, 0.42), 0 0 88px rgba(230, 250, 243, 0.12);
+  box-shadow: 0 0 0 6px rgba(8, 169, 138, 0.1), 0 10px 34px rgba(8, 169, 138, 0.18);
 }
 
 .soft-ring {
   background:
-    radial-gradient(circle at center, rgba(5, 4, 16, 1) 58%, transparent 59%),
-    conic-gradient(from -90deg, #38d6b0 0deg, #e6faf3 260deg, rgba(255, 255, 255, 0.08) 260deg);
+    radial-gradient(circle at center, #ffffff 58%, transparent 59%),
+    conic-gradient(from -90deg, #08a98a 0deg, #80d8c7 260deg, #e6efec 260deg);
 }
 
 .heartbeat {
@@ -125,10 +177,39 @@ a {
 @keyframes pulse-care {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(56, 214, 176, 0.4);
+    box-shadow: 0 0 0 0 rgba(8, 169, 138, 0.35);
   }
   50% {
-    box-shadow: 0 0 0 14px rgba(56, 214, 176, 0);
+    box-shadow: 0 0 0 14px rgba(8, 169, 138, 0);
+  }
+}
+
+.care-pulse-track {
+  background-size: 220% 100%;
+  animation: care-pulse-track 2.6s linear infinite;
+}
+
+@keyframes care-pulse-track {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -120% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

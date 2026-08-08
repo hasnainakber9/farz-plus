@@ -1,0 +1,31 @@
+"use client";
+
+import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { BrandMark } from "@/components/brand-mark";
+
+export function SignupForm() {
+  const router = useRouter();
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", password: "", country: "Pakistan", phone: "", acceptTerms: false, acknowledgePrivacy: false });
+  const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
+  const [busy, setBusy] = useState(false);
+  const update = (key: string, value: string | boolean) => setForm((current) => ({ ...current, [key]: value }));
+
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setBusy(true); setError(""); setNotice("");
+    try {
+      const response = await fetch("/api/auth/signup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error ?? "Signup failed.");
+      if (payload.needsEmailConfirmation) setNotice("Your account is created. Check your email to confirm it, then sign in to continue onboarding.");
+      else { router.push(payload.route); router.refresh(); }
+    } catch (signupError) { setError(signupError instanceof Error ? signupError.message : "Signup failed."); }
+    finally { setBusy(false); }
+  }
+
+  return <div className="min-h-screen bg-[#F4F8F6] text-[#143A35]"><header className="border-b border-[#DCE8E4] bg-white"><div className="mx-auto flex h-17 max-w-[1280px] items-center justify-between px-5 sm:px-7"><BrandMark /><Link href="/" className="inline-flex h-10 items-center gap-2 rounded-md border border-[#D5E4E0] px-3 text-xs font-bold text-[#536B66]"><ArrowLeft className="h-4 w-4" />Public site</Link></div></header><main className="mx-auto grid max-w-[1120px] gap-10 px-5 py-10 sm:px-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:py-16"><section><p className="text-xs font-bold uppercase text-[#087B69]">Start with a parent</p><h1 className="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">Create your Farz+ family account.</h1><p className="mt-5 text-base leading-7 text-[#60756F]">Start with the details needed to coordinate care. You can add your parent, contacts, medications, and records during onboarding.</p><div className="mt-8 grid gap-3 text-sm text-[#536B66]">{["Your account is private by default", "Family signup creates a FAMILY role", "You control consent and household access"].map((item) => <p key={item} className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-[#08A98A]" />{item}</p>)}</div></section><section className="rounded-md border border-[#CFE0DB] bg-white p-5 shadow-[0_22px_60px_rgba(20,58,53,0.1)] sm:p-7"><form onSubmit={submit} className="grid gap-4"><div className="grid gap-4 sm:grid-cols-2"><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">First name<input required value={form.firstName} onChange={(e) => update("firstName", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" /></label><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">Last name<input required value={form.lastName} onChange={(e) => update("lastName", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" /></label></div><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">Email<input required type="email" value={form.email} onChange={(e) => update("email", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" autoComplete="email" /></label><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">Password<input required minLength={8} type="password" value={form.password} onChange={(e) => update("password", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" autoComplete="new-password" /></label><div className="grid gap-4 sm:grid-cols-2"><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">Country<input required value={form.country} onChange={(e) => update("country", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" /></label><label className="grid gap-1.5 text-xs font-bold text-[#38534D]">Phone or WhatsApp <span className="font-normal text-[#80948F]">(optional)</span><input value={form.phone} onChange={(e) => update("phone", e.target.value)} className="h-12 rounded-md border border-[#CFE0DB] px-4 text-sm outline-none focus:border-[#08A98A]" autoComplete="tel" /></label></div><label className="flex items-start gap-3 text-sm leading-6 text-[#536B66]"><input required type="checkbox" checked={form.acceptTerms} onChange={(e) => update("acceptTerms", e.target.checked)} className="mt-1 h-4 w-4 accent-[#087B69]" />I accept the <Link href="/terms" className="text-[#087B69] underline">Terms</Link>.</label><label className="flex items-start gap-3 text-sm leading-6 text-[#536B66]"><input required type="checkbox" checked={form.acknowledgePrivacy} onChange={(e) => update("acknowledgePrivacy", e.target.checked)} className="mt-1 h-4 w-4 accent-[#087B69]" />I acknowledge the <Link href="/privacy" className="text-[#087B69] underline">Privacy Policy</Link>.</label>{notice ? <p role="status" className="rounded-md border border-[#AFCFC7] bg-[#EAF8F4] px-3 py-2 text-sm font-semibold text-[#08705F]">{notice}</p> : null}{error ? <p role="alert" className="rounded-md border border-[#FFC1BA] bg-[#FFF0EE] px-3 py-2 text-sm font-semibold text-[#A93931]">{error}</p> : null}<button disabled={busy} type="submit" className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#006E5B] px-6 text-sm font-bold text-white disabled:opacity-60">{busy ? "Creating account..." : "Create family account"}<ArrowRight className="h-4 w-4" /></button></form><p className="mt-5 text-center text-sm text-[#60756F]">Already registered? <Link href="/login" className="font-bold text-[#087B69]">Sign in</Link></p></section></main></div>;
+}
