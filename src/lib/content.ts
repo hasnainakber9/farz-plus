@@ -18,12 +18,12 @@ export const cityPhases = [
   {
     phase: "Core coverage",
     cities: ["Karachi", "Lahore", "Islamabad", "Rawalpindi"],
-    note: "Dedicated care managers, emergency profiles, and verified partner coordination.",
+    note: "Digital access is available nationwide; physical coordination is confirmed case by case.",
   },
   {
     phase: "Extended coverage",
     cities: ["Karachi", "Lahore", "Faisalabad", "Multan", "Hyderabad", "Peshawar", "Quetta", "Sialkot", "Gujranwala"],
-    note: "City-by-city partner depth for families across Pakistan.",
+    note: "Availability of any in-person service is confirmed with the family before it is promised.",
   },
 ];
 
@@ -283,20 +283,20 @@ export const testimonials = [
 
 export const faqs = [
   ["Is Farz+ an old-age home?", "No. Farz+ supports elders aging at home through care coordination, check-ins, emergency planning, and verified partner support."],
-  ["Does my parent need a smartphone?", "No. Families can use the dashboard while parents receive respectful phone and WhatsApp-first support."],
+  ["Does my parent need a smartphone?", "No. Families can use the dashboard while the care team confirms the best available communication channel."],
   ["Can I subscribe from abroad?", "Yes. Farz+ is designed for overseas Pakistanis and supports international family communication workflows."],
-  ["What happens during an emergency?", "Farz+ verifies urgency, starts the family call tree, coordinates ambulance or hospital routing where available, and maintains a live timeline until closure."],
+  ["What happens during an emergency?", "Farz+ shows an urgent routing notice, helps the family call local emergency services or a recorded contact, creates an urgent case, and keeps a human-owned timeline."],
   ["Do you provide doctors directly?", "Farz+ coordinates with verified doctors and partners. It does not replace licensed medical providers."],
   ["Are caregivers verified?", "Partner verification, background checks, documentation, scoring, and complaint escalation are core operating requirements."],
-  ["Which cities do you support?", "Farz+ supports major Pakistani cities through care managers, verified partners, phone support, and WhatsApp-first coordination."],
+  ["Which cities do you support?", "Farz+ provides nationwide digital access. Any physical coordination is confirmed case by case based on current availability."],
   ["Can I choose a female care manager?", "Yes. Female care-manager preference is part of the Pakistan-first localization model."],
   ["Is my parent's data private?", "Records are consent-based with family roles, limited staff access, and privacy-first defaults."],
   ["Can I customize a plan?", "Yes. Premium and employer plans can be configured around family needs, city support, and partner availability."],
-  ["Do you provide 24/7 nursing?", "Farz+ can coordinate nursing partners where available, but plan coverage and partner availability must be confirmed city by city."],
+  ["Do you provide 24/7 nursing?", "Farz+ does not promise 24/7 nursing. A care manager can confirm whether a suitable local service is available for the specific case."],
   ["Is Farz+ a hospital or medical provider?", "No. Farz+ is a care coordination and family-support platform."],
   ["Can siblings share access?", "Yes. The family dashboard supports role-based sibling and family access."],
   ["How are partner charges handled?", "Partner costs are shown transparently with receipts, invoices, and timeline proof where appropriate."],
-  ["What if my parent refuses app usage?", "The elder app is optional. Farz+ can operate through calls, WhatsApp, and care-manager workflows."],
+  ["What if my parent refuses app usage?", "The elder app is optional. Families can use the dashboard while the care team agrees the most respectful communication route."],
 ];
 
 export const operationsCards = [

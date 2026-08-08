@@ -1,35 +1,31 @@
 import { createServerClient } from "@supabase/ssr";
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
-export async function updateSupabaseSession(request: NextRequest) {
+export async function updateSession(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return NextResponse.next({ request });
 
-  if (!url || !anonKey) {
-    return { response: undefined };
-  }
-
-  const response = new Response(null, {
-    status: 200,
-    headers: {
-      "x-supabase-auth-enabled": "true",
-    },
-  });
-
-  const supabase = createServerClient(url, anonKey, {
+  let response = NextResponse.next({ request });
+  const supabase = createServerClient(url, key, {
     cookies: {
-      getAll() {
-        return request.cookies.getAll();
-      },
-      setAll(cookiesToSet) {
-        cookiesToSet.forEach(({ name, value, options }) => {
-          request.cookies.set(name, value);
-          response.headers.append("Set-Cookie", `${name}=${value}; Path=/; SameSite=Lax${options?.maxAge ? `; Max-Age=${options.maxAge}` : ""}`);
-        });
+      getAll: () => request.cookies.getAll(),
+      setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
+        cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+        response = NextResponse.next({ request });
+        cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
       },
     },
   });
 
-  await supabase.auth.getUser();
-  return { response };
+  const { data } = await supabase.auth.getUser();
+  const pathname = request.nextUrl.pathname;
+  const protectedRoute = pathname.startsWith("/dashboard") || pathname.startsWith("/onboarding");
+  if (protectedRoute && !data.user) {
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = "/login";
+    loginUrl.searchParams.set("next", pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+  return response;
 }

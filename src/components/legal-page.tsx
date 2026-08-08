@@ -14,7 +14,7 @@ export function LegalPage({
   disclaimer?: boolean;
 }) {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="bg-[#F8FBF9] py-20 sm:py-28">
       <Shell>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading eyebrow={eyebrow} title={title}>
@@ -23,8 +23,8 @@ export function LegalPage({
           <div className="grid gap-5">
             {sections.map((section) => (
               <GlassCard key={section.title} className="p-6">
-                <h2 className="text-xl font-semibold text-white">{section.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#B8C0C8]">{section.body}</p>
+                <h2 className="text-xl font-semibold text-[#143A35]">{section.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#617570]">{section.body}</p>
               </GlassCard>
             ))}
             {disclaimer ? <DisclaimerBox /> : null}

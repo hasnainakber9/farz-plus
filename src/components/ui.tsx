@@ -21,12 +21,12 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#E6FAF3]">{eyebrow}</p>
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#087B69]">{eyebrow}</p>
       ) : null}
-      <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-balance text-3xl font-semibold leading-[1.08] tracking-[0] text-[#143A35] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
-      {children ? <div className="mt-5 text-base leading-8 text-[#B8C0C8] sm:text-lg">{children}</div> : null}
+      {children ? <div className="mt-5 text-base leading-7 text-[#55706B] sm:text-lg">{children}</div> : null}
     </div>
   );
 }
@@ -37,7 +37,13 @@ export function GlassCard({
   ...props
 }: ComponentPropsWithoutRef<"div"> & { children: ReactNode }) {
   return (
-    <div className={cn("glass rounded-[24px] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#E6FAF3]/35", className)} {...props}>
+    <div
+      className={cn(
+        "rounded-lg border border-[#D9E5E1] bg-white p-5 shadow-[0_12px_40px_rgba(20,58,53,0.06)] transition duration-300 hover:border-[#A9C9C2]",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </div>
   );
@@ -56,7 +62,7 @@ export function PrimaryButton({
     <Link
       href={href}
       className={cn(
-        "inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#38D6B0] px-6 py-3 text-sm font-bold text-[#07111F] shadow-[0_0_35px_rgba(56,214,176,0.38)] transition hover:-translate-y-0.5 hover:bg-[#E6FAF3] focus:outline-none focus:ring-2 focus:ring-[#E6FAF3] focus:ring-offset-2 focus:ring-offset-[#07111F]",
+        "inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#006E5B] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_26px_rgba(0,110,91,0.18)] transition hover:-translate-y-0.5 hover:bg-[#005B4C] focus:outline-none focus:ring-2 focus:ring-[#0AB392] focus:ring-offset-2 focus:ring-offset-white",
         className,
       )}
     >
@@ -79,7 +85,7 @@ export function SecondaryButton({
     <Link
       href={href}
       className={cn(
-        "inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#E6FAF3]/50 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#38D6B0] hover:bg-[#38D6B0]/10 focus:outline-none focus:ring-2 focus:ring-[#E6FAF3] focus:ring-offset-2 focus:ring-offset-[#07111F]",
+        "inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#8DB7AF] bg-white px-6 py-3 text-sm font-semibold text-[#0D5E51] transition hover:-translate-y-0.5 hover:border-[#006E5B] hover:bg-[#F0F8F5] focus:outline-none focus:ring-2 focus:ring-[#0AB392] focus:ring-offset-2 focus:ring-offset-white",
         className,
       )}
     >
@@ -96,11 +102,11 @@ export function StatusPill({
   tone?: "stable" | "watch" | "risk" | "info" | "neutral";
 }) {
   const tones = {
-    stable: "border-[#38D6B0]/30 bg-[#38D6B0]/12 text-[#E6FAF3]",
-    watch: "border-[#FFC857]/35 bg-[#FFC857]/12 text-[#FFD98A]",
-    risk: "border-[#FF4D5A]/35 bg-[#FF4D5A]/12 text-[#FF9BA3]",
-    info: "border-[#43B0C1]/35 bg-[#43B0C1]/12 text-[#A7F3FF]",
-    neutral: "border-white/10 bg-white/[0.08] text-[#B8C0C8]",
+    stable: "border-[#9FD8CC] bg-[#E6F7F2] text-[#08715F]",
+    watch: "border-[#E7CA88] bg-[#FFF7DF] text-[#805E16]",
+    risk: "border-[#F3B1A8] bg-[#FFF0ED] text-[#A83B2D]",
+    info: "border-[#A9CED4] bg-[#EEF8FA] text-[#216A75]",
+    neutral: "border-[#D9E5E1] bg-[#F4F7F6] text-[#617570]",
   };
   return (
     <span className={cn("inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold", tones[tone])}>
@@ -112,8 +118,8 @@ export function StatusPill({
 
 export function CheckRow({ children }: { children: ReactNode }) {
   return (
-    <li className="flex gap-3 text-sm leading-6 text-[#D7DEE6]">
-      <Check className="mt-0.5 h-4 w-4 flex-none text-[#38D6B0]" aria-hidden="true" />
+    <li className="flex gap-3 text-sm leading-6 text-[#47645E]">
+      <Check className="mt-0.5 h-4 w-4 flex-none text-[#08A98A]" aria-hidden="true" />
       <span>{children}</span>
     </li>
   );
@@ -121,9 +127,9 @@ export function CheckRow({ children }: { children: ReactNode }) {
 
 export function DisclaimerBox() {
   return (
-    <div className="rounded-[24px] border border-[#FF4D5A]/25 bg-[#FF4D5A]/8 p-5 text-sm leading-7 text-[#FFD4D8]">
-      <div className="mb-2 flex items-center gap-2 font-semibold text-white">
-        <ShieldAlert className="h-4 w-4 text-[#FF4D5A]" aria-hidden="true" />
+    <div className="rounded-lg border border-[#F1B9B1] bg-[#FFF3F1] p-5 text-sm leading-7 text-[#79473F]">
+      <div className="mb-2 flex items-center gap-2 font-semibold text-[#7F2D23]">
+        <ShieldAlert className="h-4 w-4 text-[#D65748]" aria-hidden="true" />
         Medical disclaimer
       </div>
       Farz+ is a care coordination and family-support platform. It does not replace hospitals, licensed physicians,
@@ -135,9 +141,9 @@ export function DisclaimerBox() {
 export function MetricCard({ label, value, detail }: { label: string; value: string; detail: string }) {
   return (
     <GlassCard className="p-4">
-      <p className="text-xs uppercase tracking-[0.18em] text-[#E6FAF3]">{label}</p>
-      <p className="mt-3 font-mono text-3xl font-semibold text-white">{value}</p>
-      <p className="mt-2 text-sm leading-6 text-[#B8C0C8]">{detail}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#087B69]">{label}</p>
+      <p className="mt-3 font-mono text-3xl font-semibold text-[#143A35]">{value}</p>
+      <p className="mt-2 text-sm leading-6 text-[#617570]">{detail}</p>
     </GlassCard>
   );
 }

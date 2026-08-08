@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { AppChrome } from "@/components/app-chrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://farzplus.pk"),
+  metadataBase: new URL("https://farz-plus.vercel.app"),
   title: {
     default: "Farz+ | Pakistan's AI-assisted parent-care operating system",
     template: "%s | Farz+",
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     title: "Farz+ | Care for your parents, even when you're away.",
     description:
       "Pakistan-first parent-care coordination for overseas families, busy professionals, and elders aging at home.",
-    url: "https://farzplus.pk",
+    url: "https://farz-plus.vercel.app",
     siteName: "Farz+",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Farz+ care dashboard" }],
     locale: "en_PK",
@@ -47,8 +46,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07111F",
-  colorScheme: "dark",
+  themeColor: "#F8FBF9",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -67,7 +66,7 @@ export default function RootLayout({
     provider: {
       "@type": "Organization",
       name: "Farz+",
-      url: "https://farzplus.pk",
+      url: "https://farz-plus.vercel.app",
     },
   };
 
@@ -78,9 +77,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );
