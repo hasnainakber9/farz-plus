@@ -1,7 +1,13 @@
 import type { LeadRecord } from "@/lib/lead-contract";
+import type { CaseCareRequest } from "@/types/farz";
 
 export interface LeadRepository {
   create(lead: LeadRecord): Promise<LeadRecord>;
+}
+
+export interface CareRequestRepository {
+  create(request: CaseCareRequest): Promise<CaseCareRequest>;
+  list(): Promise<CaseCareRequest[]>;
 }
 
 class InMemoryLeadRepository implements LeadRepository {
@@ -10,7 +16,23 @@ class InMemoryLeadRepository implements LeadRepository {
   }
 }
 
+class InMemoryCareRequestRepository implements CareRequestRepository {
+  private readonly requests: CaseCareRequest[] = [];
+
+  async create(request: CaseCareRequest) {
+    this.requests.push(request);
+    return request;
+  }
+
+  async list() {
+    return this.requests;
+  }
+}
+
 export function getLeadRepository(): LeadRepository {
-  // Replace with a lazy Supabase client after URL, keys, and RLS policies exist.
   return new InMemoryLeadRepository();
+}
+
+export function getCareRequestRepository(): CareRequestRepository {
+  return new InMemoryCareRequestRepository();
 }

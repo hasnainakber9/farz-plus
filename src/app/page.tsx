@@ -20,6 +20,7 @@ import { EmergencyButton } from "@/components/emergency-button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroDashboard, PakistanSignalMap } from "@/components/hero-dashboard";
 import { LeadForm } from "@/components/lead-form";
+import { CareHandoffSimulator } from "@/components/simulator/CareHandoffSimulator";
 import {
   CheckRow,
   DisclaimerBox,
@@ -171,6 +172,15 @@ export default function Home() {
                 <p className="mt-4 text-sm font-semibold leading-6 text-white">{service}</p>
               </GlassCard>
             ))}
+          </div>
+        </Shell>
+      </AnimatedSection>
+
+      <AnimatedSection className="py-14 sm:py-20">
+        <Shell>
+          <SectionHeading eyebrow="Safety handoff simulator" title="From family message to coordinated care team." />
+          <div className="mt-10">
+            <CareHandoffSimulator />
           </div>
         </Shell>
       </AnimatedSection>

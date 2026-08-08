@@ -12,13 +12,23 @@ import {
 import { EmergencyButton } from "@/components/emergency-button";
 import { GlassCard, Shell, StatusPill } from "@/components/ui";
 
-type Role = "family" | "admin";
+type Role = "family" | "care-manager" | "clinician" | "admin";
 
 const credentials: Record<Role, { username: string; password: string; label: string }> = {
   family: {
     username: "family@farzplus.pk",
     password: "FarzFamily123",
     label: "Family Portal",
+  },
+  "care-manager": {
+    username: "hamza@farzplus.pk",
+    password: "FarzSaathi123",
+    label: "Care Manager / Saathi",
+  },
+  clinician: {
+    username: "dr.farooq@farzplus.pk",
+    password: "FarzClinical123",
+    label: "Clinical Reviewer",
   },
   admin: {
     username: "admin@farzplus.pk",
@@ -61,7 +71,7 @@ export function DashboardAccess() {
               Sign in to Farz+ care operations.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-[#D9E3E8]">
-              Family members see parent care status. Admin teams manage partners, tasks, risks, and service quality.
+              Family members see parent care status. Care managers coordinate operations. Clinicians review escalations. Admin teams manage partners, tasks, risks, and service quality.
             </p>
           </div>
           <GlassCard className="p-6 sm:p-8">
@@ -71,7 +81,7 @@ export function DashboardAccess() {
               </div>
               <div>
                 <h2 className="text-2xl font-extrabold text-white">Portal login</h2>
-                <p className="mt-1 text-sm text-[#D9E3E8]">Use a family or admin account.</p>
+                <p className="mt-1 text-sm text-[#D9E3E8]">Use a role account.</p>
               </div>
             </div>
             <form onSubmit={onSubmit} className="grid gap-4">
@@ -114,7 +124,10 @@ export function DashboardAccess() {
           <div>
             <StatusPill>{activeLabel}</StatusPill>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-              {role === "family" ? "Parent care dashboard" : "Admin operations console"}
+              {role === "family" && "Parent care dashboard"}
+              {role === "care-manager" && "Care manager queue"}
+              {role === "clinician" && "Clinical review workspace"}
+              {role === "admin" && "Admin operations console"}
             </h1>
           </div>
           <button
@@ -130,7 +143,10 @@ export function DashboardAccess() {
           </button>
         </div>
 
-        {role === "family" ? <FamilyPortal /> : <AdminPortal />}
+        {role === "family" ? <FamilyPortal /> : null}
+        {role === "care-manager" ? <CareManagerPortal /> : null}
+        {role === "clinician" ? <ClinicianPortal /> : null}
+        {role === "admin" ? <AdminPortal /> : null}
       </Shell>
     </section>
   );
@@ -159,7 +175,7 @@ function FamilyPortal() {
   );
 }
 
-function AdminPortal() {
+function CareManagerPortal() {
   return (
     <div className="grid gap-12">
       <div>
@@ -169,6 +185,35 @@ function AdminPortal() {
         </div>
         <CareManagerDashboardPreview />
       </div>
+    </div>
+  );
+}
+
+function ClinicianPortal() {
+  return (
+    <div className="grid gap-12">
+      <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8">
+        <StatusPill tone="info">Clinical review</StatusPill>
+        <h2 className="mt-5 text-2xl font-extrabold text-white">Escalations and case context</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#B8C0C8]">Escalation</p>
+            <p className="mt-2 text-lg font-bold text-white">FARZ-2429 / Bilquis Begum</p>
+            <p className="mt-4 text-sm leading-7 text-[#B8C0C8]">Medication-related concern detected. Route to human review.</p>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#B8C0C8]">Clinical note</p>
+            <p className="mt-2 text-sm leading-7 text-[#B8C0C8]">Review medication story and medication record. Request clarification if needed and return guidance through the care manager.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AdminPortal() {
+  return (
+    <div className="grid gap-12">
       <div>
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <StatusPill tone="info">Admin OS</StatusPill>
