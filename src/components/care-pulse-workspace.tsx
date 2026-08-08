@@ -565,7 +565,173 @@ function EventRow({
         <span className={cn("relative z-10 grid h-9 w-9 place-items-center rounded-full border", visual.iconClass)}>
           <Icon className="h-4 w-4" />
         </span>
-        <span className="absolute left-[17px] top-9 h-[calc(100%+1.25rem)…1586 tokens truncated…esponse,
+        <span className="absolute left-[17px] top-9 h-[calc(100%+1.25rem)] w-px bg-[#D6E5E1]" />
+        <p className="mt-2 hidden text-xs font-semibold text-[#70847E] sm:block">{event.time}</p>
+      </div>
+
+      <div className="min-w-0">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold uppercase text-[#70847E] sm:hidden">{event.time}</span>
+          <span className={cn("rounded px-2 py-1 text-xs font-bold", visual.iconClass)}>{visual.label}</span>
+          <span className="text-xs text-[#70847E]">{event.actor}</span>
+        </div>
+        {isFamilyMessage ? (
+          <div className="mt-3 flex items-start gap-3">
+            <Avatar src={handoffCase.familyMember.image} alt={handoffCase.familyMember.name} size="lg" />
+            <div className="min-w-0 max-w-2xl rounded-md border border-[#B7DED4] bg-[#EAF8F4] px-4 py-3">
+              <p className="text-sm font-bold text-[#143A35]">{event.title}</p>
+              <p className="mt-2 text-xs leading-5 text-[#60756F]">{event.detail}</p>
+            </div>
+          </div>
+        ) : (
+          <>
+            <h3 className="mt-3 text-base font-bold text-[#143A35]">{event.title}</h3>
+            <p className="mt-1.5 max-w-3xl text-sm leading-6 text-[#536B66]">{event.detail}</p>
+          </>
+        )}
+        {event.meta && (expanded || event.meta.length > 0) ? (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {event.meta.map((tag) => (
+              <span key={tag} className="rounded border border-[#D5E4E0] bg-white px-2 py-1 text-xs text-[#60756F]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+        {isContext ? <ContextGrid corti={corti} syncing={syncing} onSync={onSyncCorti} /> : null}
+      </div>
+    </motion.article>
+  );
+}
+
+function EventStream({
+  events,
+  activeFilter,
+  onFilter,
+  expanded,
+  onToggleExpanded,
+  note,
+  setNote,
+  onAddNote,
+  corti,
+  syncing,
+  onSyncCorti,
+}: {
+  events: HandoffEvent[];
+  activeFilter: EventFilter;
+  onFilter: (filter: EventFilter) => void;
+  expanded: boolean;
+  onToggleExpanded: () => void;
+  note: string;
+  setNote: (note: string) => void;
+  onAddNote: () => void;
+  corti: CortiViewStatus;
+  syncing: boolean;
+  onSyncCorti: () => void;
+}) {
+  const filteredEvents = useMemo(
+    () => (activeFilter === "all" ? events : events.filter((event) => event.category === activeFilter)),
+    [activeFilter, events],
+  );
+
+  return (
+    <section id="event-stream" className="scroll-mt-24 overflow-hidden rounded-md border border-[#D5E4E0] bg-white">
+      <div className="border-b border-[#DCE9E5] px-4 py-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
+        <div>
+          <h2 className="text-lg font-bold text-[#143A35]">Handoff timeline</h2>
+          <p className="mt-1 text-xs text-[#6F827D]">Family input, risk controls, Corti context, and human decisions.</p>
+        </div>
+        <button
+          type="button"
+          onClick={onToggleExpanded}
+          className="mt-3 inline-flex h-9 items-center gap-2 rounded-md border border-[#D5E4E0] px-3 text-xs font-bold text-[#536B66] transition hover:bg-[#F3F8F6] sm:mt-0"
+        >
+          {expanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+          {expanded ? "Collapse details" : "Expand details"}
+        </button>
+      </div>
+      <div className="grid grid-cols-3 gap-2 border-b border-[#DCE9E5] bg-[#F8FBF9] p-3 sm:flex sm:flex-wrap">
+        {eventFilters.map((filter) => (
+          <button
+            type="button"
+            key={filter.id}
+            onClick={() => onFilter(filter.id)}
+            aria-pressed={activeFilter === filter.id}
+            className={cn(
+              "min-h-9 rounded-md px-3 text-xs font-bold transition",
+              activeFilter === filter.id
+                ? "bg-[#006E5B] text-white"
+                : "border border-[#D5E4E0] bg-white text-[#60756F] hover:border-[#9FCFC4]",
+            )}
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
+
+      <AnimatePresence initial={false} mode="popLayout">
+        {filteredEvents.length ? (
+          filteredEvents.map((event) => (
+            <EventRow
+              key={event.id}
+              event={event}
+              expanded={expanded}
+              corti={corti}
+              syncing={syncing}
+              onSyncCorti={onSyncCorti}
+            />
+          ))
+        ) : (
+          <motion.div
+            key="empty"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="grid min-h-64 place-items-center p-8 text-center"
+          >
+            <div>
+              <FileCheck2 className="mx-auto h-7 w-7 text-[#8AA09A]" />
+              <p className="mt-3 text-sm font-bold text-[#143A35]">No events in this view</p>
+              <p className="mt-1 text-xs text-[#6F827D]">Choose another filter to continue.</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          onAddNote();
+        }}
+        className="border-t border-[#DCE9E5] bg-[#F8FBF9] p-3 sm:flex sm:items-center sm:gap-2"
+      >
+        <label htmlFor="internal-note" className="sr-only">
+          Add an internal note
+        </label>
+        <div className="relative min-w-0 flex-1">
+          <input
+            id="internal-note"
+            value={note}
+            onChange={(event) => setNote(event.target.value)}
+            placeholder="Add an internal note. It will not be shared with family."
+            className="h-11 w-full rounded-md border border-[#CFE0DB] bg-white pl-3 pr-11 text-sm text-[#143A35] outline-none placeholder:text-[#8AA09A] focus:border-[#08A98A] focus:ring-2 focus:ring-[#08A98A]/15"
+          />
+          <NotebookPen className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#80948F]" />
+        </div>
+        <button
+          type="submit"
+          disabled={!note.trim()}
+          className="mt-2 h-11 w-full rounded-md bg-[#006E5B] px-4 text-sm font-bold text-white transition hover:bg-[#005B4C] disabled:cursor-not-allowed disabled:opacity-40 sm:mt-0 sm:w-auto"
+        >
+          Add note
+        </button>
+      </form>
+    </section>
+  );
+}
+
+function DecisionPanel({
+  response,
   setResponse,
   reviewState,
   onApprove,
@@ -1057,4 +1223,3 @@ export function CarePulseWorkspace({ onSignOut }: { onSignOut: () => void }) {
     </div>
   );
 }
-
