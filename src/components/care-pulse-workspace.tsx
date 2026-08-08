@@ -280,7 +280,7 @@ function NavigationBody({
           <Avatar src={handoffCase.careManager.image} alt={handoffCase.careManager.name} size="sm" />
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-[#143A35]">{handoffCase.careManager.name}</p>
-            <p className="text-xs text-[#6F827D]">Care manager Â· online</p>
+            <p className="text-xs text-[#6F827D]">Care manager Ã‚Â· online</p>
           </div>
         </div>
         <button
@@ -324,7 +324,7 @@ function Topbar({
               Live case
             </span>
           </div>
-          <p className="hidden text-xs text-[#6F827D] sm:block">Medication safety Â· Lahore</p>
+          <p className="hidden text-xs text-[#6F827D] sm:block">Medication safety Ã‚Â· Lahore</p>
         </div>
       </div>
 
@@ -423,8 +423,638 @@ function CaseOverview({ reviewState }: { reviewState: ReviewState }) {
           <CaseMetric
             label="Parent"
             value={`${handoffCase.parent.name}, ${handoffCase.parent.age}`}
-            detail={`${handoffCase.parent.city} Â· Family profile verified`}
+            detail={`${handoffCase.parent.city} Ã‚Â· Family profile verified`}
           />
-          <CaseçŽ8¶‰žËkºwµçAÁÉ½Ù•€ü€ (€€€€€€€€€€€€€€ñ¡•­¥É±”È±…ÍÍ9…µ”ô‰ ´ÐÜ´Ðˆ€¼ø(€€€€€€€€€€€€¤€è€ (€€€€€€€€€€€€€€ñM•¹±…ÍÍ9…µ”ô‰ ´ÐÜ´Ðˆ€¼ø(€€€€€€€€€€€€¥ô(€€€€€€€€€€€íÍ•¹‘¥¹œ€ü€‰I•½É‘¥¹œ…ÁÁÉ½Ù…°ˆ€è…ÁÁÉ½Ù•€ü€‰I•ÍÁ½¹Í”…ÁÁÉ½Ù•ˆ€è€‰ÁÁÉ½Ù”…¹Í•¹‰ô(€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µÐ´ÈÉ¥É¥µ½±Ì´È…À´Èˆø(€€€€€€€€€€€€ñ‰ÕÑÑ½¸(€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€½¹±¥¬õí½¹Í…±…Ñ•ô(€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰™±•àµ¥¸µ ´ÄÀ¥Ñ•µÌµ•¹Ñ•È©ÕÍÑ¥™äµ•¹Ñ•È…À´ÈÉ½Õ¹‘•µµ‰½É‘•È‰½É‘•ÈµlÕÑÁtÁà´ÈÑ•áÐµáÌ™½¹Ðµ‰½±Ñ•áÐµlŒÔÌÙØÙtÑÉ…¹Í¥Ñ¥½¸¡½Ù•Èé‰½É‘•Èµlå	Ùt¡½Ù•Èé‰œµlååtˆ(€€€€€€€€€€€€ø(€€€€€€€€€€€€€€ñUÍ•ÉÍI½Õ¹±…ÍÍ9…µ”ô‰ ´Ì¸ÔÜ´Ì¸Ôˆ€¼ø(€€€€€€€€€€€€€MÕÁ•ÉÙ¥Í½È(€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ñ‰ÕÑÑ½¸(€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€½¹±¥¬õí½¹½ÕÍ9½Ñ•ô(€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰™±•àµ¥¸µ ´ÄÀ¥Ñ•µÌµ•¹Ñ•È©ÕÍÑ¥™äµ•¹Ñ•È…À´ÈÉ½Õ¹‘•µµ‰½É‘•È‰½É‘•ÈµlÕÑÁtÁà´ÈÑ•áÐµáÌ™½¹Ðµ‰½±Ñ•áÐµlŒÔÌÙØÙtÑÉ…¹Í¥Ñ¥½¸¡½Ù•Èé‰½É‘•ÈµlŒåÑt¡½Ù•Èé‰œµlÍáÙtˆ(€€€€€€€€€€€€ø(€€€€€€€€€€€€€€ñ¥±•Q•áÐ±…ÍÍ9…µ”ô‰ ´Ì¸ÔÜ´Ì¸Ôˆ€¼ø(€€€€€€€€€€€€€%¹Ñ•É¹…°¹½Ñ”(€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€ð½‘¥Øø(€€€€€€ð½Í•Ñ¥½¸ø((€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰µÐ´ÌÉ½Õ¹‘•µµ‰½É‘•È‰½É‘•ÈµlÕÑÁt‰œµÝ¡¥Ñ”À´Ðˆø(€€€€€€€€ñ È±…ÍÍ9…µ”ô‰Ñ•áÐµÍ´™½¹Ðµ‰½±Ñ•áÐµlŒÄÐÍÌÕtˆùÍ…±…Ñ¥½¸¡…¥¸ð½ Èø(€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µÐ´ÌÉ¥…À´Ìˆø(€€€€€€€€€íÁ•½Á±”¹µ…À ¡Á•ÉÍ½¸°¥¹‘•à¤€ôø€ (€€€€€€€€€€€€ñ‘¥Ø­•äõíÁ•ÉÍ½¸¹¹…µ•ô±…ÍÍ9…µ”ô‰É•±…Ñ¥Ù”™±•à¥Ñ•µÌµ•¹Ñ•È…À´Ìˆø(€€€€€€€€€€€€€í¥¹‘•à€ðÁ•½Á±”¹±•¹Ñ €´€Ä€ü€ (€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰…‰Í½±ÕÑ”±•™ÐµlÄÕÁátÑ½À´à ´Ø‰½É‘•Èµ°‰½É‘•Èµ‘…Í¡•‰½É‘•Èµl	Ítˆ€¼ø(€€€€€€€€€€€€€€¤€è¹Õ±±ô(€€€€€€€€€€€€€€ñÙ…Ñ…ÈÍÉŒõíÁ•ÉÍ½¸¹¥µ…•ô…±ÐõíÁ•ÉÍ½¸¹¹…µ•ôÍ¥é”ô‰Í´ˆ€¼ø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ¥¸µÜ´À™±•à´Äˆø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰ÑÉÕ¹…Ñ”Ñ•áÐµÍ´™½¹Ðµ‰½±Ñ•áÐµlŒÄÐÍÌÕtˆùíÁ•ÉÍ½¸¹¹…µ•ôð½Àø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰Ñ•áÐµáÌÑ•áÐµlŒÜÀàÐÝtˆùíÁ•ÉÍ½¸¹É½±•ôð½Àø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ñ•áÐµÉ¥¡Ðˆø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰Ñ•áÐµáÌ™½¹Ðµ‰½±Ñ•áÐµlŒÌàÔÌÑtˆùíÁ•ÉÍ½¸¹ÍÑ…ÑÕÍôð½Àø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰µÐ´À¸ÔÑ•áÐµáÌÑ•áÐµlŒàÀäÐátˆùíÁ•ÉÍ½¸¹¹½Ñ•ôð½Àø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€¤¥ô(€€€€€€€€ð½‘¥Øø(€€€€€€ð½Í•Ñ¥½¸ø((€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰µÐ´ÌÉ½Õ¹‘•µµ‰½É‘•È‰½É‘•ÈµlÕÑÁt‰œµÝ¡¥Ñ”À´Ðˆø(€€€€€€€€ñ‰ÕÑÑ½¸ÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí½¹Q½±•1•‘•Éô±…ÍÍ9…µ”ô‰™±•àÜµ™Õ±°¥Ñ•µÌµÍÑ…ÉÐ©ÕÍÑ¥™äµ‰•ÑÝ••¸…À´ÌÑ•áÐµ±•™Ðˆø(€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€ñ È±…ÍÍ9…µ”ô‰Ñ•áÐµÍ´™½¹Ðµ‰½±Ñ•áÐµlŒÄÐÍÌÕtˆù•¥Í¥½¸±•‘•Èð½ Èø(€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰µÐ´ÄÑ•áÐµáÌÑ•áÐµlŒÜÀàÐÝtˆù]¡ä¡Õµ…¸É•Ù¥•ÜÝ…ÌÉ•ÅÕ¥É•ð½Àø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€í±•‘•ÉáÁ…¹‘•€ü€ (€€€€€€€€€€€€ñ¡•ÙÉ½¹UÀ±…ÍÍ9…µ”ô‰ ´ÐÜ´ÐÑ•áÐµlŒÜÀàÐÝtˆ€¼ø(€€€€€€€€€€¤€è€ (€€€€€€€€€€€€ñ¡•ÙÉ½¹½Ý¸±…ÍÍ9…µ”ô‰ ´ÐÜ´ÐÑ•áÐµlŒÜÀàÐÝtˆ€¼ø(€€€€€€€€€€¥ô(€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µÐ´ÐÉ¥É¥µ½±Ì´Ì…À´ÌÍ´éÉ¥µ½±Ì´Ø±œéÉ¥µ½±Ì´Ìˆø(€€€€€€€€€í‘•¥Í¥½¹1…å•ÉÌ¹µ…À ¡±…å•È°¥¹‘•à¤€ôøì(€€€€€€€€€€€½¹ÍÐ%½¸€ô‘•¥Í¥½¹%½¹Ím¥¹‘•átì(€€€€€€€€€€€½¹ÍÐ¡Õµ…¹A•¹‘¥¹œ€ô¥¹‘•à€ôôô‘•¥Í¥½¹1…å•ÉÌ¹±•¹Ñ €´€Ä€˜˜€……ÁÁÉ½Ù•ì(€€€€€€€€€€€É•ÑÕÉ¸€ (€€€€€€€€€€€€€€ñ‘¥Ø­•äõí±…å•È¹¹…µ•ô±…ÍÍ9…µ”ô‰µ¥¸µÜ´ÀÑ•áÐµ•¹Ñ•Èˆø(€€€€€€€€€€€€€€€€ñÍÁ…¸(€€€€€€€€€€€€€€€€€±…ÍÍ9…µ”õí¸ (€€€€€€€€€€€€€€€€€€€€‰µàµ…ÕÑ¼É¥ ´àÜ´àÁ±…”µ¥Ñ•µÌµ•¹Ñ•ÈÉ½Õ¹‘•µ™Õ±°‰½É‘•Èˆ°(€€€€€€€€€€€€€€€€€€€¡Õµ…¹A•¹‘¥¹œ(€€€€€€€€€€€€€€€€€€€€€€ü€‰‰½É‘•ÈµlÉØÜÕt‰œµláÝtÑ•áÐµlŒáØÜÄátˆ(€€€€€€€€€€€€€€€€€€€€€€è€‰‰½É‘•ÈµlÝt‰œµláÕtÑ•áÐµlŒÀàÝØåtˆ°(€€€€€€€€€€€€€€€€€€¥ô(€€€€€€€€€€€€€€€€ø(€€€€€€€€€€€€€€€€€€ñ%½¸±…ÍÍ9…µ”ô‰ ´ÐÜ´Ðˆ€¼ø(€€€€€€€€€€€€€€€€ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰µÐ´Ä¸ÔÑ•áÐµáÌ±•…‘¥¹œ´ÐÑ•áÐµlŒØÀÜÔÙtˆùí±…å•È¹¹…µ•ôð½Àø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€¤ì(€€€€€€€€€ô¥ô(€€€€€€€€ð½‘¥Øø(€€€€€€€€ñ¹¥µ…Ñ•AÉ•Í•¹”¥¹¥Ñ¥…°õí™…±Í•ôø(€€€€€€€€€í±•‘•ÉáÁ…¹‘•€ü€ (€€€€€€€€€€€€ñµ½Ñ¥½¸¹‘¥Ø(€€€€€€€€€€€€€¥¹¥Ñ¥…°õíì¡•¥¡Ðè€À°½Á…¥Ñäè€Àõô(€€€€€€€€€€€€€…¹¥µ…Ñ”õíì¡•¥¡Ðè€‰…ÕÑ¼ˆ°½Á…¥Ñäè€Äõô(€€€€€€€€€€€€€•á¥Ðõíì¡•¥¡Ðè€À°½Á…¥Ñäè€Àõô(€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰½Ù•É™±½Üµ¡¥‘‘•¸ˆ(€€€€€€€€€€€€ø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µÐ´Ð‰½É‘•ÈµÐ‰½É‘•ÈµlåÕtÁÐ´Èˆø(€€€€€€€€€€€€€€€í‘•¥Í¥½¹1…å•ÉÌ¹µ…À ¡±…å•È¤€ôø€ (€€€€€€€€€€€€€€€€€€ñ‘¥Ø­•äõí±…å•È¹¹…µ•ô±…ÍÍ9…µ”ô‰‰½É‘•Èµˆ‰½É‘•ÈµlÑ	tÁä´È±…ÍÐé‰½É‘•Èµˆ´Àˆø(€€€€€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰Ñ•áÐµáÌ™½¹Ðµ‰½±Ñ•áÐµlŒÌàÔÌÑtˆùí±…å•È¹¹…µ•ôð½Àø(€€€€€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰µÐ´ÄÑ•áÐµáÌ±•…‘¥¹œ´ÔÑ•áÐµlŒÜÀàÐÝtˆùí±…å•È¹‘•Ñ…¥±ôð½Àø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€¤¥ô(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ð½µ½Ñ¥½¸¹‘¥Øø(€€€€€€€€€€¤€è¹Õ±±ô(€€€€€€€€ð½¹¥µ…Ñ•AÉ•Í•¹”ø(€€€€€€ð½Í•Ñ¥½¸ø((€€€€€€ñÍ•Ñ¥½¸¥ô‰…Õ‘¥ÐµÑÉ…¥°ˆ±…ÍÍ9…µ”ô‰µÐ´ÌÍÉ½±°µµÐ´ÈÐÉ½Õ¹‘•µµ‰½É‘•È‰½É‘•ÈµlÕÑÁt‰œµÝ¡¥Ñ”À´Ðˆø(€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰™±•à¥Ñ•µÌµ•¹Ñ•È©ÕÍÑ¥™äµ‰•ÑÝ••¸…À´Ìˆø(€€€€€€€€€€ñ È±…ÍÍ9…µ”ô‰Ñ•áÐµÍ´™½¹Ðµ‰½±Ñ•áÐµlŒÄÐÍÌÕtˆùÕ‘¥ÐÑÉ…¥°ð½ Èø(€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰¥¹±¥¹”µ™±•à¥Ñ•µÌµ•¹Ñ•È…À´ÄÑ•áÐµáÌ™½¹ÐµÍ•µ¥‰½±Ñ•áÐµlŒÀàÝØåtˆø(€€€€€€€€€€€€ñ1½­-•å¡½±”±…ÍÍ9…µ”ô‰ ´Ì¸ÔÜ´Ì¸Ôˆ€¼ø(€€€€€€€€€€€%µµÕÑ…‰±”(€€€€€€€€€€ð½ÍÁ…¸ø(€€€€€€€€ð½‘¥Øø(€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µÐ´Ìˆø(€€€€€€€€€í…Õ‘¥Ñ¹ÑÉ¥•Ì¹Í±¥” ´Ô¤¹µ…À ¡•¹ÑÉä°¥¹‘•à¤€ôø€ (€€€€€€€€€€€€ñ‘¥Ø­•äõí€‘í•¹ÑÉä¹Ñ¥µ•ô´‘í•¹ÑÉä¹•Ù•¹Ñô´‘í¥¹‘•áõô±…ÍÍ9…µ”ô‰‰½É‘•Èµˆ‰½É‘•ÈµlÑ	tÁä´È±…ÍÐé‰½É‘•Èµˆ´Àˆø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰™±•à¥Ñ•µÌµ•¹Ñ•È©ÕÍÑ¥™äµ‰•ÑÝ••¸…À´ÌÑ•áÐµáÌÑ•áÐµlŒàÀäÐátˆø(€€€€€€€€€€€€€€€€ñÍÁ…¸ùí•¹ÑÉä¹Ñ¥µ•ôð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÍÁ…¸ùí•¹ÑÉä¹…Ñ½Éôð½ÍÁ…¸ø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰µÐ´ÄÑ•áÐµáÌ±•…‘¥¹œ´ÔÑ•áÐµlŒÔÌÙØÙtˆùí•¹ÑÉä¹•Ù•¹Ñôð½Àø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€¤¥ô(€€€€€€€€ð½‘¥Øø(€€€€€€ð½Í•Ñ¥½¸ø(€€€€ð½…Í¥‘”ø(€€¤ì)ô()•áÁ½ÉÐ™Õ¹Ñ¥½¸…É•AÕ±Í•]½É­ÍÁ…”¡ì½¹M¥¹=ÕÐôèì½¹M¥¹=ÕÐè€ ¤€ôøÙ½¥ô¤ì(€½¹ÍÐÍ¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ôÕÍ•I•‘Õ•‘5½Ñ¥½¸ ¤ì(€½¹ÍÐmµ½‰¥±•=Á•¸°Í•Ñ5½‰¥±•=Á•¹t€ôÕÍ•MÑ…Ñ”¡™…±Í”¤ì(€½¹ÍÐm•Ù•¹ÑÌ°Í•ÑÙ•¹ÑÍt€ôÕÍ•MÑ…Ñ”ñ!…¹‘½™™Ù•¹Ñmtø¡¥¹¥Ñ¥…±!…¹‘½™™Ù•¹ÑÌ¤ì(€½¹ÍÐm…Ñ¥Ù•¥±Ñ•È°Í•ÑÑ¥Ù•¥±Ñ•Ét€ôÕÍ•MÑ…Ñ”ñÙ•¹Ñ¥±Ñ•Èø ‰…±°ˆ¤ì(€½¹ÍÐm•Ù•¹ÑÍáÁ…¹‘•°Í•ÑÙ•¹ÑÍáÁ…¹‘•‘t€ôÕÍ•MÑ…Ñ”¡™…±Í”¤ì(€½¹ÍÐm±•‘•ÉáÁ…¹‘•°Í•Ñ1•‘•ÉáÁ…¹‘•‘t€ôÕÍ•MÑ…Ñ”¡™…±Í”¤ì(€½¹ÍÐm¹½Ñ”°Í•Ñ9½Ñ•t€ôÕÍ•MÑ…Ñ” ˆˆ¤ì(€½¹ÍÐmÉ•ÍÁ½¹Í”°Í•ÑI•ÍÁ½¹Í•t€ôÕÍ•MÑ…Ñ”ñÍÑÉ¥¹œø¡¡…¹‘½™™…Í”¹ÁÉ½Á½Í•‘I•ÍÁ½¹Í”¤ì(€½¹ÍÐmÉ•Ù¥•ÝMÑ…Ñ”°Í•ÑI•Ù¥•ÝMÑ…Ñ•t€ôÕÍ•MÑ…Ñ”ñI•Ù¥•ÝMÑ…Ñ”ø ‰Á•¹‘¥¹œˆ¤ì(€½¹ÍÐm‘å¹…µ¥Õ‘¥Ð°Í•Ñå¹…µ¥Õ‘¥Ñt€ôÕÍ•MÑ…Ñ”ñìÑ¥µ”èÍÑÉ¥¹œì•Ù•¹ÐèÍÑÉ¥¹œì…Ñ½ÈèÍÑÉ¥¹œõmtø¡mt¤ì(€½¹ÍÐm½ÉÑ¤°Í•Ñ½ÉÑ¥t€ôÕÍ•MÑ…Ñ”ñ½ÉÑ¥Y¥•ÝMÑ…ÑÕÌø¡ìµ½‘”è€‰±½…‘¥¹œˆ°•¹Ù¥É½¹µ•¹Ðè€‰•Ôˆ°Ñ•¹…¹Ðè€‰‰…Í”ˆô¤ì(€½¹ÍÐmÍå¹¥¹½ÉÑ¤°Í•ÑMå¹¥¹½ÉÑ¥t€ôÕÍ•MÑ…Ñ”¡™…±Í”¤ì((€ÕÍ•™™•Ð  ¤€ôøì(€€€±•Ð…Ñ¥Ù”€ôÑÉÕ”ì(€€€™•Ñ  ˆ½…Á¤½½ÉÑ¤½ÍÑ…ÑÕÌˆ°ì…¡”è€‰¹¼µÍÑ½É”ˆô¤(€€€€€€¹Ñ¡•¸ ¡É•ÍÕ±Ð¤€ôøÉ•ÍÕ±Ð¹©Í½¸ ¤¤(€€€€€€¹Ñ¡•¸ ¡ÍÑ…ÑÕÌèìµ½‘”üè½ÉÑ¥5½‘”ì•¹Ù¥É½¹µ•¹ÐüèÍÑÉ¥¹œìÑ•¹…¹ÐüèÍÑÉ¥¹œô¤€ôøì(€€€€€€€¥˜€ ……Ñ¥Ù”¤É•ÑÕÉ¸ì(€€€€€€€Í•Ñ½ÉÑ¤¡ì(€€€€€€€€€µ½‘”èÍÑ…ÑÕÌ¹µ½‘”€üü€‰‘•µ¼ˆ°(€€€€€€€€€•¹Ù¥É½¹µ•¹ÐèÍÑ…ÑÕÌ¹•¹Ù¥É½¹µ•¹Ð€üü€‰•Ôˆ°(€€€€€€€€€Ñ•¹…¹ÐèÍÑ…ÑÕÌ¹Ñ•¹…¹Ð€üü€‰‰…Í”ˆ°(€€€€€€€ô¤ì(€€€€€ô¤(€€€€€€¹…Ñ   ¤€ôøì(€€€€€€€¥˜€¡…Ñ¥Ù”¤Í•Ñ½ÉÑ¤¡ìµ½‘”è€‰‘•µ¼ˆ°•¹Ù¥É½¹µ•¹Ðè€‰•Ôˆ°Ñ•¹…¹Ðè€‰‰…Í”ˆô¤ì(€€€€€ô¤ì(€€€É•ÑÕÉ¸€ ¤€ôøì(€€€€€…Ñ¥Ù”€ô™…±Í”ì(€€€ôì(€ô°mt¤ì((€™Õ¹Ñ¥½¸…‘‘Ù•¹Ð¡•Ù•¹Ðè!…¹‘½™™Ù•¹Ð¤ì(€€€Í•ÑÙ•¹ÑÌ ¡ÕÉÉ•¹Ð¤€ôøl¸¸¹ÕÉÉ•¹Ð°•Ù•¹Ñt¤ì(€ô((€™Õ¹Ñ¥½¸…‘‘Õ‘¥Ð¡•Ù•¹ÐèÍÑÉ¥¹œ°…Ñ½ÈèÍÑÉ¥¹œ€ô¡…¹‘½™™…Í”¹…É•5…¹…•È¹¹…µ”¤ì(€€€Í•Ñå¹…µ¥Õ‘¥Ð ¡ÕÉÉ•¹Ð¤€ôøl¸¸¹ÕÉÉ•¹Ð°ìÑ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°•Ù•¹Ð°…Ñ½Èõt¤ì(€ô((€™Õ¹Ñ¥½¸¡…¹‘±•‘‘9½Ñ” ¤ì(€€€½¹ÍÐÑÉ¥µµ•€ô¹½Ñ”¹ÑÉ¥´ ¤ì(€€€¥˜€ …ÑÉ¥µµ•¤É•ÑÕÉ¸ì(€€€…‘‘Ù•¹Ð¡ì(€€€€€¥è•ÙÐµ¹½Ñ”´‘í…Ñ”¹¹½Ü ¥õ€°(€€€€€Ñ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°(€€€€€…Ñ•½Éäè€‰¹½Ñ•Ìˆ°(€€€€€…Ñ½Èè¡…¹‘½™™…Í”¹…É•5…¹…•È¹¹…µ”°(€€€€€Ñ¥Ñ±”è€‰%¹Ñ•É¹…°¹½Ñ”…‘‘•ˆ°(€€€€€‘•Ñ…¥°èÑÉ¥µµ•°(€€€€€µ•Ñ„èl‰Y¥Í¥‰±”Ñ¼…Éè¬ÍÑ…™˜½¹±ä‰t°(€€€€€Ñ½¹”è€‰¡Õµ…¸ˆ°(€€€ô¤ì(€€€…‘‘Õ‘¥Ð ‰%¹Ñ•É¹…°…Í”¹½Ñ”…‘‘•ˆ¤ì(€€€Í•Ñ9½Ñ” ˆˆ¤ì(€€€Í•ÑÑ¥Ù•¥±Ñ•È ‰…±°ˆ¤ì(€ô((€™Õ¹Ñ¥½¸¡…¹‘±•ÁÁÉ½Ù” ¤ì(€€€¥˜€¡É•Ù¥•ÝMÑ…Ñ”€ôôô€‰…ÁÁÉ½Ù•ˆñðÉ•Ù¥•ÝMÑ…Ñ”€ôôô€‰Í•¹‘¥¹œˆ¤É•ÑÕÉ¸ì(€€€Í•ÑI•Ù¥•ÝMÑ…Ñ” ‰Í•¹‘¥¹œˆ¤ì(€€€Ý¥¹‘½Ü¹Í•ÑQ¥µ•½ÕÐ  ¤€ôøì(€€€€€Í•ÑI•Ù¥•ÝMÑ…Ñ” ‰…ÁÁÉ½Ù•ˆ¤ì(€€€€€…‘‘Ù•¹Ð¡ì(€€€€€€€¥è•ÙÐµ…ÁÁÉ½Ù•´‘í…Ñ”¹¹½Ü ¥õ€°(€€€€€€€Ñ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°(€€€€€€€…Ñ•½Éäè€‰¡Õµ…¸ˆ°(€€€€€€€…Ñ½Èè¡…¹‘½™™…Í”¹…É•5…¹…•È¹¹…µ”°(€€€€€€€Ñ¥Ñ±”è€‰I•Ù¥•Ý•É•ÍÁ½¹Í”…ÁÁÉ½Ù•ˆ°(€€€€€€€‘•Ñ…¥°è€‰Q¡”É•ÍÁ½¹Í”Á…ÍÍ•Ñ¡”¡Õµ…¸…ÁÁÉ½Ù…°…Ñ”…¹¥ÌÅÕ•Õ•™½È™…µ¥±ä‘•±¥Ù•Éä¸ˆ°(€€€€€€€µ•Ñ„èl‰ÁÁÉ½Ù•‰ä…É”µ…¹…•Èˆ°€‰]¡…ÑÍÁÀ‘•±¥Ù•ÉäÅÕ•Õ”‰t°(€€€€€€€Ñ½¹”è€‰¡Õµ…¸ˆ°(€€€€€ô¤ì(€€€€€…‘‘Õ‘¥Ð ‰I•Ù¥•Ý•É•ÍÁ½¹Í”…ÁÁÉ½Ù•ˆ¤ì(€€€ô°Í¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ü€À€è€ÐÔÀ¤ì(€ô((€™Õ¹Ñ¥½¸¡…¹‘±•Í…±…Ñ” ¤ì(€€€¥˜€¡É•Ù¥•ÝMÑ…Ñ”€ôôô€‰•Í…±…Ñ•ˆ¤É•ÑÕÉ¸ì(€€€Í•ÑI•Ù¥•ÝMÑ…Ñ” ‰•Í…±…Ñ•ˆ¤ì(€€€…‘‘Ù•¹Ð¡ì(€€€€€¥è•ÙÐµ•Í…±…Ñ•´‘í…Ñ”¹¹½Ü ¥õ€°(€€€€€Ñ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°(€€€€€…Ñ•½Éäè€‰¡Õµ…¸ˆ°(€€€€€…Ñ½Èè¡…¹‘½™™…Í”¹…É•5…¹…•È¹¹…µ”°(€€€€€Ñ¥Ñ±”è€‰MÕÁ•ÉÙ¥Í½ÈÉ•Ù¥•ÜÉ•ÅÕ•ÍÑ•ˆ°(€€€€€‘•Ñ…¥°è€‘í¡…¹‘½™™…Í”¹ÍÕÁ•ÉÙ¥Í½È¹¹…µ•ôÝ…Ì…‘‘•Ñ¼Ñ¡”¡…¹‘½™˜…¹¹½Ñ¥™¥•½˜Ñ¡”µ•‘¥…Ñ¥½¸µÉ¥Í¬…Í”¹€°(€€€€€µ•Ñ„èl‰Í…±…Ñ¥½¸±•Ù•°èMÕÁ•ÉÙ¥Í½È‰t°(€€€€€Ñ½¹”è€‰¡Õµ…¸ˆ°(€€€ô¤ì(€€€…‘‘Õ‘¥Ð ‰MÕÁ•ÉÙ¥Í½ÈÉ•Ù¥•ÜÉ•ÅÕ•ÍÑ•ˆ¤ì(€ô((€…Íå¹Œ™Õ¹Ñ¥½¸¡…¹‘±•Må¹½ÉÑ¤ ¤ì(€€€¥˜€¡Íå¹¥¹½ÉÑ¤¤É•ÑÕÉ¸ì(€€€Í•ÑMå¹¥¹½ÉÑ¤¡ÑÉÕ”¤ì(€€€ÑÉäì(€€€€€½¹ÍÐÉ•ÍÕ±Ð€ô…Ý…¥Ð™•Ñ  ˆ½…Á¤½½ÉÑ¤½¥¹Ñ•É…Ñ¥½¹Ìˆ°ì(€€€€€€€µ•Ñ¡½è€‰A=MPˆ°(€€€€€€€¡•…‘•ÉÌèì€‰½¹Ñ•¹ÐµQåÁ”ˆè€‰…ÁÁ±¥…Ñ¥½¸½©Í½¸ˆô°(€€€€€€€‰½‘äè)M=8¹ÍÑÉ¥¹¥™ä¡ì…Í•%è¡…¹‘½™™…Í”¹¥ô¤°(€€€€€ô¤ì(€€€€€½¹ÍÐÁ…å±½…€ô€¡…Ý…¥ÐÉ•ÍÕ±Ð¹©Í½¸ ¤¤…Ìì(€€€€€€€µ½‘”üè€‰‘•µ¼ˆð€‰É•…‘äˆð€‰±¥Ù”ˆì(€€€€€€€Íå¹•üè‰½½±•…¸ì(€€€€€€€¥¹Ñ•É…Ñ¥½¹%üèÍÑÉ¥¹œì(€€€€€€€µ•ÍÍ…”üèÍÑÉ¥¹œì(€€€€€€€•ÉÉ½ÈüèÍÑÉ¥¹œì(€€€€€ôì(€€€€€¥˜€ …É•ÍÕ±Ð¹½¬¤Ñ¡É½Ü¹•ÜÉÉ½È¡Á…å±½…¹•ÉÉ½È€üü€‰½ÉÑ¤É•ÅÕ•ÍÐ™…¥±•¸ˆ¤ì((€€€€€Í•Ñ½ÉÑ¤ ¡ÕÉÉ•¹Ð¤€ôø€¡ì€¸¸¹ÕÉÉ•¹Ð°µ½‘”èÁ…å±½…¹µ½‘”€üüÕÉÉ•¹Ð¹µ½‘”ô¤¤ì(€€€€€…‘‘Ù•¹Ð¡ì(€€€€€€€¥è•ÙÐµ½ÉÑ¤µÉ•™É•Í ´‘í…Ñ”¹¹½Ü ¥õ€°(€€€€€€€Ñ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°(€€€€€€€…Ñ•½Éäè€‰½ÉÑ¤ˆ°(€€€€€€€…Ñ½Èè€‰½ÉÑ¤ˆ°(€€€€€€€Ñ¥Ñ±”èÁ…å±½…¹Íå¹•€ü€‰1¥Ù”½ÉÑ¤¥¹Ñ•É…Ñ¥½¸…ÑÑ…¡•ˆ€è€‰½ÉÑ¤‘•µ¼½¹Ñ•áÐÉ•™É•Í¡•ˆ°(€€€€€€€‘•Ñ…¥°èÁ…å±½…¹µ•ÍÍ…”€üü€‰½ÉÑ¤½¹Ñ•áÐÉ•™É•Í¡•¸ˆ°(€€€€€€€µ•Ñ„èÁ…å±½…¹¥¹Ñ•É…Ñ¥½¹%€üm%¹Ñ•É…Ñ¥½¸è€‘íÁ…å±½…¹¥¹Ñ•É…Ñ¥½¹%‘õt€èÕ¹‘•™¥¹•°(€€€€€€€Ñ½¹”è€‰½ÉÑ¤ˆ°(€€€€€ô¤ì(€€€€€…‘‘Õ‘¥Ð¡Á…å±½…¹Íå¹•€ü€‰½ÉÑ¤¥¹Ñ•É…Ñ¥½¸…ÑÑ…¡•ˆ€è€‰½ÉÑ¤‘•µ¼½¹Ñ•áÐÉ•™É•Í¡•ˆ°€‰MåÍÑ•´ˆ¤ì(€€€ô…Ñ €¡•ÉÉ½È¤ì(€€€€€…‘‘Ù•¹Ð¡ì(€€€€€€€¥è•ÙÐµ½ÉÑ¤µ•ÉÉ½È´‘í…Ñ”¹¹½Ü ¥õ€°(€€€€€€€Ñ¥µ”èÕÉÉ•¹ÑA…­¥ÍÑ…¹Q¥µ” ¤°(€€€€€€€…Ñ•½Éäè€‰ÍåÍÑ•´ˆ°(€€€€€€€…Ñ½Èè€‰MåÍÑ•´ˆ°(€€€€€€€Ñ¥Ñ±”è€‰½ÉÑ¤Íå¹Œ¹••‘Ì…ÑÑ•¹Ñ¥½¸ˆ°(€€€€€€€‘•Ñ…¥°è•ÉÉ½È¥¹ÍÑ…¹•½˜ÉÉ½È€ü•ÉÉ½È¹µ•ÍÍ…”€è€‰½ÉÑ¤É•ÅÕ•ÍÐ™…¥±•¸ˆ°(€€€€€€€µ•Ñ„èl‰9¼™…µ¥±äÉ•ÍÁ½¹Í”Ý…Ì…™™•Ñ•‰t°(€€€€€€€Ñ½¹”è€‰É¥Í¬ˆ°(€€€€€ô¤ì(€€€ô™¥¹…±±äì(€€€€€Í•ÑMå¹¥¹½ÉÑ¤¡™…±Í”¤ì(€€€ô(€ô((€™Õ¹Ñ¥½¸¹…Ù¥…Ñ•Q¼¡Ñ…É•ÐèÍÑÉ¥¹œ¤ì(€€€Í•Ñ5½‰¥±•=Á•¸¡™…±Í”¤ì(€€€Ý¥¹‘½Ü¹É•ÅÕ•ÍÑ¹¥µ…Ñ¥½¹É…µ”  ¤€ôøì(€€€€€‘½Õµ•¹Ð¹•Ñ±•µ•¹Ñ	å%¡Ñ…É•Ð¤ü¹ÍÉ½±±%¹Ñ½Y¥•Ü¡ì‰•¡…Ù¥½ÈèÍ¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ü€‰…ÕÑ¼ˆ€è€‰Íµ½½Ñ ˆ°‰±½¬è€‰ÍÑ…ÉÐˆô¤ì(€€€ô¤ì(€ô((€™Õ¹Ñ¥½¸™½ÕÍ9½Ñ” ¤ì(€€€‘½Õµ•¹Ð¹•Ñ±•µ•¹Ñ	å% ‰¥¹Ñ•É¹…°µ¹½Ñ”ˆ¤ü¹ÍÉ½±±%¹Ñ½Y¥•Ü¡ì(€€€€€‰•¡…Ù¥½ÈèÍ¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ü€‰…ÕÑ¼ˆ€è€‰Íµ½½Ñ ˆ°(€€€€€‰±½¬è€‰•¹Ñ•Èˆ°(€€€ô¤ì(€€€Ý¥¹‘½Ü¹Í•ÑQ¥µ•½ÕÐ  ¤€ôø‘½Õµ•¹Ð¹•Ñ±•µ•¹Ñ	å% ‰¥¹Ñ•É¹…°µ¹½Ñ”ˆ¤ü¹™½ÕÌ ¤°Í¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ü€À€è€ÌÔÀ¤ì(€ô((€½¹ÍÐ±…Ñ•ÍÑMÑ…ÑÕÌ€ô(€€€É•Ù¥•ÝMÑ…Ñ”€ôôô€‰…ÁÁÉ½Ù•ˆ(€€€€€€ü€‰I•ÍÁ½¹Í”…ÁÁÉ½Ù•ˆ(€€€€€€èÉ•Ù¥•ÝMÑ…Ñ”€ôôô€‰•Í…±…Ñ•ˆ(€€€€€€€€ü€‰MÕÁ•ÉÙ¥Í½ÈÉ•Ù¥•ÜÉ•ÅÕ•ÍÑ•ˆ(€€€€€€€€è€‰Ý…¥Ñ¥¹œ…É”µµ…¹…•È…ÁÁÉ½Ù…°ˆì((€É•ÑÕÉ¸€ (€€€€ñ‘¥Ø‘…Ñ„µÁ±…Ñ™½É´µÍ¡•±°±…ÍÍ9…µ”ô‰µ¥¸µ µÍÉ••¸‰œµlÍÝÕtÑ•áÐµlŒÄÐÍÌÕtm™½¹ÐµÍå¹Ñ¡•Í¥Ìé¹½¹•tˆø(€€€€€€ñ…Í¥‘”±…ÍÍ9…µ”ô‰™¥á•¥¹Í•Ðµä´À±•™Ð´Àè´ÐÀ¡¥‘‘•¸ÜµlÈÌÉÁát‰½É‘•ÈµÈ‰½É‘•ÈµlåÕt±œé‰±½¬ˆø(€€€€€€€€ñ9…Ù¥…Ñ¥½¹	½‘ä½ÉÑ¤õí½ÉÑ¥ô½¹9…Ù¥…Ñ”õí¹…Ù¥…Ñ•Q½ô½¹M¥¹=ÕÐõí½¹M¥¹=ÕÑô€¼ø(€€€€€€ð½…Í¥‘”ø((€€€€€€ñ¹¥µ…Ñ•AÉ•Í•¹”ø(€€€€€€€íµ½‰¥±•=Á•¸€ü€ (€€€€€€€€€€ðø(€€€€€€€€€€€€ñµ½Ñ¥½¸¹‰ÕÑÑ½¸(€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€…É¥„µ±…‰•°ô‰±½Í”¹…Ù¥…Ñ¥½¸ˆ(€€€€€€€€€€€€€½¹±¥¬õì ¤€ôøÍ•Ñ5½‰¥±•=Á•¸¡™…±Í”¥ô(€€€€€€€€€€€€€¥¹¥Ñ¥…°õíì½Á…¥Ñäè€Àõô(€€€€€€€€€€€€€…¹¥µ…Ñ”õíì½Á…¥Ñäè€Äõô(€€€€€€€€€€€€€•á¥Ðõíì½Á…¥Ñäè€Àõô(€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰™¥á•¥¹Í•Ð´Àè´ÐÀ‰œµlŒÄÐÍÌÕt¼ÐÀ‰…­‘É½Àµ‰±ÕÈµÍ´±œé¡¥‘‘•¸ˆ(€€€€€€€€€€€€¼ø(€€€€€€€€€€€€ñµ½Ñ¥½¸¹…Í¥‘”(€€€€€€€€€€€€€¥¹¥Ñ¥…°õíìàè€´ÈØÀõô(€€€€€€€€€€€€€…¹¥µ…Ñ”õíìàè€Àõô(€€€€€€€€€€€€€•á¥Ðõíìàè€´ÈØÀõô(€€€€€€€€€€€€€ÑÉ…¹Í¥Ñ¥½¸õíì‘ÕÉ…Ñ¥½¸èÍ¡½Õ±‘I•‘Õ•5½Ñ¥½¸€ü€À€è€À¸ÈÐ°•…Í”è€‰•…Í•=ÕÐˆõô(€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰™¥á•¥¹Í•Ðµä´À±•™Ð´Àè´ÔÀÜµmµ¥¸ àÙÙÜ°ÌÀÁÁà¥t‰½É‘•ÈµÈ‰½É‘•ÈµlåÕt±œé¡¥‘‘•¸ˆ(€€€€€€€€€€€€ø(€€€€€€€€€€€€€€ñ9…Ù¥…Ñ¥½¹	½‘ä(€€€€€€€€€€€€€€€½ÉÑ¤õí½ÉÑ¥ô(€€€€€€€€€€€€€€€½¹9…Ù¥…Ñ”õí¹…Ù¥…Ñ•Q½ô(€€€€€€€€€€€€€€€½¹M¥¹=ÕÐõí½¹M¥¹=ÕÑô(€€€€€€€€€€€€€€€½¹±½Í”õì ¤€ôøÍ•Ñ5½‰¥±•=Á•¸¡™…±Í”¥ô(€€€€€€€€€€€€€€¼ø(€€€€€€€€€€€€ð½µ½Ñ¥½¸¹…Í¥‘”ø(€€€€€€€€€€ð¼ø(€€€€€€€€¤€è¹Õ±±ô(€€€€€€ð½¹¥µ…Ñ•AÉ•Í•¹”ø((€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ¥¸µ µÍÉ••¸±œéÁ°µlÈÌÉÁátˆø(€€€€€€€€ñQ½Á‰…È½¹5•¹Ôõì ¤€ôøÍ•Ñ5½‰¥±•=Á•¸¡ÑÉÕ”¥ô½¹M¥¹=ÕÐõí½¹M¥¹=ÕÑô€¼ø(€€€€€€€€ñ…Í•=Ù•ÉÙ¥•ÜÉ•Ù¥•ÝMÑ…Ñ”õíÉ•Ù¥•ÝMÑ…Ñ•ô€¼ø(€€€€€€€€ñµ…¥¸±…ÍÍ9…µ”ô‰µàµ…ÕÑ¼É¥µ…àµÜµlÄØÀÁÁát…À´ÐÁà´ÐÁä´ÔÍ´éÁà´Ø±œéÉ¥µ½±Ìµmµ¥¹µ…à À°Å™È¥|ÌàÁÁát±œé¥Ñ•µÌµÍÑ…ÉÐˆø(€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰½É‘•È´Èµ¥¸µÜ´À±œé½É‘•È´Äˆø(€€€€€€€€€€€€ñÙ•¹ÑMÑÉ•…´(€€€€€€€€€€€€€•Ù•¹ÑÌõí•Ù•¹ÑÍô(€€€€€€€€€€€€€…Ñ¥Ù•¥±Ñ•Èõí…Ñ¥Ù•¥±Ñ•Éô(€€€€€€€€€€€€€½¹¥±Ñ•ÈõíÍ•ÑÑ¥Ù•¥±Ñ•Éô(€€€€€€€€€€€€€•áÁ…¹‘•õí•Ù•¹ÑÍáÁ…¹‘•‘ô(€€€€€€€€€€€€€½¹Q½±•áÁ…¹‘•õì ¤€ôøÍ•ÑÙ•¹ÑÍáÁ…¹‘• ¡Ù…±Õ”¤€ôø€…Ù…±Õ”¥ô(€€€€€€€€€€€€€¹½Ñ”õí¹½Ñ•ô(€€€€€€€€€€€€€Í•Ñ9½Ñ”õíÍ•Ñ9½Ñ•ô(€€€€€€€€€€€€€½¹‘‘9½Ñ”õí¡…¹‘±•‘‘9½Ñ•ô(€€€€€€€€€€€€€½ÉÑ¤õí½ÉÑ¥ô(€€€€€€€€€€€€€Íå¹¥¹œõíÍå¹¥¹½ÉÑ¥ô(€€€€€€€€€€€€€½¹Må¹½ÉÑ¤õí¡…¹‘±•Må¹½ÉÑ¥ô(€€€€€€€€€€€€¼ø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰½É‘•È´Ä±œé½É‘•È´Èˆø(€€€€€€€€€€€€ñ•¥Í¥½¹A…¹•°(€€€€€€€€€€€€€É•ÍÁ½¹Í”õíÉ•ÍÁ½¹Í•ô(€€€€€€€€€€€€€Í•ÑI•ÍÁ½¹Í”õíÍ•ÑI•ÍÁ½¹Í•ô(€€€€€€€€€€€€€É•Ù¥•ÝMÑ…Ñ”õíÉ•Ù¥•ÝMÑ…Ñ•ô(€€€€€€€€€€€€€½¹ÁÁÉ½Ù”õí¡…¹‘±•ÁÁÉ½Ù•ô(€€€€€€€€€€€€€½¹Í…±…Ñ”õí¡…¹‘±•Í…±…Ñ•ô(€€€€€€€€€€€€€½¹½ÕÍ9½Ñ”õí™½ÕÍ9½Ñ•ô(€€€€€€€€€€€€€±•‘•ÉáÁ…¹‘•õí±•‘•ÉáÁ…¹‘•‘ô(€€€€€€€€€€€€€½¹Q½±•1•‘•Èõì ¤€ôøÍ•Ñ1•‘•ÉáÁ…¹‘• ¡Ù…±Õ”¤€ôø€…Ù…±Õ”¥ô(€€€€€€€€€€€€€‘å¹…µ¥Õ‘¥Ðõí‘å¹…µ¥Õ‘¥Ñô(€€€€€€€€€€€€¼ø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€ð½µ…¥¸ø(€€€€€€€€ñ™½½Ñ•È±…ÍÍ9…µ”ô‰‰½É‘•ÈµÐ‰½É‘•ÈµlåÕt‰œµÝ¡¥Ñ”Áà´ÔÁä´ÐÑ•áÐµáÌÑ•áÐµlŒÜÀàÐÝtˆø(€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µàµ…ÕÑ¼™±•àµ…àµÜµlÄØÀÁÁát™±•àµÝÉ…À¥Ñ•µÌµ•¹Ñ•È©ÕÍÑ¥™äµ‰•ÑÝ••¸…À´Èˆø(€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰¥¹±¥¹”µ™±•à¥Ñ•µÌµ•¹Ñ•È…À´Èˆø(€€€€€€€€€€€€€€ñ1½­-•å¡½±”±…ÍÍ9…µ”ô‰ ´Ì¸ÔÜ´Ì¸Ôˆ€¼ø(€€€€€€€€€€€€€½¹Í•¹Ðµ‰…Í•…•ÍÌƒ
-Üí±…Ñ•ÍÑMÑ…ÑÕÍô(€€€€€€€€€€€€ð½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÁ…¸ùA…­¥ÍÑ…¸MÑ…¹‘…ÉQ¥µ”ƒ
-Ü€Èä)Õ°€ÈÀÈØð½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÁ…¸ù…Éè¬½½É‘¥¹…Ñ•Ì…É”¸%Ð‘½•Ì¹½Ð‘¥…¹½Í”½ÈÁÉ•ÍÉ¥‰”¸ð½ÍÁ…¸ø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€ð½™½½Ñ•Èø(€€€€€€ð½‘¥Øø(€€€€ð½‘¥Øø(€€¤ì)ô
+          <CaseMetric
+            label="Assigned to"
+            value={handoffCase.careManager.name}
+            detail={handoffCase.careManager.role}
+            image={handoffCase.careManager.image}
+          />
+          <CaseMetric label="Received" value="09:18 AM PKT" detail={handoffCase.receivedAt.split(",")[0]} />
+          <CaseMetric label="Service level" value={handoffCase.sla} detail={handoffCase.dueAt} last />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseMetric({
+  label,
+  value,
+  detail,
+  image,
+  last = false,
+}: {
+  label: string;
+  value: string;
+  detail: string;
+  image?: string;
+  last?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        "flex min-h-24 items-center gap-3 border-b border-r border-[#DCE9E5] px-3 py-4 even:border-r-0 xl:border-b-0 xl:border-r xl:px-5 xl:even:border-r",
+        last && "xl:border-r-0 xl:even:border-r-0",
+      )}
+    >
+      {image ? <Avatar src={image} alt={value} size="sm" /> : null}
+      <div>
+        <p className="text-xs font-bold uppercase text-[#80948F]">{label}</p>
+        <p className="mt-1 text-sm font-bold text-[#143A35]">{value}</p>
+        <p className="mt-1 text-xs text-[#6F827D]">{detail}</p>
+      </div>
+    </div>
+  );
+}
+
+function ContextGrid({
+  corti,
+  syncing,
+  onSync,
+}: {
+  corti: CortiViewStatus;
+  syncing: boolean;
+  onSync: () => void;
+}) {
+  const contextItems = [
+    { title: "Medications", lines: handoffCase.parent.medications, source: "Care plan" },
+    { title: "Allergies", lines: handoffCase.parent.allergies, source: "Care plan" },
+    { title: "Care plan", lines: handoffCase.parent.carePlan, source: "Family record" },
+    {
+      title: "Emergency contact",
+      lines: [handoffCase.parent.emergencyContact],
+      source: "Verified family profile",
+    },
+  ];
+
+  return (
+    <section id="case-context" className="mt-4 scroll-mt-24 overflow-hidden rounded-md border border-[#CFE2DD] bg-[#F5FAF8]">
+      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#CFE2DD] px-4 py-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <BrainCircuit className="h-4 w-4 text-[#087B69]" />
+            <h4 className="text-sm font-bold text-[#143A35]">Corti context package</h4>
+          </div>
+          <p className="mt-1 text-xs leading-5 text-[#60756F]">
+            Source-grounded context for a human decision. No diagnosis or dosing change is generated.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onSync}
+          disabled={syncing}
+          className="inline-flex min-h-9 items-center gap-2 rounded-md border border-[#AFCFC7] bg-white px-3 text-xs font-bold text-[#087B69] transition hover:border-[#69B9A7] hover:bg-[#ECF8F4] disabled:cursor-wait disabled:opacity-60"
+        >
+          <RefreshCw className={cn("h-3.5 w-3.5", syncing && "animate-spin")} />
+          {syncing ? "Refreshing" : "Refresh context"}
+        </button>
+      </div>
+      <div className="grid sm:grid-cols-2 xl:grid-cols-4">
+        {contextItems.map((item) => (
+          <div key={item.title} className="min-h-36 border-b border-[#D9E7E3] p-4 sm:border-r xl:border-b-0">
+            <p className="text-xs font-bold uppercase text-[#70847E]">{item.title}</p>
+            <div className="mt-3 space-y-2">
+              {item.lines.map((line) => (
+                <p key={line} className="text-sm leading-5 text-[#274A43]">
+                  {line}
+                </p>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-[#80948F]">Source: {item.source}</p>
+          </div>
+        ))}
+      </div>
+      <p className="border-t border-[#CFE2DD] px-4 py-3 text-xs leading-5 text-[#60756F]">
+        {corti.mode === "live"
+          ? "A live Corti interaction is attached to this Farz+ case reference."
+          : "Safe demo mode is active. No family or medical details are sent to Corti until a configured interaction is enabled."}
+      </p>
+    </section>
+  );
+}
+
+function EventRow({
+  event,
+  expanded,
+  corti,
+  syncing,
+  onSyncCorti,
+}: {
+  event: HandoffEvent;
+  expanded: boolean;
+  corti: CortiViewStatus;
+  syncing: boolean;
+  onSyncCorti: () => void;
+}) {
+  const visual = eventVisual[event.tone];
+  const Icon = visual.icon;
+  const isFamilyMessage = event.id === "evt-family-message";
+  const isContext = event.id === "evt-corti-context";
+
+  return (
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      className="grid grid-cols-[42px_minmax(0,1fr)] gap-3 border-b border-[#E0ECE8] px-4 py-5 last:border-b-0 sm:grid-cols-[92px_minmax(0,1fr)] sm:gap-4"
+    >
+      <div className="relative">
+        <span className={cn("relative z-10 grid h-9 w-9 place-items-center rounded-full border", visual.iconClass)}>
+          <Icon className="h-4 w-4" />
+        </span>
+        <span className="absolute left-[17px] top-9 h-[calc(100%+1.25rem)â€¦1586 tokens truncatedâ€¦esponse,
+  setResponse,
+  reviewState,
+  onApprove,
+  onEscalate,
+  onFocusNote,
+  ledgerExpanded,
+  onToggleLedger,
+  dynamicAudit,
+}: {
+  response: string;
+  setResponse: (value: string) => void;
+  reviewState: ReviewState;
+  onApprove: () => void;
+  onEscalate: () => void;
+  onFocusNote: () => void;
+  ledgerExpanded: boolean;
+  onToggleLedger: () => void;
+  dynamicAudit: { time: string; event: string; actor: string }[];
+}) {
+  const [editing, setEditing] = useState(false);
+  const currentStatus = statusCopy(reviewState);
+  const approved = reviewState === "approved";
+  const sending = reviewState === "sending";
+  const people = [
+    {
+      ...handoffCase.careManager,
+      status: approved ? "Approved" : "In review",
+      note: "Assigned at 09:22 AM",
+    },
+    {
+      ...handoffCase.supervisor,
+      status: reviewState === "escalated" ? "Review requested" : "On duty",
+      note: reviewState === "escalated" ? "Notified just now" : "Available if needed",
+    },
+    { ...handoffCase.medicalAdvisor, status: "On call", note: "Clinical escalation only" },
+  ];
+  const auditEntries = [...initialAuditTrail, ...dynamicAudit];
+
+  return (
+    <aside id="decision-panel" className="scroll-mt-24 lg:sticky lg:top-20 lg:self-start">
+      <section className="overflow-hidden rounded-md border border-[#CFE0DB] bg-white shadow-[0_18px_48px_rgba(20,58,53,0.08)]">
+        <div className="border-b border-[#DCE9E5] px-5 py-4">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-bold uppercase text-[#087B69]">Human decision</p>
+              <h2 className="mt-1 text-lg font-bold text-[#143A35]">Proposed family response</h2>
+            </div>
+            <button
+              type="button"
+              onClick={() => setEditing((value) => !value)}
+              className="rounded-md border border-[#D5E4E0] px-2.5 py-1.5 text-xs font-bold text-[#087B69] hover:bg-[#F3F8F6]"
+            >
+              {editing ? "Done" : "Edit"}
+            </button>
+          </div>
+          {editing ? (
+            <textarea
+              value={response}
+              onChange={(event) => setResponse(event.target.value)}
+              rows={8}
+              className="mt-4 w-full resize-none rounded-md border border-[#AFCFC7] bg-[#F8FBF9] p-3 text-sm leading-6 text-[#274A43] outline-none focus:border-[#08A98A] focus:ring-2 focus:ring-[#08A98A]/15"
+            />
+          ) : (
+            <p className="mt-4 text-sm leading-6 text-[#38534D]">{response}</p>
+          )}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded border border-[#B7DED4] bg-[#EAF8F4] px-2 py-1 text-xs font-semibold text-[#08705F]">
+              <MessageCircle className="h-3.5 w-3.5" />
+              WhatsApp
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded border border-[#D5E4E0] bg-white px-2 py-1 text-xs text-[#60756F]">
+              English
+            </span>
+          </div>
+        </div>
+
+        <div className="border-b border-[#DCE9E5] bg-[#F8FBF9] px-5 py-4">
+          <p className="text-xs font-bold uppercase text-[#70847E]">Policy boundary</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            {[
+              "No diagnosis or prescribing",
+              "General safety guidance only",
+              "Source-grounded context",
+              "Human approval required",
+            ].map((policy) => (
+              <p key={policy} className="flex items-start gap-2 text-xs leading-5 text-[#536B66]">
+                <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-[#08A98A]" />
+                {policy}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="p-5">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={currentStatus.label}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              className={cn("rounded-md border px-3 py-2.5", currentStatus.className)}
+            >
+              <p className="flex items-center gap-2 text-sm font-bold">
+                <span className={cn("h-2 w-2 rounded-full", currentStatus.dot)} />
+                {currentStatus.label}
+              </p>
+              <p className="mt-1 text-xs opacity-80">{currentStatus.detail}</p>
+            </motion.div>
+          </AnimatePresence>
+          <button
+            type="button"
+            onClick={onApprove}
+            disabled={approved || sending}
+            className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-[#006E5B] text-sm font-bold text-white transition hover:bg-[#005B4C] disabled:cursor-not-allowed disabled:bg-[#9FC8BF]"
+          >
+            {sending ? (
+              <LoaderCircle className="h-4 w-4 animate-spin" />
+            ) : approved ? (
+              <CheckCircle2 className="h-4 w-4" />
+            ) : (
+              <Send className="h-4 w-4" />
+            )}
+            {sending ? "Recording approval" : approved ? "Response approved" : "Approve and send"}
+          </button>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={onEscalate}
+              className="flex min-h-10 items-center justify-center gap-2 rounded-md border border-[#D5E4E0] px-2 text-xs font-bold text-[#536B66] transition hover:border-[#D9BC6F] hover:bg-[#FFF9E9]"
+            >
+              <UsersRound className="h-3.5 w-3.5" />
+              Supervisor
+            </button>
+            <button
+              type="button"
+              onClick={onFocusNote}
+              className="flex min-h-10 items-center justify-center gap-2 rounded-md border border-[#D5E4E0] px-2 text-xs font-bold text-[#536B66] transition hover:border-[#9FCFC4] hover:bg-[#F3F8F6]"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              Internal note
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-3 rounded-md border border-[#D5E4E0] bg-white p-4">
+        <h2 className="text-sm font-bold text-[#143A35]">Escalation chain</h2>
+        <div className="mt-3 grid gap-3">
+          {people.map((person, index) => (
+            <div key={person.name} className="relative flex items-center gap-3">
+              {index < people.length - 1 ? (
+                <span className="absolute left-[15px] top-8 h-6 border-l border-dashed border-[#BFD3CE]" />
+              ) : null}
+              <Avatar src={person.image} alt={person.name} size="sm" />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-bold text-[#143A35]">{person.name}</p>
+                <p className="text-xs text-[#70847E]">{person.role}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs font-bold text-[#38534D]">{person.status}</p>
+                <p className="mt-0.5 text-xs text-[#80948F]">{person.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-3 rounded-md border border-[#D5E4E0] bg-white p-4">
+        <button type="button" onClick={onToggleLedger} className="flex w-full items-start justify-between gap-3 text-left">
+          <div>
+            <h2 className="text-sm font-bold text-[#143A35]">Decision ledger</h2>
+            <p className="mt-1 text-xs text-[#70847E]">Why human review was required</p>
+          </div>
+          {ledgerExpanded ? (
+            <ChevronUp className="h-4 w-4 text-[#70847E]" />
+          ) : (
+            <ChevronDown className="h-4 w-4 text-[#70847E]" />
+          )}
+        </button>
+        <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6 lg:grid-cols-3">
+          {decisionLayers.map((layer, index) => {
+            const Icon = decisionIcons[index];
+            const humanPending = index === decisionLayers.length - 1 && !approved;
+            return (
+              <div key={layer.name} className="min-w-0 text-center">
+                <span
+                  className={cn(
+                    "mx-auto grid h-8 w-8 place-items-center rounded-full border",
+                    humanPending
+                      ? "border-[#E2C675] bg-[#FFF8E7] text-[#8B6718]"
+                      : "border-[#AFCFC7] bg-[#EFF8F5] text-[#087B69]",
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                </span>
+                <p className="mt-1.5 text-xs leading-4 text-[#60756F]">{layer.name}</p>
+              </div>
+            );
+          })}
+        </div>
+        <AnimatePresence initial={false}>
+          {ledgerExpanded ? (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 border-t border-[#DCE9E5] pt-2">
+                {decisionLayers.map((layer) => (
+                  <div key={layer.name} className="border-b border-[#E4EEEB] py-2 last:border-b-0">
+                    <p className="text-xs font-bold text-[#38534D]">{layer.name}</p>
+                    <p className="mt-1 text-xs leading-5 text-[#70847E]">{layer.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </section>
+
+      <section id="audit-trail" className="mt-3 scroll-mt-24 rounded-md border border-[#D5E4E0] bg-white p-4">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-sm font-bold text-[#143A35]">Audit trail</h2>
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#087B69]">
+            <LockKeyhole className="h-3.5 w-3.5" />
+            Immutable
+          </span>
+        </div>
+        <div className="mt-3">
+          {auditEntries.slice(-5).map((entry, index) => (
+            <div key={`${entry.time}-${entry.event}-${index}`} className="border-b border-[#E4EEEB] py-2 last:border-b-0">
+              <div className="flex items-center justify-between gap-3 text-xs text-[#80948F]">
+                <span>{entry.time}</span>
+                <span>{entry.actor}</span>
+              </div>
+              <p className="mt-1 text-xs leading-5 text-[#536B66]">{entry.event}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </aside>
+  );
+}
+
+export function CarePulseWorkspace({ onSignOut }: { onSignOut: () => void }) {
+  const shouldReduceMotion = useReducedMotion();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [events, setEvents] = useState<HandoffEvent[]>(initialHandoffEvents);
+  const [activeFilter, setActiveFilter] = useState<EventFilter>("all");
+  const [eventsExpanded, setEventsExpanded] = useState(false);
+  const [ledgerExpanded, setLedgerExpanded] = useState(false);
+  const [note, setNote] = useState("");
+  const [response, setResponse] = useState<string>(handoffCase.proposedResponse);
+  const [reviewState, setReviewState] = useState<ReviewState>("pending");
+  const [dynamicAudit, setDynamicAudit] = useState<{ time: string; event: string; actor: string }[]>([]);
+  const [corti, setCorti] = useState<CortiViewStatus>({ mode: "loading", environment: "eu", tenant: "base" });
+  const [syncingCorti, setSyncingCorti] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/corti/status", { cache: "no-store" })
+      .then((result) => result.json())
+      .then((status: { mode?: CortiMode; environment?: string; tenant?: string }) => {
+        if (!active) return;
+        setCorti({
+          mode: status.mode ?? "demo",
+          environment: status.environment ?? "eu",
+          tenant: status.tenant ?? "base",
+        });
+      })
+      .catch(() => {
+        if (active) setCorti({ mode: "demo", environment: "eu", tenant: "base" });
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  function addEvent(event: HandoffEvent) {
+    setEvents((current) => [...current, event]);
+  }
+
+  function addAudit(event: string, actor: string = handoffCase.careManager.name) {
+    setDynamicAudit((current) => [...current, { time: currentPakistanTime(), event, actor }]);
+  }
+
+  function handleAddNote() {
+    const trimmed = note.trim();
+    if (!trimmed) return;
+    addEvent({
+      id: `evt-note-${Date.now()}`,
+      time: currentPakistanTime(),
+      category: "notes",
+      actor: handoffCase.careManager.name,
+      title: "Internal note added",
+      detail: trimmed,
+      meta: ["Visible to Farz+ staff only"],
+      tone: "human",
+    });
+    addAudit("Internal case note added");
+    setNote("");
+    setActiveFilter("all");
+  }
+
+  function handleApprove() {
+    if (reviewState === "approved" || reviewState === "sending") return;
+    setReviewState("sending");
+    window.setTimeout(() => {
+      setReviewState("approved");
+      addEvent({
+        id: `evt-approved-${Date.now()}`,
+        time: currentPakistanTime(),
+        category: "human",
+        actor: handoffCase.careManager.name,
+        title: "Reviewed response approved",
+        detail: "The response passed the human approval gate and is queued for family delivery.",
+        meta: ["Approved by care manager", "WhatsApp delivery queue"],
+        tone: "human",
+      });
+      addAudit("Reviewed response approved");
+    }, shouldReduceMotion ? 0 : 450);
+  }
+
+  function handleEscalate() {
+    if (reviewState === "escalated") return;
+    setReviewState("escalated");
+    addEvent({
+      id: `evt-escalated-${Date.now()}`,
+      time: currentPakistanTime(),
+      category: "human",
+      actor: handoffCase.careManager.name,
+      title: "Supervisor review requested",
+      detail: `${handoffCase.supervisor.name} was added to the handoff and notified of the medication-risk case.`,
+      meta: ["Escalation level: Supervisor"],
+      tone: "human",
+    });
+    addAudit("Supervisor review requested");
+  }
+
+  async function handleSyncCorti() {
+    if (syncingCorti) return;
+    setSyncingCorti(true);
+    try {
+      const result = await fetch("/api/corti/interactions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ caseId: handoffCase.id }),
+      });
+      const payload = (await result.json()) as {
+        mode?: "demo" | "ready" | "live";
+        synced?: boolean;
+        interactionId?: string;
+        message?: string;
+        error?: string;
+      };
+      if (!result.ok) throw new Error(payload.error ?? "Corti request failed.");
+
+      setCorti((current) => ({ ...current, mode: payload.mode ?? current.mode }));
+      addEvent({
+        id: `evt-corti-refresh-${Date.now()}`,
+        time: currentPakistanTime(),
+        category: "corti",
+        actor: "Corti",
+        title: payload.synced ? "Live Corti interaction attached" : "Corti demo context refreshed",
+        detail: payload.message ?? "Corti context refreshed.",
+        meta: payload.interactionId ? [`Interaction: ${payload.interactionId}`] : undefined,
+        tone: "corti",
+      });
+      addAudit(payload.synced ? "Corti interaction attached" : "Corti demo context refreshed", "System");
+    } catch (error) {
+      addEvent({
+        id: `evt-corti-error-${Date.now()}`,
+        time: currentPakistanTime(),
+        category: "system",
+        actor: "System",
+        title: "Corti sync needs attention",
+        detail: error instanceof Error ? error.message : "Corti request failed.",
+        meta: ["No family response was affected"],
+        tone: "risk",
+      });
+    } finally {
+      setSyncingCorti(false);
+    }
+  }
+
+  function navigateTo(target: string) {
+    setMobileOpen(false);
+    window.requestAnimationFrame(() => {
+      document.getElementById(target)?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
+    });
+  }
+
+  function focusNote() {
+    document.getElementById("internal-note")?.scrollIntoView({
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+      block: "center",
+    });
+    window.setTimeout(() => document.getElementById("internal-note")?.focus(), shouldReduceMotion ? 0 : 350);
+  }
+
+  const latestStatus =
+    reviewState === "approved"
+      ? "Response approved"
+      : reviewState === "escalated"
+        ? "Supervisor review requested"
+        : "Awaiting care-manager approval";
+
+  return (
+    <div data-platform-shell className="min-h-screen bg-[#F3F7F5] text-[#143A35] [font-synthesis:none]">
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[232px] border-r border-[#DCE9E5] lg:block">
+        <NavigationBody corti={corti} onNavigate={navigateTo} onSignOut={onSignOut} />
+      </aside>
+
+      <AnimatePresence>
+        {mobileOpen ? (
+          <>
+            <motion.button
+              type="button"
+              aria-label="Close navigation"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-[#143A35]/40 backdrop-blur-sm lg:hidden"
+            />
+            <motion.aside
+              initial={{ x: -260 }}
+              animate={{ x: 0 }}
+              exit={{ x: -260 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.24, ease: "easeOut" }}
+              className="fixed inset-y-0 left-0 z-50 w-[min(86vw,300px)] border-r border-[#DCE9E5] lg:hidden"
+            >
+              <NavigationBody
+                corti={corti}
+                onNavigate={navigateTo}
+                onSignOut={onSignOut}
+                onClose={() => setMobileOpen(false)}
+              />
+            </motion.aside>
+          </>
+        ) : null}
+      </AnimatePresence>
+
+      <div className="min-h-screen lg:pl-[232px]">
+        <Topbar onMenu={() => setMobileOpen(true)} onSignOut={onSignOut} />
+        <CaseOverview reviewState={reviewState} />
+        <main className="mx-auto grid max-w-[1600px] gap-4 px-4 py-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+          <div className="order-2 min-w-0 lg:order-1">
+            <EventStream
+              events={events}
+              activeFilter={activeFilter}
+              onFilter={setActiveFilter}
+              expanded={eventsExpanded}
+              onToggleExpanded={() => setEventsExpanded((value) => !value)}
+              note={note}
+              setNote={setNote}
+              onAddNote={handleAddNote}
+              corti={corti}
+              syncing={syncingCorti}
+              onSyncCorti={handleSyncCorti}
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <DecisionPanel
+              response={response}
+              setResponse={setResponse}
+              reviewState={reviewState}
+              onApprove={handleApprove}
+              onEscalate={handleEscalate}
+              onFocusNote={focusNote}
+              ledgerExpanded={ledgerExpanded}
+              onToggleLedger={() => setLedgerExpanded((value) => !value)}
+              dynamicAudit={dynamicAudit}
+            />
+          </div>
+        </main>
+        <footer className="border-t border-[#DCE9E5] bg-white px-5 py-4 text-xs text-[#70847E]">
+          <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-2">
+            <span className="inline-flex items-center gap-2">
+              <LockKeyhole className="h-3.5 w-3.5" />
+              Consent-based access Ã‚Â· {latestStatus}
+            </span>
+            <span>Pakistan Standard Time Ã‚Â· 29 Jul 2026</span>
+            <span>Farz+ coordinates care. It does not diagnose or prescribe.</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
