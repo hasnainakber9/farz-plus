@@ -238,9 +238,9 @@ function CarePulseHero() {
             className="relative min-h-[380px] overflow-hidden"
           >
             <div className="absolute left-0 top-1 z-20">
-              <p className="text-xl font-semibold text-[#143A35]">Lahore ↔ Dubai</p>
+              <p className="text-xl font-semibold text-[#143A35]">Lahore â†” Dubai</p>
               <p className="mt-1 text-sm text-[#4E6963]">Medication safety handoff</p>
-              <p className="mt-1 text-xs text-[#82928E]">29 Jul 2026 · 09:18 AM PKT</p>
+              <p className="mt-1 text-xs text-[#82928E]">29 Jul 2026 Â· 09:18 AM PKT</p>
             </div>
             <Image
               src="/images/care-pulse-elder.png"
@@ -264,7 +264,7 @@ function CarePulseHero() {
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-bold text-[#143A35]">Amina (Daughter)</p>
-                  <p className="mt-0.5 text-[11px] text-[#71847F]">Dubai · via WhatsApp</p>
+                  <p className="mt-0.5 text-[11px] text-[#71847F]">Dubai Â· via WhatsApp</p>
                 </div>
                 <MessageCircle className="h-4 w-4 text-[#08A98A]" aria-hidden="true" />
               </div>
@@ -371,7 +371,34 @@ function CarePulseHero() {
           <div className="py-5 md:hidden">
             <div className="grid grid-cols-5 gap-1.5">
               {pulseStages.map((stage, index) => {
-             �έ�G����ƭy�
+                const Icon = stage.icon;
+                const active = index === activeStage;
+                const complete = index < activeStage;
+                return (
+                  <button
+                    key={stage.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveStage(index);
+                      setPlaying(false);
+                    }}
+                    aria-label={`${index + 1}. ${stage.title}`}
+                    aria-pressed={active}
+                    className={cn(
+                      "grid h-11 place-items-center rounded-md border",
+                      active
+                        ? "border-[#08A98A] bg-[#E6F7F2] text-[#08715F]"
+                        : complete
+                          ? "border-[#08A98A] bg-[#08A98A] text-white"
+                          : "border-[#D6E4E0] bg-white text-[#71847F]",
+                    )}
+                  >
+                    {complete ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
+                  </button>
+                );
+              })}
+            </div>
+            <AnimatePresence mode="wait">
               <motion.div
                 key={pulseStages[activeStage].id}
                 initial={reduceMotion ? false : { opacity: 0, y: 8 }}
@@ -520,10 +547,10 @@ function AudienceSection() {
 
 function OperatingLayer() {
   const sources = [
-    ["Medication", "Lisinopril 10mg · once daily", "Care plan"],
+    ["Medication", "Lisinopril 10mg Â· once daily", "Care plan"],
     ["Allergies", "No known drug allergies", "Care plan"],
-    ["Care context", "Hypertension · Type 2 diabetes", "Family record"],
-    ["Emergency contact", "Amina Hassan · verified", "Family profile"],
+    ["Care context", "Hypertension Â· Type 2 diabetes", "Family record"],
+    ["Emergency contact", "Amina Hassan Â· verified", "Family profile"],
   ];
 
   return (
@@ -562,7 +589,7 @@ function OperatingLayer() {
               <div className="border-b border-white/15 p-5 lg:border-b-0 lg:border-r">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#87DAC9]">Incoming family message</p>
                 <blockquote className="mt-4 text-2xl font-medium leading-[1.35]">
-                  “{handoffCase.familyMessage}”
+                  â€œ{handoffCase.familyMessage}â€
                 </blockquote>
                 <div className="mt-6 flex items-center gap-3">
                   <Image
@@ -574,7 +601,7 @@ function OperatingLayer() {
                   />
                   <div>
                     <p className="text-sm font-semibold">{handoffCase.familyMember.name}</p>
-                    <p className="mt-0.5 text-xs text-[#9EB8B2]">Daughter · Dubai · WhatsApp</p>
+                    <p className="mt-0.5 text-xs text-[#9EB8B2]">Daughter Â· Dubai Â· WhatsApp</p>
                   </div>
                 </div>
               </div>
@@ -679,3 +706,4 @@ function FinalCareCall() {
     </AnimatedSection>
   );
 }
+
