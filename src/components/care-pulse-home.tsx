@@ -124,7 +124,7 @@ const audienceModes = [
     icon: UsersRound,
     title: "Stay close without becoming the operations desk.",
     body: "See what happened, who handled it, what is next, and when your parent was updated.",
-    bullets: ["One named care manager", "WhatsApp-first updates", "Consent-based family access"],
+    bullets: ["One named care manager", "In-app family updates", "Consent-based family access"],
     href: "/for-overseas-pakistanis",
     link: "Explore family care",
   },
@@ -699,11 +699,10 @@ function FinalCareCall() {
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-[#617570]">
           <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#08A98A]" /> Parent app is optional</span>
-          <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#08A98A]" /> WhatsApp-first support</span>
+          <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#08A98A]" /> In-app family support</span>
           <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#08A98A]" /> Care coordination, not diagnosis</span>
         </div>
       </div>
     </AnimatedSection>
   );
 }
-
