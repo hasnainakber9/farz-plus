@@ -1,18 +1,17 @@
 # Farz+
 
-Farz+ is a human-led parent-care operating platform for Pakistani families, care managers, Saathis, and doctors. This repository contains the interactive public experience and a synchronized multi-role working prototype.
+Farz+ is a human-led parent-care coordination platform for Pakistani families, care managers, Saathis, and clinicians. This repository contains the public experience and the Production V1 application foundation.
 
-## Prototype capabilities
+## Production V1 capabilities
 
 - Animated public site with a responsive React Three Fiber care network.
-- Live WhatsApp handoff simulator with risk screening, Corti context, and human approval.
+- Educational handoff simulator with risk screening, Corti context, and human approval boundaries.
 - Persona journeys for overseas families, care teams, and doctors.
-- Role-gated family, care-manager, and doctor dashboards.
-- Shared patient, message, medication, escalation, and care-log records.
-- Server-Sent Events for live updates across open dashboards.
-- REST API routes for handoffs, case decisions, medications, and emergency requests.
-- Server-only Corti adapter with explicit demo, ready, and live states.
-- Locally bundled, credited Pexels imagery for reliable demonstrations.
+- Supabase SSR auth, Postgres migration, RLS, private Storage, consent records, audit events, and Realtime-ready reads.
+- Role-gated family, care-manager, clinician, and administrator dashboards.
+- Database-backed parent records, care requests, messaging, notifications, documents, subscriptions, and deletion requests.
+- Server-only Corti gateway with explicit disabled, ready, and live states; live PHI is disabled by default.
+- Locally bundled, credited imagery for reliable demonstrations.
 
 ## Run locally
 
@@ -23,19 +22,9 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Demo accounts
-
-| Role | Email | Password |
-| --- | --- | --- |
-| Overseas family | `family@farzplus.pk` | `FarzFamily123` |
-| Care manager | `care@farzplus.pk` | `FarzCare123` |
-| Doctor | `doctor@farzplus.pk` | `FarzDoctor123` |
-
-The login form prefills the selected role's credentials.
-
 ## Key routes
 
-- `/` - public platform and live handoff simulator
+- `/` - public platform and educational handoff simulator
 - `/families` - overseas family journey
 - `/care-teams` - care manager and Saathi journey
 - `/doctors` - doctor and clinic journey
@@ -44,7 +33,7 @@ The login form prefills the selected role's credentials.
 - `/dashboard/care-manager` - safety handoff and MAR workspace
 - `/dashboard/doctor` - clinical escalation portal
 
-## Prototype APIs
+## API routes
 
 - `GET /api/platform/snapshot`
 - `GET /api/platform/events`
@@ -53,7 +42,7 @@ The login form prefills the selected role's credentials.
 - `PATCH /api/platform/medications/:medicationId`
 - `POST /api/platform/emergency`
 
-The prototype repository is an in-memory, tenant-scoped server store. It is intentionally easy to demo and replace. Before handling real patient records, connect PostgreSQL or Supabase, enforce row-level tenant access, add production authentication, encrypt sensitive data, and complete clinical, privacy, and incident-response review.
+API routes require Supabase configuration and authenticated role access where records are involved. The migration applies tenant-aware RLS policies; apply it to isolated staging and production projects before using real records.
 
 ## Corti integration
 
@@ -64,11 +53,25 @@ CORTI_CLIENT_ID=...
 CORTI_CLIENT_SECRET=...
 CORTI_ENVIRONMENT=eu
 CORTI_TENANT=base
-CORTI_LIVE_SYNC=false
+CORTI_ENABLED=false
+CORTI_LIVE_PHI_ENABLED=false
+CORTI_DPA_APPROVED=false
+CORTI_TRANSFER_APPROVED=false
 ```
 
-`CORTI_LIVE_SYNC=false` keeps the integration in safe demo mode. Enable live interaction creation only for an approved deployment. The current adapter sends a non-identifying Farz+ case reference and does not send family messages, medications, or other health information.
+Live PHI processing remains disabled until recorded consent, an administrator-approved DPA, documented EU transfer approval, and an explicit activation event exist. WhatsApp automation remains disabled unless real Meta credentials are configured; in-app messaging is the production channel.
+
+## Deployment checklist
+
+1. Create isolated Mumbai Supabase staging and production projects.
+2. Apply `supabase/migrations/202608080001_platform.sql` to both projects.
+3. Configure Vercel Preview/Development and Production variables from `.env.example`.
+4. Configure Supabase email templates and callback URLs.
+5. Create and verify `hasnainakber9@gmail.com`, then complete administrator MFA.
+6. Run disposable-account, mobile, accessibility, and adversarial RLS acceptance tests before promotion.
+
+Farz+ describes nationwide digital access. Physical and external-provider coordination is confirmed case by case. The platform does not claim HIPAA, GDPR, Pakistani privacy-law, medical certification, response-time, partner, or user adoption status without formal evidence.
 
 ## Safety boundary
 
-Farz+ coordinates care. It does not diagnose, prescribe, replace licensed clinicians, or contact emergency services in this prototype.
+Farz+ coordinates care. It does not diagnose, prescribe, replace licensed clinicians, or promise emergency dispatch or clinical outcomes.
