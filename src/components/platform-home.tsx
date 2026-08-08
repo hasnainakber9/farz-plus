@@ -82,7 +82,7 @@ export function PlatformHome() {
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#78E3CA] px-5 text-sm font-bold text-[#073D35] transition hover:bg-[#9AF0DC]"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  Run a live handoff
+                  Run a sample handoff
                 </Link>
                 <Link
                   href="/login"
@@ -124,7 +124,7 @@ export function PlatformHome() {
                 AI prepares the work. Humans carry the duty.
               </h2>
               <p className="site-muted mt-4 text-base leading-7">
-                Every high-risk case has a source trail, policy boundary, named owner, response timer, and
+                Every high-risk case has a source trail, policy boundary, named owner, status trail, and
                 documented outcome.
               </p>
               <Link href="/how-it-works" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#08A98A]">
