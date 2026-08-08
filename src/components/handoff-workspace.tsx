@@ -567,7 +567,117 @@ function EventRow({
                 </span>
               ))}
             </div>
-            <p className="mt-1.5 max-w-3xl text-[11px] leading-[1.65] text-[#B4C1CC]">{even…903 tokens truncated…    >
+            <p className="mt-1.5 max-w-3xl text-[11px] leading-[1.65] text-[#B4C1CC]">{event.detail}</p>
+
+            {event.meta && (expanded || event.meta.length > 1) ? (
+              <div className="mt-2 flex flex-wrap gap-2">
+                {event.meta.slice(1).map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded border border-white/10 bg-white/[0.035] px-2 py-1 text-[9px] text-[#8FA2B3]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </>
+        )}
+
+        {isContext ? <ContextGrid corti={corti} syncing={syncing} onSync={onSyncCorti} /> : null}
+      </div>
+    </article>
+  );
+}
+
+function EventTimeline({
+  events,
+  activeFilter,
+  onFilter,
+  expanded,
+  onToggleExpanded,
+  note,
+  setNote,
+  onAddNote,
+  corti,
+  syncing,
+  onSyncCorti,
+}: {
+  events: HandoffEvent[];
+  activeFilter: EventFilter;
+  onFilter: (filter: EventFilter) => void;
+  expanded: boolean;
+  onToggleExpanded: () => void;
+  note: string;
+  setNote: (note: string) => void;
+  onAddNote: () => void;
+  corti: CortiViewStatus;
+  syncing: boolean;
+  onSyncCorti: () => void;
+}) {
+  const filteredEvents = activeFilter === "all" ? events : events.filter((event) => event.category === activeFilter);
+
+  return (
+    <section className={cn("flex min-h-[650px] min-w-0 flex-col overflow-hidden rounded-md", panelClass)}>
+      <div className="flex min-h-12 items-center justify-between gap-3 border-b border-white/10 px-3">
+        <div className="flex min-w-0 gap-1 overflow-x-auto py-2">
+          {filters.map((filter) => (
+            <button
+              type="button"
+              key={filter.id}
+              onClick={() => onFilter(filter.id)}
+              aria-pressed={activeFilter === filter.id}
+              className={cn(
+                "h-8 flex-none rounded-full px-3 text-[11px] font-semibold transition",
+                activeFilter === filter.id
+                  ? "bg-[#0B5B5C] text-[#E8FFFA]"
+                  : "text-[#91A4B6] hover:bg-white/[0.05] hover:text-white",
+              )}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={onToggleExpanded}
+          className="hidden h-8 flex-none items-center gap-2 rounded px-2 text-[10px] font-semibold text-[#8FA3B4] hover:bg-white/[0.05] hover:text-white sm:flex"
+        >
+          {expanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+          {expanded ? "Collapse details" : "Expand all"}
+        </button>
+      </div>
+
+      <div className="min-h-0 flex-1 overflow-y-auto px-1">
+        {filteredEvents.length ? (
+          filteredEvents.map((event) => (
+            <EventRow
+              key={event.id}
+              event={event}
+              expanded={expanded}
+              corti={corti}
+              syncing={syncing}
+              onSyncCorti={onSyncCorti}
+            />
+          ))
+        ) : (
+          <div className="grid min-h-80 place-items-center px-6 text-center">
+            <div>
+              <FileCheck2 className="mx-auto h-7 w-7 text-[#557085]" />
+              <p className="mt-3 text-sm font-semibold text-white">No events in this view</p>
+              <p className="mt-1 text-xs text-[#7990A4]">Choose another event filter to continue.</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          onAddNote();
+        }}
+        className="flex items-center gap-2 border-t border-white/10 bg-[#091827] p-3"
+      >
         <label htmlFor="internal-note" className="sr-only">
           Add an internal note
         </label>
@@ -1104,4 +1214,3 @@ export function HandoffWorkspace({ onSignOut }: { onSignOut: () => void }) {
     </div>
   );
 }
-
