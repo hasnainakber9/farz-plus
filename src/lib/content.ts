@@ -461,7 +461,7 @@ export const demoElder: ElderProfile = {
     },
   ],
   serviceRequests: [
-    { id: "sr_1", title: "Request clinician appointment coordination", category: "Doctor", status: "pending confirmation", sla: "Awaiting availability" },
+    { id: "sr_1", title: "Request clinician appointment coordination", category: "Doctor", status: "coordinating", sla: "Awaiting availability" },
     { id: "sr_2", title: "Request family care summary", category: "Report", status: "open", sla: "Awaiting review" },
   ],
 };
