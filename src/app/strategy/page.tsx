@@ -34,7 +34,7 @@ export default function StrategyPage() {
       <section className="relative overflow-hidden border-b border-[#DCE9E5] bg-white py-20 sm:py-28">
         <div className="absolute inset-0 grid-texture opacity-30" />
         <Shell className="relative">
-          <SectionHeading eyebrow="Pitch Strategy" title="Pakistan's AI-assisted parent-care operating system.">
+          <SectionHeading eyebrow="Product Strategy" title="Pakistan's human-led parent-care coordination layer.">
             <p>
               Pakistan has doctors, labs, nurses, pharmacies, and hospitals, but families still struggle to coordinate care for aging parents.
               Farz+ connects fragmented services into one managed care layer.
