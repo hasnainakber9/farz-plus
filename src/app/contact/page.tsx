@@ -22,7 +22,7 @@ export default function ContactPage() {
             <GlassCard className="p-5">
               <StatusPill>Pakistan coverage</StatusPill>
               <p className="mt-4 text-sm leading-7 text-[#60756F]">
-                Care managers coordinate family updates, partner bookings, reports, and emergency readiness across major cities.
+                Digital access is available nationwide. Physical coordination, provider bookings, reports, and urgent support are confirmed case by case.
               </p>
             </GlassCard>
             <GlassCard className="p-5">
