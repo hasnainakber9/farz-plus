@@ -60,7 +60,7 @@ function PatientQueueItem({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="truncate text-sm font-bold text-[#143A35]">{patient.name}</p>
-          <p className="mt-1 text-xs text-[#70847E]">{patient.age} · {patient.city}</p>
+          <p className="mt-1 text-xs text-[#70847E]">{patient.age} Â· {patient.city}</p>
         </div>
         <ChevronRight className={cn("h-4 w-4 flex-none", active ? "text-[#087B69]" : "text-[#9AADAA]")} />
       </div>
@@ -82,16 +82,15 @@ export function CareManagerDashboard({ name }: { name: string }) {
   const [busy, setBusy] = useState("");
   const [notice, setNotice] = useState("");
 
-  const patient = snapshot?.patients.find((item) => item.id === selectedPatientId);
-  const activeCase = snapshot?.cases.find((item) => item.patientId === selectedPatientId);
+  const activePatientId = snapshot?.patients.some((item) => item.id === selectedPatientId)
+    ? selectedPatientId
+    : snapshot?.patients[0]?.id ?? "";
+  const patient = snapshot?.patients.find((item) => item.id === activePatientId);
+  const activeCase = snapshot?.cases.find((item) => item.patientId === activePatientId);
   const sourceMessage = snapshot?.messages.find((item) => item.id === activeCase?.sourceMessageId);
-  const patientMedications = snapshot?.medications.filter((item) => item.patientId === selectedPatientId) ?? [];
-  const patientFeed = snapshot?.feed.filter((item) => item.patientId === selectedPatientId).slice(0, 5) ?? [];
+  const patientMedications = snapshot?.medications.filter((item) => item.patientId === activePatientId) ?? [];
+  const patientFeed = snapshot?.feed.filter((item) => item.patientId === activePatientId).slice(0, 5) ?? [];
   const draft = draftOverride ?? activeCase?.draftedResponse ?? "";
-
-  useEffect(() => {
-    if (snapshot?.patients.length && !snapshot.patients.some((item) => item.id === selectedPatientId)) setSelectedPatientId(snapshot.patients[0].id);
-  }, [selectedPatientId, snapshot]);
 
   const queueStats = useMemo(() => {
     const patients = snapshot?.patients ?? [];
@@ -130,7 +129,7 @@ export function CareManagerDashboard({ name }: { name: string }) {
       role="CARE_MANAGER"
       name={name}
       title="Care operations"
-      subtitle="Live patient queue · assigned records only"
+      subtitle="Live patient queue Â· assigned records only"
       connected={connected}
     >
       <main className="mx-auto max-w-[1680px] p-4 sm:p-5">
@@ -175,7 +174,7 @@ export function CareManagerDashboard({ name }: { name: string }) {
                 <PatientQueueItem
                   key={queuePatient.id}
                   patient={queuePatient}
-                  active={queuePatient.id === selectedPatientId}
+                  active={queuePatient.id === activePatientId}
                   openCases={snapshot?.cases.filter((item) => item.patientId === queuePatient.id && item.status !== "APPROVED").length ?? 0}
                   onSelect={() => {
                     setSelectedPatientId(queuePatient.id);
@@ -200,7 +199,7 @@ export function CareManagerDashboard({ name }: { name: string }) {
                     ) : null}
                   </div>
                   <h2 className="mt-2 text-xl font-extrabold text-[#143A35]">{patient?.name ?? "Select a patient"}</h2>
-                  <p className="mt-1 text-xs text-[#70847E]">{patient?.city} · Assigned to {name}</p>
+                  <p className="mt-1 text-xs text-[#70847E]">{patient?.city} Â· Assigned to {name}</p>
                 </div>
                 {activeCase ? (
                   <span className="inline-flex items-center gap-2 rounded-md border border-[#D5E4E0] bg-white px-3 py-2 text-xs font-bold text-[#536B66]">
@@ -319,7 +318,7 @@ export function CareManagerDashboard({ name }: { name: string }) {
               <section className="overflow-hidden rounded-md border border-[#D5E4E0] bg-white">
                 <div className="border-b border-[#DCE9E5] px-5 py-4">
                   <h2 className="text-sm font-bold text-[#143A35]">Daily MAR</h2>
-                  <p className="mt-1 text-xs text-[#70847E]">Medication administration record · {patient?.name ?? "No parent selected"}</p>
+                  <p className="mt-1 text-xs text-[#70847E]">Medication administration record Â· {patient?.name ?? "No parent selected"}</p>
                 </div>
                 {patientMedications.length ? (
                   <div className="divide-y divide-[#E3ECE9]">
@@ -331,7 +330,7 @@ export function CareManagerDashboard({ name }: { name: string }) {
                           </span>
                           <div>
                             <p className="text-sm font-bold text-[#143A35]">{medication.name}</p>
-                            <p className="mt-1 text-xs text-[#70847E]">{medication.dosage} · {medication.time}</p>
+                            <p className="mt-1 text-xs text-[#70847E]">{medication.dosage} Â· {medication.time}</p>
                           </div>
                         </div>
                         <div className="flex gap-2">
