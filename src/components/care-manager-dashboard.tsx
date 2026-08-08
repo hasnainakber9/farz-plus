@@ -18,7 +18,7 @@ import {
   UserRoundCheck,
   Users,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { DashboardShell } from "@/components/dashboard-shell";
 import { useCareOperations } from "@/hooks/use-care-operations";
 import type { CaseStatus, MedicationStatus, Patient, RiskLevel } from "@/lib/platform-types";
